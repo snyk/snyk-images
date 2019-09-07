@@ -1,0 +1,7 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "Snyk installed"
+    command: "which"
+    args: ["snyk"]
+    expectedOutput: ["/usr/local/bin/snyk"]
