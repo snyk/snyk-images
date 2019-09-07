@@ -2,8 +2,9 @@ ARG IMAGE
 
 FROM ${IMAGE} as parent
 WORKDIR /app
-ENTRYPOINT ["snyk"]
-CMD ["test"]
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+CMD ["snyk", "test"]
 
 
 FROM ubuntu as snyk
