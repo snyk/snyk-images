@@ -10,15 +10,15 @@ ifndef DOCKER_BUILDKIT
 endif
 
 build-linux: check-buildkit
-	@awk '{ print "docker build --build-arg IMAGE="$$0" -t snyk/snyk-"$$0" ." | "/bin/sh"}' $(NAME)
+	@awk '{ print "docker build --build-arg IMAGE="$$1" -t snyk/snyk-"$$NF" ." | "/bin/sh"}' $(NAME)
 
 build-alpine: check-buildkit
-	@awk '{ print "docker build --target alpine --build-arg IMAGE="$$0" -t snyk/snyk-"$$0" ." | "/bin/sh"}' $(NAME)
+	@awk '{ print "docker build --target alpine --build-arg IMAGE="$$1" -t snyk/snyk-"$$NF" ." | "/bin/sh"}' $(NAME)
 
 test: test-linux test-alpine
 
 test-%: 
-	@awk '{ print "echo Testing "$$0"; docker run --rm -v $(CURDIR):/app -v /var/run/docker.sock:/var/run/docker.sock gcr.io/gcp-runtimes/container-structure-test test --image snyk/snyk-"$$0" --config /app/tests.yaml" | "/bin/bash"}' $(NAME)
+	@awk '{ print "echo Testing "$$NF"; docker run --rm -v $(CURDIR):/app -v /var/run/docker.sock:/var/run/docker.sock gcr.io/gcp-runtimes/container-structure-test test --image snyk/snyk-"$$NF" --config /app/tests.yaml" | "/bin/bash"}' $(NAME)
 
 sort: sort-linux sort-alpine
 

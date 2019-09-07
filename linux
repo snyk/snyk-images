@@ -1,9 +1,10 @@
 golang
 gradle
-hseeberger/scala-sbt:8u212_1.2.8_2.13.0
+hseeberger/scala-sbt:8u212_1.2.8_2.13.0 sbt
+hseeberger/scala-sbt:8u212_1.2.8_2.13.0 scala
 java
 maven
-mcr.microsoft.com/dotnet/core/sdk
+mcr.microsoft.com/dotnet/core/sdk dotnet
 node
 python
 ruby

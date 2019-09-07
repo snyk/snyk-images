@@ -1,3 +1,4 @@
 composer
+composer php
 python:alpine
 ruby:alpine
