@@ -1,6 +1,9 @@
 golang
+gradle
+hseeberger/scala-sbt:8u212_1.2.8_2.13.0
 java
 maven
+mcr.microsoft.com/dotnet/core/sdk
 node
 python
 ruby

@@ -2,7 +2,7 @@ NAME=$$(echo $@ | cut -d "-" -f 2)
 
 default: build
 
-build: build-linux build-alpine
+build: sort build-linux build-alpine
 
 check-buildkit:
 ifndef DOCKER_BUILDKIT
