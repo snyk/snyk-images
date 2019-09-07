@@ -38,6 +38,52 @@ Next steps:
 - Run `snyk test` as part of your CI/test.
 ```
 
+Here's another example, this time using a vulnerable Node.js application:
+
+```console
+$ git clone git@github.com:snyk/goof.git
+$ docker run --rm -it --env SNYK_TOKEN -v (pwd):/app snyk/snyk-node
+...
+✗ High severity vulnerability found in ejs
+  Description: Arbitrary Code Execution
+  Info: https://snyk.io/vuln/npm:ejs:20161128
+  Introduced through: ejs@1.0.0, ejs-locals@1.0.2
+  From: ejs@1.0.0
+  From: ejs-locals@1.0.2 > ejs@0.8.8
+  Remediation:
+    Upgrade direct dependency ejs@1.0.0 to ejs@2.5.3 (triggers upgrades to ejs@2.5.3)
+    Some paths have no direct dependency upgrade that can address this issue. Run `snyk wizard` to explore remediation options.
+
+✗ High severity vulnerability found in dustjs-linkedin
+  Description: Code Injection
+  Info: https://snyk.io/vuln/npm:dustjs-linkedin:20160819
+  Introduced through: dustjs-linkedin@2.5.0
+  From: dustjs-linkedin@2.5.0
+  Remediation:
+    Upgrade direct dependency dustjs-linkedin@2.5.0 to dustjs-linkedin@2.6.0 (triggers upgrades to dustjs-linkedin@2.6.0)
+
+✗ High severity vulnerability found in adm-zip
+  Description: Arbitrary File Write via Archive Extraction (Zip Slip)
+  Info: https://snyk.io/vuln/npm:adm-zip:20180415
+  Introduced through: adm-zip@0.4.7
+  From: adm-zip@0.4.7
+  Remediation:
+    Upgrade direct dependency adm-zip@0.4.7 to adm-zip@0.4.11 (triggers upgrades to adm-zip@0.4.11)
+
+
+
+Organization:      garethr
+Package manager:   npm
+Target file:       package-lock.json
+Open source:       no
+Project path:      /app
+Licenses:          enabled
+
+Tested 448 dependencies for known issues, found 47 issues, 90 vulnerable paths.
+
+Run `snyk wizard` to address these issues.
+```
+
 ## Toolchain
 
 ### Usage
