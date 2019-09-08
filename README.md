@@ -10,7 +10,26 @@ An *experimental* build toolchain for Snyk Docker images.
 
 ## Images
 
-Please note that the nuber of images is relatively small at present, and not all of them are expected to work. This is very much work-in-progress, but the following demonstrates some progress.
+Please note that the nuber of images is relatively small at present, and not all of them are expected to work. This is very much work-in-progress, but the following demonstrates how these images are intended to work.
+
+## Existing images
+
+| Image | Based on |
+| --- | --- |
+| snyk/snyk-composer | composer |
+| snyk/snyk-php | composer |
+| snyk/snyk-golang | golang |
+| snyk/snyk-gradle | gradle |
+| snyk/snyk-sbt | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
+| snyk/snyk-scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
+| snyk/snyk-java | java |
+| snyk/snyk-maven | maven |
+| snyk/snyk-dotnet | mcr.microsoft.com/dotnet/core/sdk |
+| snyk/snyk-node | node |
+| snyk/snyk-python | python |
+| snyk/snyk-python:alpine | python:alpine |
+| snyk/snyk-ruby | ruby |
+| snyk/snyk-ruby:alpine | ruby:alpine |
 
 ### Usage
 

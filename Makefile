@@ -25,4 +25,9 @@ sort: sort-linux sort-alpine
 sort-%:
 	@sort $(NAME) -o $(NAME)
 
-.PHONY: defaul build build-linux build-alpine check-buildkit sort sort-% test test-%
+markdown:
+	@echo "| Image | Based on |"
+	@echo "| --- | --- |"
+	@cat linux alpine | sort | awk '{ print "| snyk/snyk-"$$NF" | "$$1" |" }'
+
+.PHONY: defaul build build-linux build-alpine check-buildkit sort sort-% test test-% markdown
