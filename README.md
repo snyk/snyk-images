@@ -9,6 +9,7 @@ An *experimental* build toolchain for Snyk Docker images.
   covering the range of different software versions and operating systems in common usage
 * Minimize the amount of configuration we need to maintain per image
 * Avoid the need to install a Node development environment for non-Node users
+* Enable images to be automatically built (and rebuilt) regularly
 
 
 ## Images
