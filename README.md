@@ -1,5 +1,8 @@
 An *experimental* build toolchain for Snyk Docker images.
 
+![](https://github.com/garethr/snyk-images/workflows/Build%20and%20push%20images/badge.svg)
+
+
 ## Design goals
 
 * Make it easy to provide images which match upstream development environments, for example
@@ -12,24 +15,42 @@ An *experimental* build toolchain for Snyk Docker images.
 
 Please note that the nuber of images is relatively small at present, and not all of them are expected to work. This is very much work-in-progress, but the following demonstrates how these images are intended to work.
 
-## Existing images
+## Current images
 
 | Image | Based on |
 | --- | --- |
 | docker.pkg.github.com/garethr/snyk-images/snyk-composer | composer |
 | docker.pkg.github.com/garethr/snyk-images/snyk-php | composer |
 | docker.pkg.github.com/garethr/snyk-images/snyk-golang | golang |
+| docker.pkg.github.com/garethr/snyk-images/snyk-golang:1.12 | golang:1.12 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-golang:1.13 | golang:1.13 |
 | docker.pkg.github.com/garethr/snyk-images/snyk-gradle | gradle |
+| docker.pkg.github.com/garethr/snyk-images/snyk-gradle:jdk11 | gradle:jdk11 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-gradle:jdk12 | gradle:jdk12 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-gradle:jdk8 | gradle:jdk8 |
 | docker.pkg.github.com/garethr/snyk-images/snyk-sbt | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
 | docker.pkg.github.com/garethr/snyk-images/snyk-scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
 | docker.pkg.github.com/garethr/snyk-images/snyk-java | java |
-| docker.pkg.github.com/garethr/snyk-images/snyk-maven | maven |
+| docker.pkg.github.com/garethr/snyk-images/snyk-maven:3-jdk-11 | maven:3-jdk-11 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-maven:3-jdk-12 | maven:3-jdk-12 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-maven:3-jdk-13 | maven:3-jdk-13 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-maven:3-jdk-14 | maven:3-jdk-14 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-maven:3-jdk-8 | maven:3-jdk-8 |
 | docker.pkg.github.com/garethr/snyk-images/snyk-dotnet | mcr.microsoft.com/dotnet/core/sdk |
 | docker.pkg.github.com/garethr/snyk-images/snyk-node | node |
+| docker.pkg.github.com/garethr/snyk-images/snyk-node:10 | node:10 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-node:12 | node:12 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-node:8 | node:8 |
 | docker.pkg.github.com/garethr/snyk-images/snyk-python | python |
+| docker.pkg.github.com/garethr/snyk-images/snyk-python:2.7 | python:2.7 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-python:3.6 | python:3.6 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-python:3.7 | python:3.7 |
 | docker.pkg.github.com/garethr/snyk-images/snyk-python:alpine | python:alpine |
 | docker.pkg.github.com/garethr/snyk-images/snyk-ruby | ruby |
-| docker.pkg.github.com/garethr/snyk-images/snyk-ruby:alpine | ruby:alpine |
+| docker.pkg.github.com/garethr/snyk-images/snyk-ruby:2.4 | ruby:2.4 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-ruby:2.5 | ruby:2.5 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-ruby:2.6 | ruby:2.6 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-ruby:alpine | ruby:alpine
 
 ### Usage
 
