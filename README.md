@@ -60,7 +60,7 @@ I've picked a somewhat random example Golang respository which is setup to use G
 
 ```console
 $ git clone git@github.com:puppetlabs/wash.git
-$ docker run --rm -it --env SNYK_TOKEN -v (pwd):/app snyk/snyk-golang
+$ docker run --rm -it --env SNYK_TOKEN -v (pwd):/app docker.pkg.github.com/garethr/snyk-images/snyk-golang
 
 Testing /app...
 
@@ -82,7 +82,7 @@ Here's another example, this time using a vulnerable Node.js application:
 
 ```console
 $ git clone git@github.com:snyk/goof.git
-$ docker run --rm -it --env SNYK_TOKEN -v (pwd):/app snyk/snyk-node
+$ docker run --rm -it --env SNYK_TOKEN -v (pwd):/app docker.pkg.github.com/garethr/snyk-images/snyk-node
 ...
 ✗ High severity vulnerability found in ejs
   Description: Arbitrary Code Execution
