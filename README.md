@@ -4,7 +4,7 @@ An *experimental* build toolchain for Snyk Docker images.
 
 * Make it easy to provide images which match upstream development environments, for example
   covering the range of different software versions and operating systems in common usage
-* Minimize the ammount of configuration we need to maintain per image
+* Minimize the amount of configuration we need to maintain per image
 * Avoid the need to install a Node development environment for non-Node users
 
 
@@ -16,20 +16,20 @@ Please note that the nuber of images is relatively small at present, and not all
 
 | Image | Based on |
 | --- | --- |
-| snyk/snyk-composer | composer |
-| snyk/snyk-php | composer |
-| snyk/snyk-golang | golang |
-| snyk/snyk-gradle | gradle |
-| snyk/snyk-sbt | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
-| snyk/snyk-scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
-| snyk/snyk-java | java |
-| snyk/snyk-maven | maven |
-| snyk/snyk-dotnet | mcr.microsoft.com/dotnet/core/sdk |
-| snyk/snyk-node | node |
-| snyk/snyk-python | python |
-| snyk/snyk-python:alpine | python:alpine |
-| snyk/snyk-ruby | ruby |
-| snyk/snyk-ruby:alpine | ruby:alpine |
+| docker.pkg.github.com/garethr/snyk-images/snyk-composer | composer |
+| docker.pkg.github.com/garethr/snyk-images/snyk-php | composer |
+| docker.pkg.github.com/garethr/snyk-images/snyk-golang | golang |
+| docker.pkg.github.com/garethr/snyk-images/snyk-gradle | gradle |
+| docker.pkg.github.com/garethr/snyk-images/snyk-sbt | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
+| docker.pkg.github.com/garethr/snyk-images/snyk-java | java |
+| docker.pkg.github.com/garethr/snyk-images/snyk-maven | maven |
+| docker.pkg.github.com/garethr/snyk-images/snyk-dotnet | mcr.microsoft.com/dotnet/core/sdk |
+| docker.pkg.github.com/garethr/snyk-images/snyk-node | node |
+| docker.pkg.github.com/garethr/snyk-images/snyk-python | python |
+| docker.pkg.github.com/garethr/snyk-images/snyk-python:alpine | python:alpine |
+| docker.pkg.github.com/garethr/snyk-images/snyk-ruby | ruby |
+| docker.pkg.github.com/garethr/snyk-images/snyk-ruby:alpine | ruby:alpine |
 
 ### Usage
 
@@ -101,6 +101,21 @@ Licenses:          enabled
 Tested 448 dependencies for known issues, found 47 issues, 90 vulnerable paths.
 
 Run `snyk wizard` to address these issues.
+```
+
+### Running bootstrap commands
+
+In some cases you may want to run a command before Snyk tests your dependencies. This is not required for most development environments. For common cases the images do some pre-work, for instance:
+
+* If Maven is installed and a `pom.xml` file is found, `mvn install` is run
+* If Pip is present and a `requirements.txt` file is found, run `pip install -r requirements.txt`
+* If Pipenv is present, run `pipenv sync` (if we find a `Pipfile.lock`) or `pipenv update` (if we find only a `Pipfile`)
+
+If you have specific requirements you can pass the command to run (which replaces any of the above) using the `COMMAND` environment variable. For instance, if you have a Python project with dependencies specified in a file called `dependencies.txt` you could run:
+
+
+```
+docker run --rm -it --env SNYK_TOKEN --env COMMAND="pip install -r dependencies.txt" -v (pwd):/app snyk/snyk-python snyk test --file=dependencies.txt
 ```
 
 ## Toolchain

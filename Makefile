@@ -1,6 +1,6 @@
 NAME=$$(echo $@ | cut -d "-" -f 2)
 
-PREFIX = "docker.pkg.github.com/gareth/snyk-images/snyk"
+PREFIX = "docker.pkg.github.com/garethr/snyk-images/snyk"
 
 default: build
 
