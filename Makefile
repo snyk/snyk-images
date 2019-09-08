@@ -31,7 +31,7 @@ markdown:
 	@cat linux alpine | sort | awk '{ print "| docker.pkg.github.com/garethr/snyk-"$$NF" | "$$1" |" }'
 
 push:
-	@cat linux alpine | sort | awk '{ print "docker push docker.pkg.github.com/garethr/snyk-"$$NF" | "/bin/bash"}'
+	@cat linux alpine | sort | awk '{ print "docker push docker.pkg.github.com/garethr/snyk-"$$NF"" | "/bin/bash"}'
 
 
 .PHONY: defaul build build-linux build-alpine check-buildkit sort sort-% test test-% markdown push
