@@ -1,0 +1,23 @@
+name: Build and push images
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Login to GitHub Package Registry
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_token }}
+      run:
+        docker login docker.pkg.github.com --username garethr --password ${GITHUB_TOKEN}
+    - name: Build all images
+      env:
+        DOCKER_BUILDKIT: "1"
+      run:
+        make
+    - name: Push images
+      run:
+        make push
+
+
