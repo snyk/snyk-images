@@ -1,4 +1,5 @@
 composer
 composer php
+docker
 python:alpine
 ruby:alpine

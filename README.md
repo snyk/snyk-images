@@ -22,6 +22,7 @@ Please note that the nuber of images is relatively small at present, and not all
 | --- | --- |
 | docker.pkg.github.com/garethr/snyk-images/snyk-composer | composer |
 | docker.pkg.github.com/garethr/snyk-images/snyk-php | composer |
+| docker.pkg.github.com/garethr/snyk-images/snyk-docker | docker |
 | docker.pkg.github.com/garethr/snyk-images/snyk-golang | golang |
 | docker.pkg.github.com/garethr/snyk-images/snyk-golang:1.12 | golang:1.12 |
 | docker.pkg.github.com/garethr/snyk-images/snyk-golang:1.13 | golang:1.13 |
@@ -125,6 +126,14 @@ Tested 448 dependencies for known issues, found 47 issues, 90 vulnerable paths.
 Run `snyk wizard` to address these issues.
 ```
 
+### Docker
+
+You can test Docker images as well by mounting the local Docker socket:
+
+```
+docker run --rm -it --env SNYK_TOKEN -v /var/run/docker.sock:/var/run/docker.sock docker.pkg.github.com/garethr/snyk-images/snyk-docker snyk test --docker nginx
+```
+
 ### Running bootstrap commands
 
 In some cases you may want to run a command before Snyk tests your dependencies. This is not required for most development environments. For common cases the images do some pre-work, for instance:
@@ -137,7 +146,7 @@ If you have specific requirements you can pass the command to run (which replace
 
 
 ```
-docker run --rm -it --env SNYK_TOKEN --env COMMAND="pip install -r dependencies.txt" -v $(PWD):/app snyk/snyk-python snyk test --file=dependencies.txt
+docker run --rm -it --env SNYK_TOKEN --env COMMAND="pip install -r dependencies.txt" -v $(PWD):/app docker.pkg.github.com/gareth/snyk-images/snyk-python snyk test --file=dependencies.txt
 ```
 
 ## Toolchain
