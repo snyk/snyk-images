@@ -23,10 +23,10 @@ RUN curl -s https://api.github.com/repos/snyk/snyk/releases/latest | grep "brows
     chmod +x /usr/local/bin/snyk
 
 
-FROM parent as Alpine
+FROM parent as alpine
 RUN apk add --no-cache libstdc++
 COPY --from=snyk-alpine /usr/local/bin/snyk /usr/local/bin/snyk
 
 
-FROM parent
+FROM parent as linux
 COPY --from=snyk /usr/local/bin/snyk /usr/local/bin/snyk
