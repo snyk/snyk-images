@@ -22,13 +22,15 @@ else
     fi
 
     if [ -f "Pipfile" ]; then
-        if ! [ -x "$(command -v pipenv)" ]; then
-            pip install pipenv
-        fi
-        if [ -f "Pipfile.lock" ]; then
-            pipenv sync
-        else
-            pipenv update
+        if [ -x "$(command -v pip)" ]; then
+            if ! [ -x "$(command -v pipenv)" ]; then
+                pip install pipenv
+            fi
+            if [ -f "Pipfile.lock" ]; then
+                pipenv sync
+            else
+                pipenv update
+            fi
         fi
     fi
 
