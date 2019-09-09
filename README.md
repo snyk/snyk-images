@@ -20,6 +20,7 @@ Please note that the nuber of images is relatively small at present, and not all
 
 | Image | Based on |
 | --- | --- |
+| docker.pkg.github.com/garethr/snyk-images/snyk-alpine | alpine |
 | docker.pkg.github.com/garethr/snyk-images/snyk-composer | composer |
 | docker.pkg.github.com/garethr/snyk-images/snyk-php | composer |
 | docker.pkg.github.com/garethr/snyk-images/snyk-docker | docker |
@@ -52,7 +53,8 @@ Please note that the nuber of images is relatively small at present, and not all
 | docker.pkg.github.com/garethr/snyk-images/snyk-ruby:2.4 | ruby:2.4 |
 | docker.pkg.github.com/garethr/snyk-images/snyk-ruby:2.5 | ruby:2.5 |
 | docker.pkg.github.com/garethr/snyk-images/snyk-ruby:2.6 | ruby:2.6 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-ruby:alpine | ruby:alpine
+| docker.pkg.github.com/garethr/snyk-images/snyk-ruby:alpine | ruby:alpine |
+| docker.pkg.github.com/garethr/snyk-images/snyk-linux | ubuntu |
 
 ### Usage
 
@@ -126,12 +128,30 @@ Tested 448 dependencies for known issues, found 47 issues, 90 vulnerable paths.
 Run `snyk wizard` to address these issues.
 ```
 
-### Docker
+### Testing Docker images
 
 You can test Docker images as well by mounting the local Docker socket:
 
 ```
 docker run --rm -it --env SNYK_TOKEN -v /var/run/docker.sock:/var/run/docker.sock docker.pkg.github.com/garethr/snyk-images/snyk-docker snyk test --docker nginx
+```
+
+### Including Snyk in your own images
+
+The easiest way of adding Snyk into your own custom images is to copy the binary from one of the above images. If you're using a `glibc` flavour of Linux (most of them) then add the following `COPY` line to your Dockerfile.
+
+```dockerfile
+FROM ubuntu
+
+COPY --from=docker.pkg.github.com/garethr/snyk-images/snyk-linux /usr/local/bin/snyk /usr/local/bin/snyk
+```
+
+If you're using a `musl` based distribution like Alpine then you need a different binary.
+
+```dockerfile
+FROM alpine
+
+COPY --from=docker.pkg.github.com/garethr/snyk-images/snyk-alpine /usr/local/bin/snyk /usr/local/bin/snyk
 ```
 
 ### Running bootstrap commands
