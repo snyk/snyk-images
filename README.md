@@ -20,41 +20,41 @@ Please note that the nuber of images is relatively small at present, and not all
 
 | Image | Based on |
 | --- | --- |
-| docker.pkg.github.com/garethr/snyk-images/snyk-alpine | alpine |
-| docker.pkg.github.com/garethr/snyk-images/snyk-composer | composer |
-| docker.pkg.github.com/garethr/snyk-images/snyk-php | composer |
-| docker.pkg.github.com/garethr/snyk-images/snyk-docker | docker |
-| docker.pkg.github.com/garethr/snyk-images/snyk-golang | golang |
-| docker.pkg.github.com/garethr/snyk-images/snyk-golang:1.12 | golang:1.12 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-golang:1.13 | golang:1.13 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-gradle | gradle |
-| docker.pkg.github.com/garethr/snyk-images/snyk-gradle:jdk11 | gradle:jdk11 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-gradle:jdk12 | gradle:jdk12 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-gradle:jdk8 | gradle:jdk8 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-sbt | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-java | java |
-| docker.pkg.github.com/garethr/snyk-images/snyk-maven:3-jdk-11 | maven:3-jdk-11 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-maven:3-jdk-12 | maven:3-jdk-12 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-maven:3-jdk-13 | maven:3-jdk-13 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-maven:3-jdk-14 | maven:3-jdk-14 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-maven:3-jdk-8 | maven:3-jdk-8 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-dotnet | mcr.microsoft.com/dotnet/core/sdk |
-| docker.pkg.github.com/garethr/snyk-images/snyk-node | node |
-| docker.pkg.github.com/garethr/snyk-images/snyk-node:10 | node:10 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-node:12 | node:12 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-node:8 | node:8 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-python | python |
-| docker.pkg.github.com/garethr/snyk-images/snyk-python:2.7 | python:2.7 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-python:3.6 | python:3.6 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-python:3.7 | python:3.7 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-python:alpine | python:alpine |
-| docker.pkg.github.com/garethr/snyk-images/snyk-ruby | ruby |
-| docker.pkg.github.com/garethr/snyk-images/snyk-ruby:2.4 | ruby:2.4 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-ruby:2.5 | ruby:2.5 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-ruby:2.6 | ruby:2.6 |
-| docker.pkg.github.com/garethr/snyk-images/snyk-ruby:alpine | ruby:alpine |
-| docker.pkg.github.com/garethr/snyk-images/snyk-linux | ubuntu |
+| garethr/snyk-alpine | alpine |
+| garethr/snyk-composer | composer |
+| garethr/snyk-php | composer |
+| garethr/snyk-docker | docker |
+| garethr/snyk-golang | golang |
+| garethr/snyk-golang:1.12 | golang:1.12 |
+| garethr/snyk-golang:1.13 | golang:1.13 |
+| garethr/snyk-gradle | gradle |
+| garethr/snyk-gradle:jdk11 | gradle:jdk11 |
+| garethr/snyk-gradle:jdk12 | gradle:jdk12 |
+| garethr/snyk-gradle:jdk8 | gradle:jdk8 |
+| garethr/snyk-sbt | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
+| garethr/snyk-scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
+| garethr/snyk-java | java |
+| garethr/snyk-maven:3-jdk-11 | maven:3-jdk-11 |
+| garethr/snyk-maven:3-jdk-12 | maven:3-jdk-12 |
+| garethr/snyk-maven:3-jdk-13 | maven:3-jdk-13 |
+| garethr/snyk-maven:3-jdk-14 | maven:3-jdk-14 |
+| garethr/snyk-maven:3-jdk-8 | maven:3-jdk-8 |
+| garethr/snyk-dotnet | mcr.microsoft.com/dotnet/core/sdk |
+| garethr/snyk-node | node |
+| garethr/snyk-node:10 | node:10 |
+| garethr/snyk-node:12 | node:12 |
+| garethr/snyk-node:8 | node:8 |
+| garethr/snyk-python | python |
+| garethr/snyk-python:2.7 | python:2.7 |
+| garethr/snyk-python:3.6 | python:3.6 |
+| garethr/snyk-python:3.7 | python:3.7 |
+| garethr/snyk-python:alpine | python:alpine |
+| garethr/snyk-ruby | ruby |
+| garethr/snyk-ruby:2.4 | ruby:2.4 |
+| garethr/snyk-ruby:2.5 | ruby:2.5 |
+| garethr/snyk-ruby:2.6 | ruby:2.6 |
+| garethr/snyk-ruby:alpine | ruby:alpine |
+| garethr/snyk-linux | ubuntu |
 
 ### Usage
 
@@ -64,7 +64,7 @@ I've picked a somewhat random example Golang respository which is setup to use G
 
 ```console
 $ git clone git@github.com:puppetlabs/wash.git
-$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app docker.pkg.github.com/garethr/snyk-images/snyk-golang
+$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app garethr/snyk-images/snyk-golang
 
 Testing /app...
 
@@ -86,7 +86,7 @@ Here's another example, this time using a vulnerable Node.js application:
 
 ```console
 $ git clone git@github.com:snyk/goof.git
-$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app docker.pkg.github.com/garethr/snyk-images/snyk-node
+$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app garethr/snyk-images/snyk-node
 ...
 ✗ High severity vulnerability found in ejs
   Description: Arbitrary Code Execution
@@ -133,7 +133,7 @@ Run `snyk wizard` to address these issues.
 You can test Docker images as well by mounting the local Docker socket:
 
 ```
-docker run --rm -it --env SNYK_TOKEN -v /var/run/docker.sock:/var/run/docker.sock docker.pkg.github.com/garethr/snyk-images/snyk-docker snyk test --docker nginx
+docker run --rm -it --env SNYK_TOKEN -v /var/run/docker.sock:/var/run/docker.sock garethr/snyk-images/snyk-docker snyk test --docker nginx
 ```
 
 ### Including Snyk in your own images
@@ -143,7 +143,7 @@ The easiest way of adding Snyk into your own custom images is to copy the binary
 ```dockerfile
 FROM ubuntu
 
-COPY --from=docker.pkg.github.com/garethr/snyk-images/snyk-linux /usr/local/bin/snyk /usr/local/bin/snyk
+COPY --from=garethr/snyk-images/snyk-linux /usr/local/bin/snyk /usr/local/bin/snyk
 ```
 
 If you're using a `musl` based distribution like Alpine then you need a different binary.
@@ -151,7 +151,7 @@ If you're using a `musl` based distribution like Alpine then you need a differen
 ```dockerfile
 FROM alpine
 
-COPY --from=docker.pkg.github.com/garethr/snyk-images/snyk-alpine /usr/local/bin/snyk /usr/local/bin/snyk
+COPY --from=garethr/snyk-images/snyk-alpine /usr/local/bin/snyk /usr/local/bin/snyk
 ```
 
 ### Running bootstrap commands
@@ -166,7 +166,7 @@ If you have specific requirements you can pass the command to run (which replace
 
 
 ```
-docker run --rm -it --env SNYK_TOKEN --env COMMAND="pip install -r dependencies.txt" -v $(PWD):/app docker.pkg.github.com/gareth/snyk-images/snyk-python snyk test --file=dependencies.txt
+docker run --rm -it --env SNYK_TOKEN --env COMMAND="pip install -r dependencies.txt" -v $(PWD):/app gareth/snyk-images/snyk-python snyk test --file=dependencies.txt
 ```
 
 ## Toolchain

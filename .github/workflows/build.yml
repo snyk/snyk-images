@@ -16,14 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    # Actions doesn't currently have access to push to Package Registry
-    # https://github.community/t5/GitHub-Actions/Github-Actions-Docker-login/td-p/29852
-    - name: Login to GitHub Package Registry
+    - name: Login to registry
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run:
-        docker login docker.pkg.github.com --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}
+        docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}
     - name: Build all images
       env:
         DOCKER_BUILDKIT: "1"
