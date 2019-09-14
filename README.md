@@ -64,7 +64,7 @@ I've picked a somewhat random example Golang respository which is setup to use G
 
 ```console
 $ git clone git@github.com:puppetlabs/wash.git
-$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app garethr/snyk-images/snyk-golang
+$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app garethr/snyk-golang
 
 Testing /app...
 
@@ -86,7 +86,7 @@ Here's another example, this time using a vulnerable Node.js application:
 
 ```console
 $ git clone git@github.com:snyk/goof.git
-$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app garethr/snyk-images/snyk-node
+$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app garethr/snyk-node
 ...
 ✗ High severity vulnerability found in ejs
   Description: Arbitrary Code Execution
@@ -133,7 +133,7 @@ Run `snyk wizard` to address these issues.
 You can test Docker images as well by mounting the local Docker socket:
 
 ```
-docker run --rm -it --env SNYK_TOKEN -v /var/run/docker.sock:/var/run/docker.sock garethr/snyk-images/snyk-docker snyk test --docker nginx
+docker run --rm -it --env SNYK_TOKEN -v /var/run/docker.sock:/var/run/docker.sock garethr/snyk-docker snyk test --docker nginx
 ```
 
 ### Including Snyk in your own images
@@ -143,7 +143,7 @@ The easiest way of adding Snyk into your own custom images is to copy the binary
 ```dockerfile
 FROM ubuntu
 
-COPY --from=garethr/snyk-images/snyk-linux /usr/local/bin/snyk /usr/local/bin/snyk
+COPY --from=garethr/snyk-linux /usr/local/bin/snyk /usr/local/bin/snyk
 ```
 
 If you're using a `musl` based distribution like Alpine then you need a different binary.
@@ -151,7 +151,7 @@ If you're using a `musl` based distribution like Alpine then you need a differen
 ```dockerfile
 FROM alpine
 
-COPY --from=garethr/snyk-images/snyk-alpine /usr/local/bin/snyk /usr/local/bin/snyk
+COPY --from=garethr/snyk-alpine /usr/local/bin/snyk /usr/local/bin/snyk
 ```
 
 ### Running bootstrap commands
@@ -166,7 +166,7 @@ If you have specific requirements you can pass the command to run (which replace
 
 
 ```
-docker run --rm -it --env SNYK_TOKEN --env COMMAND="pip install -r dependencies.txt" -v $(PWD):/app gareth/snyk-images/snyk-python snyk test --file=dependencies.txt
+docker run --rm -it --env SNYK_TOKEN --env COMMAND="pip install -r dependencies.txt" -v $(PWD):/app gareth/snyk-python snyk test --file=dependencies.txt
 ```
 
 ## Toolchain
