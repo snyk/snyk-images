@@ -39,7 +39,7 @@ else
     # If mvn is present on the path, and we find a pom.xml, run mvn install
     if [ -x "$(command -v mvn)" ]; then
         if [ -f "pom.xml" ]; then
-            mvn install
+            mvn install --no-transfer-progress
         fi
     fi
 fi
