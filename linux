@@ -8,6 +8,7 @@ gradle:jdk8
 hseeberger/scala-sbt:8u212_1.2.8_2.13.0 sbt
 hseeberger/scala-sbt:8u212_1.2.8_2.13.0 scala
 java
+maven
 maven:3-jdk-11
 maven:3-jdk-12
 maven:3-jdk-13
