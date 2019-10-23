@@ -49,7 +49,7 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:python-2.7 | python:2.7 |
 | snyk/snyk:python-3.6 | python:3.6 |
 | snyk/snyk:python-3.7 | python:3.7 |
-| snyk/snyk:python-aline | python:alpine |
+| snyk/snyk:python-alpine | python:alpine |
 | snyk/snyk:ruby | ruby |
 | snyk/snyk:ruby-2.4 | ruby:2.4 |
 | snyk/snyk:ruby-2.5 | ruby:2.5 |
