@@ -42,6 +42,17 @@ else
             mvn install --no-transfer-progress
         fi
     fi
+
+    # Go dep
+    # Snyk requires dep to be installed
+    # If we find a Gopkg.toml file, ensure dep is installed and then install dependencies
+    if [ -f "Gopkg.toml" ]; then
+        if ! [ -x "$(command -v dep)" ]; then
+            curl -s https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+        fi
+        dep ensure
+    fi
+
 fi
 
 exec $@

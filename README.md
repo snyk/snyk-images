@@ -154,6 +154,40 @@ FROM alpine
 COPY --from=garethr/snyk-alpine /usr/local/bin/snyk /usr/local/bin/snyk
 ```
 
+#### A note on Go dep support
+
+Using [dep](https://github.com/golang/dep) requires a little bit of extra work, as determining the dependencies requires the source code to be on the `GOPATH`.
+To test projects using dep you need to mount the source into the relevant `GOPATH` directory and pass the same path as the working directory. Here's an example.
+
+```console
+$ docker run --rm -it --env SNYK_TOKEN --workdir /go/src/hypnoglow/helm-s3 -v (pwd):/go/src/hypnoglow/helm-s3 garethr/snyk-golang
+ARCH = amd64
+OS = linux
+Will install into /go/bin
+Fetching https://github.com/golang/dep/releases/latest..
+Release Tag = v0.5.4
+Fetching https://github.com/golang/dep/releases/tag/v0.5.4..
+Fetching https://github.com/golang/dep/releases/download/v0.5.4/dep-linux-amd64..
+Setting executable permissions.
+Moving executable to /go/bin/dep
+
+Testing /go/src/hypnoglow/helm-s3...
+
+Organization:      garethr
+Package manager:   golangdep
+Target file:       Gopkg.lock
+Open source:       no
+Project path:      /go/src/hypnoglow/helm-s3
+Licenses:          enabled
+
+✓ Tested 72 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+```
+
+
 ### Running bootstrap commands
 
 In some cases you may want to run a command before Snyk tests your dependencies. This is not required for most development environments. For common cases the images do some pre-work, for instance:
