@@ -4,5 +4,5 @@ alpine cocoapods
 composer
 composer php
 docker
-python:alpine python-aline
+python:alpine python-alpine
 ruby:alpine ruby-alpine
