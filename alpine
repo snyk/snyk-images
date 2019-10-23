@@ -1,4 +1,6 @@
 alpine
+alpine swift
+alpine cocoapods
 composer
 composer php
 docker
