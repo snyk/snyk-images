@@ -1,6 +1,6 @@
 An *experimental* build toolchain for Snyk Docker images.
 
-![](https://github.com/garethr/snyk-images/workflows/Build%20and%20push%20images/badge.svg)
+![](https://github.com/snyk/snyk-images/workflows/Build%20and%20push%20images/badge.svg)
 
 
 ## Design goals
@@ -20,41 +20,42 @@ Please note that the nuber of images is relatively small at present, and not all
 
 | Image | Based on |
 | --- | --- |
-| garethr/snyk-alpine | alpine |
-| garethr/snyk-composer | composer |
-| garethr/snyk-php | composer |
-| garethr/snyk-docker | docker |
-| garethr/snyk-golang | golang |
-| garethr/snyk-golang:1.12 | golang:1.12 |
-| garethr/snyk-golang:1.13 | golang:1.13 |
-| garethr/snyk-gradle | gradle |
-| garethr/snyk-gradle:jdk11 | gradle:jdk11 |
-| garethr/snyk-gradle:jdk12 | gradle:jdk12 |
-| garethr/snyk-gradle:jdk8 | gradle:jdk8 |
-| garethr/snyk-sbt | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
-| garethr/snyk-scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
-| garethr/snyk-java | java |
-| garethr/snyk-maven:3-jdk-11 | maven:3-jdk-11 |
-| garethr/snyk-maven:3-jdk-12 | maven:3-jdk-12 |
-| garethr/snyk-maven:3-jdk-13 | maven:3-jdk-13 |
-| garethr/snyk-maven:3-jdk-14 | maven:3-jdk-14 |
-| garethr/snyk-maven:3-jdk-8 | maven:3-jdk-8 |
-| garethr/snyk-dotnet | mcr.microsoft.com/dotnet/core/sdk |
-| garethr/snyk-node | node |
-| garethr/snyk-node:10 | node:10 |
-| garethr/snyk-node:12 | node:12 |
-| garethr/snyk-node:8 | node:8 |
-| garethr/snyk-python | python |
-| garethr/snyk-python:2.7 | python:2.7 |
-| garethr/snyk-python:3.6 | python:3.6 |
-| garethr/snyk-python:3.7 | python:3.7 |
-| garethr/snyk-python:alpine | python:alpine |
-| garethr/snyk-ruby | ruby |
-| garethr/snyk-ruby:2.4 | ruby:2.4 |
-| garethr/snyk-ruby:2.5 | ruby:2.5 |
-| garethr/snyk-ruby:2.6 | ruby:2.6 |
-| garethr/snyk-ruby:alpine | ruby:alpine |
-| garethr/snyk-linux | ubuntu |
+| snyk/snyk:alpine | alpine |
+| snyk/snyk:composer | composer |
+| snyk/snyk:php | composer |
+| snyk/snyk:docker | docker |
+| snyk/snyk:golang | golang |
+| snyk/snyk:golang-1.12 | golang:1.12 |
+| snyk/snyk:golang-1.13 | golang:1.13 |
+| snyk/snyk:gradle | gradle |
+| snyk/snyk:gradle-jdk11 | gradle:jdk11 |
+| snyk/snyk:gradle-jdk12 | gradle:jdk12 |
+| snyk/snyk:gradle-jdk8 | gradle:jdk8 |
+| snyk/snyk:sbt | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
+| snyk/snyk:scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
+| snyk/snyk:java | java |
+| snyk/snyk:maven | maven |
+| snyk/snyk:maven-3-jdk-11 | maven:3-jdk-11 |
+| snyk/snyk:maven-3-jdk-12 | maven:3-jdk-12 |
+| snyk/snyk:maven-3-jdk-13 | maven:3-jdk-13 |
+| snyk/snyk:maven-3-jdk-14 | maven:3-jdk-14 |
+| snyk/snyk:maven-3-jdk-8 | maven:3-jdk-8 |
+| snyk/snyk:dotnet | mcr.microsoft.com/dotnet/core/sdk |
+| snyk/snyk:node | node |
+| snyk/snyk:node-10 | node:10 |
+| snyk/snyk:node-12 | node:12 |
+| snyk/snyk:node-8 | node:8 |
+| snyk/snyk:python | python |
+| snyk/snyk:python-2.7 | python:2.7 |
+| snyk/snyk:python-3.6 | python:3.6 |
+| snyk/snyk:python-3.7 | python:3.7 |
+| snyk/snyk:python-aline | python:alpine |
+| snyk/snyk:ruby | ruby |
+| snyk/snyk:ruby-2.4 | ruby:2.4 |
+| snyk/snyk:ruby-2.5 | ruby:2.5 |
+| snyk/snyk:ruby-2.6 | ruby:2.6 |
+| snyk/snyk:ruby-alpine | ruby:alpine |
+| snyk/snyk:linux | ubuntu |
 
 ### Usage
 
@@ -64,7 +65,7 @@ I've picked a somewhat random example Golang respository which is setup to use G
 
 ```console
 $ git clone git@github.com:puppetlabs/wash.git
-$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app garethr/snyk-golang
+$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app snyk/snyk:golang
 
 Testing /app...
 
@@ -86,7 +87,7 @@ Here's another example, this time using a vulnerable Node.js application:
 
 ```console
 $ git clone git@github.com:snyk/goof.git
-$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app garethr/snyk-node
+$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app snyk/snyk:node
 ...
 ✗ High severity vulnerability found in ejs
   Description: Arbitrary Code Execution
@@ -133,7 +134,7 @@ Run `snyk wizard` to address these issues.
 You can test Docker images as well by mounting the local Docker socket:
 
 ```
-docker run --rm -it --env SNYK_TOKEN -v /var/run/docker.sock:/var/run/docker.sock garethr/snyk-docker snyk test --docker nginx
+docker run --rm -it --env SNYK_TOKEN -v /var/run/docker.sock:/var/run/docker.sock snyk/snyk:docker snyk test --docker nginx
 ```
 
 ### Including Snyk in your own images
@@ -143,7 +144,7 @@ The easiest way of adding Snyk into your own custom images is to copy the binary
 ```dockerfile
 FROM ubuntu
 
-COPY --from=garethr/snyk-linux /usr/local/bin/snyk /usr/local/bin/snyk
+COPY --from=snyk/snyk:linux /usr/local/bin/snyk /usr/local/bin/snyk
 ```
 
 If you're using a `musl` based distribution like Alpine then you need a different binary.
@@ -151,7 +152,7 @@ If you're using a `musl` based distribution like Alpine then you need a differen
 ```dockerfile
 FROM alpine
 
-COPY --from=garethr/snyk-alpine /usr/local/bin/snyk /usr/local/bin/snyk
+COPY --from=snyk/snyk:alpine /usr/local/bin/snyk /usr/local/bin/snyk
 ```
 
 #### A note on Go dep support
@@ -160,7 +161,7 @@ Using [dep](https://github.com/golang/dep) requires a little bit of extra work, 
 To test projects using dep you need to mount the source into the relevant `GOPATH` directory and pass the same path as the working directory. Here's an example.
 
 ```console
-$ docker run --rm -it --env SNYK_TOKEN --workdir /go/src/hypnoglow/helm-s3 -v (pwd):/go/src/hypnoglow/helm-s3 garethr/snyk-golang
+$ docker run --rm -it --env SNYK_TOKEN --workdir /go/src/hypnoglow/helm-s3 -v (pwd):/go/src/hypnoglow/helm-s3 snyk/snyk:golang
 ARCH = amd64
 OS = linux
 Will install into /go/bin

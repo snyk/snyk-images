@@ -2,5 +2,5 @@ alpine
 composer
 composer php
 docker
-python:alpine
-ruby:alpine
+python:alpine python-aline
+ruby:alpine ruby-alpine

@@ -1,30 +1,30 @@
 golang
-golang:1.12
-golang:1.13
+golang:1.12 golang-1.12
+golang:1.13 golang-1.13
 gradle
-gradle:jdk11
-gradle:jdk12
-gradle:jdk8
+gradle:jdk11 gradle-jdk11
+gradle:jdk12 gradle-jdk12
+gradle:jdk8 gradle-jdk8
 hseeberger/scala-sbt:8u212_1.2.8_2.13.0 sbt
 hseeberger/scala-sbt:8u212_1.2.8_2.13.0 scala
 java
 maven
-maven:3-jdk-11
-maven:3-jdk-12
-maven:3-jdk-13
-maven:3-jdk-14
-maven:3-jdk-8
+maven:3-jdk-11 maven-3-jdk-11
+maven:3-jdk-12 maven-3-jdk-12
+maven:3-jdk-13 maven-3-jdk-13
+maven:3-jdk-14 maven-3-jdk-14
+maven:3-jdk-8 maven-3-jdk-8
 mcr.microsoft.com/dotnet/core/sdk dotnet
 node
-node:10
-node:12
-node:8
+node:10 node-10
+node:12 node-12
+node:8 node-8
 python
-python:2.7
-python:3.6
-python:3.7
+python:2.7 python-2.7
+python:3.6 python-3.6
+python:3.7 python-3.7
 ruby
-ruby:2.4
-ruby:2.5
-ruby:2.6
+ruby:2.4 ruby-2.4
+ruby:2.5 ruby-2.5
+ruby:2.6 ruby-2.6
 ubuntu linux
