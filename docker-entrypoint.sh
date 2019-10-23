@@ -19,10 +19,7 @@ else
         if [ -f "requirements.txt" ]; then
             pip install -r requirements.txt
         fi
-    fi
-
-    if [ -f "Pipfile" ]; then
-        if [ -x "$(command -v pip)" ]; then
+        if [ -f "Pipfile" ]; then
             if ! [ -x "$(command -v pipenv)" ]; then
                 pip install pipenv
             fi
@@ -45,12 +42,14 @@ else
 
     # Go dep
     # Snyk requires dep to be installed
-    # If we find a Gopkg.toml file, ensure dep is installed and then install dependencies
-    if [ -f "Gopkg.toml" ]; then
-        if ! [ -x "$(command -v dep)" ]; then
-            curl -s https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+    # If Go is installed and if we find a Gopkg.toml file, ensure dep is installed and then install dependencies
+    if [ -x "$(command -v go)" ]; then
+        if [ -f "Gopkg.toml" ]; then
+            if ! [ -x "$(command -v dep)" ]; then
+                curl -s https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+            fi
+            dep ensure
         fi
-        dep ensure
     fi
 
 fi
