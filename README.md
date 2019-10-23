@@ -201,7 +201,7 @@ If you have specific requirements you can pass the command to run (which replace
 
 
 ```
-docker run --rm -it --env SNYK_TOKEN --env COMMAND="pip install -r dependencies.txt" -v $(PWD):/app gareth/snyk-python snyk test --file=dependencies.txt
+docker run --rm -it --env SNYK_TOKEN --env COMMAND="pip install -r dependencies.txt" -v $(PWD):/app snyk/snyk:python snyk test --file=dependencies.txt
 ```
 
 ## Toolchain
