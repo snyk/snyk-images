@@ -21,6 +21,8 @@ Please note that the nuber of images is relatively small at present, and not all
 | Image | Based on |
 | --- | --- |
 | snyk/snyk:alpine | alpine |
+| snyk/snyk:cocoapods | alpine |
+| snyk/snyk:swift | alpine |
 | snyk/snyk:composer | composer |
 | snyk/snyk:php | composer |
 | snyk/snyk:docker | docker |
@@ -56,6 +58,7 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:ruby-2.6 | ruby:2.6 |
 | snyk/snyk:ruby-alpine | ruby:alpine |
 | snyk/snyk:linux | ubuntu |
+
 
 ### Usage
 
