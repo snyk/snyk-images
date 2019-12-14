@@ -32,6 +32,7 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:gradle | gradle |
 | snyk/snyk:gradle-jdk11 | gradle:jdk11 |
 | snyk/snyk:gradle-jdk12 | gradle:jdk12 |
+| snyk/snyk:gradle-jdk13 | gradle:jdk13 |
 | snyk/snyk:gradle-jdk8 | gradle:jdk8 |
 | snyk/snyk:sbt | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
 | snyk/snyk:scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
@@ -43,14 +44,20 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:maven-3-jdk-14 | maven:3-jdk-14 |
 | snyk/snyk:maven-3-jdk-8 | maven:3-jdk-8 |
 | snyk/snyk:dotnet | mcr.microsoft.com/dotnet/core/sdk |
+| snyk/snyk:dotnet-2.1 | mcr.microsoft.com/dotnet/core/sdk:2.1 |
+| snyk/snyk:dotnet-2.2 | mcr.microsoft.com/dotnet/core/sdk:2.2 |
+| snyk/snyk:dotnet-3.0 | mcr.microsoft.com/dotnet/core/sdk:3.0 |
+| snyk/snyk:dotnet-3.1 | mcr.microsoft.com/dotnet/core/sdk:3.1 |
 | snyk/snyk:node | node |
 | snyk/snyk:node-10 | node:10 |
 | snyk/snyk:node-12 | node:12 |
+| snyk/snyk:node-13 | node:13 |
 | snyk/snyk:node-8 | node:8 |
 | snyk/snyk:python | python |
 | snyk/snyk:python-2.7 | python:2.7 |
 | snyk/snyk:python-3.6 | python:3.6 |
 | snyk/snyk:python-3.7 | python:3.7 |
+| snyk/snyk:python-3.8 | python:3.8 |
 | snyk/snyk:python-alpine | python:alpine |
 | snyk/snyk:ruby | ruby |
 | snyk/snyk:ruby-2.4 | ruby:2.4 |
@@ -58,7 +65,6 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:ruby-2.6 | ruby:2.6 |
 | snyk/snyk:ruby-alpine | ruby:alpine |
 | snyk/snyk:linux | ubuntu |
-
 
 ### Usage
 
