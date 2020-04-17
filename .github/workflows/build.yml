@@ -22,16 +22,10 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run:
         docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}
-    - name: Build all images
+    - name: Build and push all images
       env:
         DOCKER_BUILDKIT: "1"
       run:
-        make
-    - name: Run tests
-      run:
-        make test
-    - name: Push images
-      run:
-        make push
+        make build-push
 
 

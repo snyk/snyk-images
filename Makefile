@@ -6,6 +6,8 @@ default: build
 
 build: sort build-linux build-alpine
 
+build-push: build-linux-push build-alpine-push
+
 check-buildkit:
 ifndef DOCKER_BUILDKIT
 	$(error You must enable Buildkit for Docker, by setting DOCKER_BUILDKIT=1)
@@ -35,5 +37,11 @@ markdown:
 push:
 	@cat linux alpine | sort | awk '{ print "docker push "$(PREFIX)":"$$NF"" | "/bin/bash"}'
 
+build-linux-push:
+	@awk '{ print "docker build --build-arg IMAGE="$$1" -t "$(PREFIX)":"$$NF" . && docker push "$(PREFIX)":"$$NF" && docker rmi "$(PREFIX)":"$$NF"" | "/bin/sh"}' $(NAME)
 
-.PHONY: defaul build build-linux build-alpine check-buildkit sort sort-% test test-% markdown push
+build-alpine-push:
+	@awk '{ print "docker build --target alpine --build-arg IMAGE="$$1" -t "$(PREFIX)":"$$NF" . && docker push "$(PREFIX)":"$$NF" && docker rmi "$(PREFIX)":"$$NF"" | "/bin/sh"}' $(NAME)
+
+
+.PHONY: default build build-push build-linux build-linux-push build-alpine build-alpine-push check-buildkit sort sort-% test test-% markdown push
