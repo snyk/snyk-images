@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 #
-# Generate a GitHub Action with separate jobs for every image
+# Generate a GitHub Action with separate builds for every image
 #
 
 require "erb"
