@@ -7,7 +7,7 @@ on:
       - build.rb
 
 jobs:
-  actions:
+  generate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
