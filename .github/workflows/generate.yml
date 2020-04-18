@@ -22,5 +22,6 @@ jobs:
         with:
           branch: master
           github_token: ${{ secrets.workflow_token }}
+          github_pat: ${{ secrets.workflow_token }}
           commit_author: "gareth@morethanseven.net"
           commit_message: Generated new Action to build Snyk images
