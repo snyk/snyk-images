@@ -7,6 +7,8 @@ on:
     - "*"
     - "!README.md"
     - "!build.rb"
+    - "!linux"
+    - "!alpine"
     - "!Makefile"
   schedule:
     # As well as running when we make changes we should run at least

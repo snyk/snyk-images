@@ -1,9 +1,7 @@
 #!/usr/bin/env ruby
 
-#
 # Generate a GitHub Action with separate builds for every image
 # based on the  contents of the two target files
-#
 
 require "date"
 require "erb"
