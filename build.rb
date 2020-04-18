@@ -13,6 +13,9 @@ require "fileutils"
   end
 end
 
+# Matrix builds require a least one item in the matrix to be valid
+# so we grab the first entry to populate the matrix.
+# Everything else is used as explicitly included jobs.
 @seed = @images.shift
 
 templatename = File.join("_templates", "build.yml.erb")
