@@ -23,6 +23,10 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:alpine | alpine |
 | snyk/snyk:cocoapods | alpine |
 | snyk/snyk:swift | alpine |
+| snyk/snyk:clojure | clojure |
+| snyk/snyk:clojure-boot | clojure:boot |
+| snyk/snyk:clojure-lein | clojure:lein |
+| snyk/snyk:clojure-tools-deps | clojure:tools-deps |
 | snyk/snyk:composer | composer |
 | snyk/snyk:php | composer |
 | snyk/snyk:docker | docker |

@@ -1,3 +1,7 @@
+clojure
+clojure:boot clojure-boot
+clojure:lein clojure-lein
+clojure:tools-deps clojure-tools-deps
 golang
 golang:1.12 golang-1.12
 golang:1.13 golang-1.13
