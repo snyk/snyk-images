@@ -18,6 +18,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        base: []
+        tag: []
         include:<% @images.each do |base, tag| %>
           - base: <%= base %>
             tag: <%= tag %><% end %>

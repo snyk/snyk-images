@@ -18,6 +18,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        base: []
+        tag: []
         include:
           - base: node
             tag: node

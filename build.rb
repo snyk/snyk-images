@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "erb"
-require 'fileutils'
+require "fileutils"
 
 @images = [
   ["node",  "node"],
