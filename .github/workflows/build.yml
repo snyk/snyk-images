@@ -4,8 +4,9 @@ on:
     branches:
     - master
     paths:
-    - '*'
-    - '!README.md'
+    - "*"
+    - "!README.md"
+    - "!build.rb"
   schedule:
     # As well as running when we make changes we should run at least
     # every week in order to pick up new parent images and new versions of Snyk
