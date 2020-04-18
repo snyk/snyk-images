@@ -11,16 +11,16 @@ on:
     # every week in order to pick up new parent images and new versions of Snyk
     - cron:  "0 0 * * 0"
 
-strategy:
-  fail-fast:  false
-  matrix:
-    include:<% @images.each do |base, tag| %>
-      - base: <%= base %>
-        tag: <%= tag %><% end %>
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:<% @images.each do |base, tag| %>
+          - base: <%= base %>
+            tag: <%= tag %><% end %>
     steps:
     - uses: actions/checkout@v1
     - uses: docker/build-push-action@v1

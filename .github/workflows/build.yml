@@ -11,18 +11,18 @@ on:
     # every week in order to pick up new parent images and new versions of Snyk
     - cron:  "0 0 * * 0"
 
-strategy:
-  fail-fast:  false
-  matrix:
-    include:
-      - base: node
-        tag: node
-      - base: node:10
-        tag: node-10
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - base: node
+            tag: node
+          - base: node:10
+            tag: node-10
     steps:
     - uses: actions/checkout@v1
     - uses: docker/build-push-action@v1
