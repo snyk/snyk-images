@@ -18,9 +18,9 @@ jobs:
       fail-fast: false
       matrix:
         base:
-          - node
+          - <%= @seed[0] %>
         tag:
-          - node
+          - <%= @seed[1] %>
         include:<% @images.each do |base, tag| %>
           - base: <%= base %>
             tag: <%= tag %><% end %>

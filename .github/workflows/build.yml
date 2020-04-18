@@ -18,12 +18,82 @@ jobs:
       fail-fast: false
       matrix:
         base:
-          - node
+          - golang
         tag:
-          - node
+          - golang
         include:
+          - base: golang:1.12
+            tag: golang-1.12
+          - base: golang:1.13
+            tag: golang-1.13
+          - base: gradle
+            tag: gradle
+          - base: gradle:jdk11
+            tag: gradle-jdk11
+          - base: gradle:jdk12
+            tag: gradle-jdk12
+          - base: gradle:jdk13
+            tag: gradle-jdk13
+          - base: gradle:jdk8
+            tag: gradle-jdk8
+          - base: hseeberger/scala-sbt:8u212_1.2.8_2.13.0
+            tag: sbt
+          - base: hseeberger/scala-sbt:8u212_1.2.8_2.13.0
+            tag: scala
+          - base: java
+            tag: java
+          - base: maven
+            tag: maven
+          - base: maven:3-jdk-11
+            tag: maven-3-jdk-11
+          - base: maven:3-jdk-12
+            tag: maven-3-jdk-12
+          - base: maven:3-jdk-13
+            tag: maven-3-jdk-13
+          - base: maven:3-jdk-14
+            tag: maven-3-jdk-14
+          - base: maven:3-jdk-8
+            tag: maven-3-jdk-8
+          - base: mcr.microsoft.com/dotnet/core/sdk
+            tag: dotnet
+          - base: mcr.microsoft.com/dotnet/core/sdk:2.1
+            tag: dotnet-2.1
+          - base: mcr.microsoft.com/dotnet/core/sdk:2.2
+            tag: dotnet-2.2
+          - base: mcr.microsoft.com/dotnet/core/sdk:3.0
+            tag: dotnet-3.0
+          - base: mcr.microsoft.com/dotnet/core/sdk:3.1
+            tag: dotnet-3.1
+          - base: node
+            tag: node
+          - base: node:8
+            tag: node-8
           - base: node:10
             tag: node-10
+          - base: node:12
+            tag: node-12
+          - base: node:13
+            tag: node-13
+          - base: python
+            tag: python
+          - base: python:2.7
+            tag: python-2.7
+          - base: python:3.6
+            tag: python-3.6
+          - base: python:3.7
+            tag: python-3.7
+          - base: python:3.8
+            tag: python-3.8
+          - base: ruby
+            tag: ruby
+          - base: ruby:2.4
+            tag: ruby-2.4
+          - base: ruby:2.5
+            tag: ruby-2.5
+          - base: ruby:2.6
+            tag: ruby-2.6
+          - base: ubuntu
+            tag: linux
     steps:
     - uses: actions/checkout@v1
     - uses: docker/build-push-action@v1
