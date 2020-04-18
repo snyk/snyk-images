@@ -7,6 +7,7 @@ on:
     - "*"
     - "!README.md"
     - "!build.rb"
+    - "!Makefile"
   schedule:
     # As well as running when we make changes we should run at least
     # every week in order to pick up new parent images and new versions of Snyk
