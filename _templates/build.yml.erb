@@ -11,15 +11,16 @@ on:
     # every week in order to pick up new parent images and new versions of Snyk
     - cron:  "0 0 * * 0"
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        base: []
-        tag: []
+        base:
+          - node
+        tag:
+          - node
         include:<% @images.each do |base, tag| %>
           - base: <%= base %>
             tag: <%= tag %><% end %>

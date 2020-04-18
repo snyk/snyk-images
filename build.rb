@@ -4,7 +4,7 @@ require "erb"
 require "fileutils"
 
 @images = [
-  ["node",  "node"],
+#  ["node",  "node"],
   ["node:10", "node-10"]
 ]
 templatename = File.join("_templates", "build.yml.erb")

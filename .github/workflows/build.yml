@@ -11,18 +11,17 @@ on:
     # every week in order to pick up new parent images and new versions of Snyk
     - cron:  "0 0 * * 0"
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        base: []
-        tag: []
+        base:
+          - node
+        tag:
+          - node
         include:
-          - base: node
-            tag: node
           - base: node:10
             tag: node-10
     steps:
