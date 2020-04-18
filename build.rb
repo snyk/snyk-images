@@ -5,9 +5,12 @@ require "fileutils"
 
 
 @images = []
-File.open("linux").each do |line|
-  base,tag = line.split
-  @images.append [base, tag ? tag : base]
+
+["linux", "alpine"].each do |target|
+  File.open(target).each do |line|
+    base,tag = line.split
+    @images.append [base, tag ? tag : base, target]
+  end
 end
 
 @seed = @images.shift

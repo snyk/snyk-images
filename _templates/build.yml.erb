@@ -21,9 +21,12 @@ jobs:
           - <%= @seed[0] %>
         tag:
           - <%= @seed[1] %>
-        include:<% @images.each do |base, tag| %>
+        target:
+          - <%= @seed[2] %>
+        include:<% @images.each do |base,tag,target| %>
           - base: <%= base %>
-            tag: <%= tag %><% end %>
+            tag: <%= tag %>
+            target: <%= target %><% end %>
     steps:
     - uses: actions/checkout@v1
     - uses: docker/build-push-action@v1
@@ -33,6 +36,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         add_git_labels: true
+        target: ${{ matrix.target }}
         repository: snyk/snyk
         tags: ${{ matrix.tag }}
         build_args: IMAGE=${{ matrix.base }}

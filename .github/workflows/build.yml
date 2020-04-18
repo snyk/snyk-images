@@ -21,79 +21,141 @@ jobs:
           - golang
         tag:
           - golang
+        target:
+          - linux
         include:
           - base: golang:1.12
             tag: golang-1.12
+            target: linux
           - base: golang:1.13
             tag: golang-1.13
+            target: linux
           - base: gradle
             tag: gradle
+            target: linux
           - base: gradle:jdk11
             tag: gradle-jdk11
+            target: linux
           - base: gradle:jdk12
             tag: gradle-jdk12
+            target: linux
           - base: gradle:jdk13
             tag: gradle-jdk13
+            target: linux
           - base: gradle:jdk8
             tag: gradle-jdk8
+            target: linux
           - base: hseeberger/scala-sbt:8u212_1.2.8_2.13.0
             tag: sbt
+            target: linux
           - base: hseeberger/scala-sbt:8u212_1.2.8_2.13.0
             tag: scala
+            target: linux
           - base: java
             tag: java
+            target: linux
           - base: maven
             tag: maven
+            target: linux
           - base: maven:3-jdk-11
             tag: maven-3-jdk-11
+            target: linux
           - base: maven:3-jdk-12
             tag: maven-3-jdk-12
+            target: linux
           - base: maven:3-jdk-13
             tag: maven-3-jdk-13
+            target: linux
           - base: maven:3-jdk-14
             tag: maven-3-jdk-14
+            target: linux
           - base: maven:3-jdk-8
             tag: maven-3-jdk-8
+            target: linux
           - base: mcr.microsoft.com/dotnet/core/sdk
             tag: dotnet
+            target: linux
           - base: mcr.microsoft.com/dotnet/core/sdk:2.1
             tag: dotnet-2.1
+            target: linux
           - base: mcr.microsoft.com/dotnet/core/sdk:2.2
             tag: dotnet-2.2
+            target: linux
           - base: mcr.microsoft.com/dotnet/core/sdk:3.0
             tag: dotnet-3.0
+            target: linux
           - base: mcr.microsoft.com/dotnet/core/sdk:3.1
             tag: dotnet-3.1
+            target: linux
           - base: node
             tag: node
+            target: linux
           - base: node:8
             tag: node-8
+            target: linux
           - base: node:10
             tag: node-10
+            target: linux
           - base: node:12
             tag: node-12
+            target: linux
           - base: node:13
             tag: node-13
+            target: linux
           - base: python
             tag: python
+            target: linux
           - base: python:2.7
             tag: python-2.7
+            target: linux
           - base: python:3.6
             tag: python-3.6
+            target: linux
           - base: python:3.7
             tag: python-3.7
+            target: linux
           - base: python:3.8
             tag: python-3.8
+            target: linux
           - base: ruby
             tag: ruby
+            target: linux
           - base: ruby:2.4
             tag: ruby-2.4
+            target: linux
           - base: ruby:2.5
             tag: ruby-2.5
+            target: linux
           - base: ruby:2.6
             tag: ruby-2.6
+            target: linux
           - base: ubuntu
             tag: linux
+            target: linux
+          - base: alpine
+            tag: alpine
+            target: alpine
+          - base: alpine
+            tag: swift
+            target: alpine
+          - base: alpine
+            tag: cocoapods
+            target: alpine
+          - base: composer
+            tag: composer
+            target: alpine
+          - base: composer
+            tag: php
+            target: alpine
+          - base: docker
+            tag: docker
+            target: alpine
+          - base: python:alpine
+            tag: python-alpine
+            target: alpine
+          - base: ruby:alpine
+            tag: ruby-alpine
+            target: alpine
     steps:
     - uses: actions/checkout@v1
     - uses: docker/build-push-action@v1
@@ -103,6 +165,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         add_git_labels: true
+        target: ${{ matrix.target }}
         repository: snyk/snyk
         tags: ${{ matrix.tag }}
         build_args: IMAGE=${{ matrix.base }}
