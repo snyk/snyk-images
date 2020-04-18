@@ -21,10 +21,10 @@ mcr.microsoft.com/dotnet/core/sdk:2.2 dotnet-2.2
 mcr.microsoft.com/dotnet/core/sdk:3.0 dotnet-3.0
 mcr.microsoft.com/dotnet/core/sdk:3.1 dotnet-3.1
 node
-node:8 node-8
 node:10 node-10
 node:12 node-12
 node:13 node-13
+node:8 node-8
 python
 python:2.7 python-2.7
 python:3.6 python-3.6
