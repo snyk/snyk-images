@@ -20,7 +20,7 @@ jobs:
           ruby build.rb
       - name: Commit to repository
         env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
+          GITHUB_TOKEN: ${{ secrets.worflow_token }}
           COMMIT_MSG: |
             Generated new Action to build Snyk images
             skip-checks: true

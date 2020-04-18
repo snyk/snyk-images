@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+#
+# Generate a GitHub Action with separate jobs for every image
+#
+
 require "erb"
 require "fileutils"
 
