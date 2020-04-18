@@ -14,11 +14,9 @@ on:
 strategy:
   fail-fast:  false
   matrix:
-    include:
-      - base: node
-        tag: node
-      - base: node:10
-        tag: node-10
+    include:<% @images.each do |base, tag| %>
+      - base: <%= base %>
+        tag: <%= tag %><% end %>
 
 jobs:
   build:
