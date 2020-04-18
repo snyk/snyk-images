@@ -7,9 +7,6 @@ on:
     - "*"
     - "!README.md"
     - "!build.rb"
-    - "!linux"
-    - "!alpine"
-    - "!Makefile"
   schedule:
     # As well as running when we make changes we should run at least
     # every week in order to pick up new parent images and new versions of Snyk
@@ -22,12 +19,24 @@ jobs:
       fail-fast: false
       matrix:
         base:
-          - golang
+          - clojure
         tag:
-          - golang
+          - clojure
         target:
           - linux
         include:
+          - base: clojure:boot
+            tag: clojure-boot
+            target: linux
+          - base: clojure:lein
+            tag: clojure-lein
+            target: linux
+          - base: clojure:tools-deps
+            tag: clojure-tools-deps
+            target: linux
+          - base: golang
+            tag: golang
+            target: linux
           - base: golang:1.12
             tag: golang-1.12
             target: linux
@@ -94,9 +103,6 @@ jobs:
           - base: node
             tag: node
             target: linux
-          - base: node:8
-            tag: node-8
-            target: linux
           - base: node:10
             tag: node-10
             target: linux
@@ -105,6 +111,9 @@ jobs:
             target: linux
           - base: node:13
             tag: node-13
+            target: linux
+          - base: node:8
+            tag: node-8
             target: linux
           - base: python
             tag: python
@@ -140,10 +149,10 @@ jobs:
             tag: alpine
             target: alpine
           - base: alpine
-            tag: swift
+            tag: cocoapods
             target: alpine
           - base: alpine
-            tag: cocoapods
+            tag: swift
             target: alpine
           - base: composer
             tag: composer
@@ -173,5 +182,3 @@ jobs:
         repository: snyk/snyk
         tags: ${{ matrix.tag }}
         build_args: IMAGE=${{ matrix.base }}
-
-
