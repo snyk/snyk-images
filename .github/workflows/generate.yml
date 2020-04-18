@@ -18,21 +18,9 @@ jobs:
       - name: Render latest template
         run: |
           ruby build.rb
-      - name: Commit to repository
-        env:
-          GITHUB_TOKEN: ${{ secrets.worflow_token }}
-          COMMIT_MSG: |
-            Generated new Action to build Snyk images
-            skip-checks: true
-        run: |
-          # Hard-code user config
-          git config user.email "gareth@morethanseven.net"
-          git config user.name "Gareth Rushgrove"
-          git config --get-regexp "user\.(name|email)"
-          # Update origin with token
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          # Checkout the branch so we can push back to it
-          git checkout master
-          git add .
-          # Only commit and push if we have changes
-          git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
+      - uses: seanmiddleditch/gha-publish-to-git@master
+        with:
+          branch: master
+          github_token: ${{ secrets.workflow_token }}
+          commit_author: "gareth@morethanseven.net"
+          commit_message: Generated new Action to build Snyk images
