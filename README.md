@@ -72,7 +72,9 @@ Please note that the nuber of images is relatively small at present, and not all
 
 ### Usage
 
-Note that images are not currently published to Docker Hub, so usage requires you to build the images locally at present. See the toolchain instructions below. You'll need your Snyk API token stored in an environment variable called `SNYK_TOKEN`.
+These images are published on Docker Hub at [snyk/snyk](https://hub.docker.com/r/snyk/snyk) See the toolchain instructions below if you want to build your own versions.
+
+Usage requires a Snyk API token stored in an environment variable called `SNYK_TOKEN`.
 
 I've picked a somewhat random example Golang respository which is setup to use Go Modules. 
 
