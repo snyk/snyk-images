@@ -115,6 +115,9 @@ jobs:
           - base: node:13
             tag: node-13
             target: linux
+          - base: node:14
+            tag: node-14
+            target: linux
           - base: node:8
             tag: node-8
             target: linux
