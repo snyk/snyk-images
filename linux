@@ -5,6 +5,7 @@ clojure:tools-deps clojure-tools-deps
 golang
 golang:1.12 golang-1.12
 golang:1.13 golang-1.13
+golang:1.14 golang-1.14
 gradle
 gradle:jdk11 gradle-jdk11
 gradle:jdk12 gradle-jdk12

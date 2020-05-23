@@ -43,6 +43,9 @@ jobs:
           - base: golang:1.13
             tag: golang-1.13
             target: linux
+          - base: golang:1.14
+            tag: golang-1.14
+            target: linux
           - base: gradle
             tag: gradle
             target: linux
