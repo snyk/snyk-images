@@ -145,6 +145,9 @@ jobs:
           - base: ruby:2.6
             tag: ruby-2.6
             target: linux
+          - base: ruby:2.7
+            tag: ruby-2.7
+            target: linux
           - base: ubuntu
             tag: linux
             target: linux
