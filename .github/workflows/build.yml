@@ -169,7 +169,16 @@ jobs:
           - base: composer
             tag: php
             target: alpine
-          - base: docker
+          - base: docker:18.09
+            tag: docker-18.09
+            target: alpine
+          - base: docker:19.03
+            tag: docker-19.03
+            target: alpine
+          - base: docker:latest
+            tag: docker-latest
+            target: alpine
+          - base: docker:stable
             tag: docker
             target: alpine
           - base: python:alpine
