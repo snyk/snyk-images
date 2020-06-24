@@ -29,10 +29,14 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:clojure-tools-deps | clojure:tools-deps |
 | snyk/snyk:composer | composer |
 | snyk/snyk:php | composer |
-| snyk/snyk:docker | docker |
+| snyk/snyk:docker-18.09 | docker:18.09 |
+| snyk/snyk:docker-19.03 | docker:19.03 |
+| snyk/snyk:docker-latest | docker:latest |
+| snyk/snyk:docker | docker:stable |
 | snyk/snyk:golang | golang |
 | snyk/snyk:golang-1.12 | golang:1.12 |
 | snyk/snyk:golang-1.13 | golang:1.13 |
+| snyk/snyk:golang-1.14 | golang:1.14 |
 | snyk/snyk:gradle | gradle |
 | snyk/snyk:gradle-jdk11 | gradle:jdk11 |
 | snyk/snyk:gradle-jdk12 | gradle:jdk12 |
@@ -56,6 +60,7 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:node-10 | node:10 |
 | snyk/snyk:node-12 | node:12 |
 | snyk/snyk:node-13 | node:13 |
+| snyk/snyk:node-14 | node:14 |
 | snyk/snyk:node-8 | node:8 |
 | snyk/snyk:python | python |
 | snyk/snyk:python-2.7 | python:2.7 |
@@ -67,6 +72,7 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:ruby-2.4 | ruby:2.4 |
 | snyk/snyk:ruby-2.5 | ruby:2.5 |
 | snyk/snyk:ruby-2.6 | ruby:2.6 |
+| snyk/snyk:ruby-2.7 | ruby:2.7 |
 | snyk/snyk:ruby-alpine | ruby:alpine |
 | snyk/snyk:linux | ubuntu |
 
