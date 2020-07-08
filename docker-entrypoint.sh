@@ -17,7 +17,7 @@ else
     # If pipenv is present on the path, and we find a Pipfile without a Pipfile.lock, run pipenv update
     if [ -x "$(command -v pip)" ]; then
         if [ -f "requirements.txt" ]; then
-            pip install -r requirements.txt
+            cat requirements.txt | xargs -n 1 pip install # Skipping the dependencies which aren't Installable
         fi
         if [ -f "Pipfile" ]; then
             if ! [ -x "$(command -v pipenv)" ]; then
