@@ -51,16 +51,10 @@ jobs:
             tag: gradle
             target: linux
           - base: gradle:6.4
-            tag: gradle:6.4
+            tag: gradle-6.4
             target: linux
           - base: gradle:6.4-jdk11
             tag: gradle-6.4-jdk11
-            target: linux
-          - base: gradle:6.4-jdk12
-            tag: gradle-6.4-jdk12
-            target: linux
-          - base: gradle:6.4-jdk13
-            tag: gradle-6.4-jdk13
             target: linux
           - base: gradle:6.4-jdk14
             tag: gradle-6.4-jdk14

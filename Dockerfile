@@ -4,7 +4,7 @@ FROM ${IMAGE} as parent
 WORKDIR /app
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-CMD ["snyk", "test", "--json-file-output=snyk.json"]
+CMD ["snyk", "test"]
 
 
 FROM ubuntu as snyk
