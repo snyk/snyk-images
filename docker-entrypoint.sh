@@ -54,4 +54,11 @@ else
 
 fi
 
-exec $@
+# This is in place for GitHub Actions, in order to build a nice
+# interface using args (which are converted to ENV) for whether or not
+# to output a JSON file
+if [ "$INPUT_COMMAND" = "test" -a "$INPUT_JSON" = "true" ]; then
+    JSON_OUTPUT="--json-file-output=snyk.json"
+fi
+
+exec $@ $JSON_OUTPUT
