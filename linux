@@ -7,9 +7,16 @@ golang:1.12 golang-1.12
 golang:1.13 golang-1.13
 golang:1.14 golang-1.14
 gradle
+gradle:6.4
+gradle:6.4-jdk11 gradle-6.4-jdk11
+gradle:6.4-jdk12 gradle-6.4-jdk12
+gradle:6.4-jdk13 gradle-6.4-jdk13
+gradle:6.4-jdk14 gradle-6.4-jdk14
+gradle:6.4-jdk8 gradle-6.4-jdk8
 gradle:jdk11 gradle-jdk11
 gradle:jdk12 gradle-jdk12
 gradle:jdk13 gradle-jdk13
+gradle:jdk14 gradle-jdk14
 gradle:jdk8 gradle-jdk8
 hseeberger/scala-sbt:8u212_1.2.8_2.13.0 sbt
 hseeberger/scala-sbt:8u212_1.2.8_2.13.0 scala

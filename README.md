@@ -38,9 +38,16 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:golang-1.13 | golang:1.13 |
 | snyk/snyk:golang-1.14 | golang:1.14 |
 | snyk/snyk:gradle | gradle |
+| snyk/snyk:gradle:6.4 | gradle:6.4 |
+| snyk/snyk:gradle-6.4-jdk11 | gradle:6.4-jdk11 |
+| snyk/snyk:gradle-6.4-jdk12 | gradle:6.4-jdk12 |
+| snyk/snyk:gradle-6.4-jdk13 | gradle:6.4-jdk13 |
+| snyk/snyk:gradle-6.4-jdk14 | gradle:6.4-jdk14 |
+| snyk/snyk:gradle-6.4-jdk8 | gradle:6.4-jdk8 |
 | snyk/snyk:gradle-jdk11 | gradle:jdk11 |
 | snyk/snyk:gradle-jdk12 | gradle:jdk12 |
 | snyk/snyk:gradle-jdk13 | gradle:jdk13 |
+| snyk/snyk:gradle-jdk14 | gradle:jdk14 |
 | snyk/snyk:gradle-jdk8 | gradle:jdk8 |
 | snyk/snyk:sbt | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
 | snyk/snyk:scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
@@ -67,6 +74,7 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:python-3.6 | python:3.6 |
 | snyk/snyk:python-3.7 | python:3.7 |
 | snyk/snyk:python-3.8 | python:3.8 |
+| snyk/snyk:python-3.9 | python:3.9-rc |
 | snyk/snyk:python-alpine | python:alpine |
 | snyk/snyk:ruby | ruby |
 | snyk/snyk:ruby-2.4 | ruby:2.4 |
