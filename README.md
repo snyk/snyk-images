@@ -38,10 +38,8 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:golang-1.13 | golang:1.13 |
 | snyk/snyk:golang-1.14 | golang:1.14 |
 | snyk/snyk:gradle | gradle |
-| snyk/snyk:gradle:6.4 | gradle:6.4 |
+| snyk/snyk:gradle-6.4 | gradle:6.4 |
 | snyk/snyk:gradle-6.4-jdk11 | gradle:6.4-jdk11 |
-| snyk/snyk:gradle-6.4-jdk12 | gradle:6.4-jdk12 |
-| snyk/snyk:gradle-6.4-jdk13 | gradle:6.4-jdk13 |
 | snyk/snyk:gradle-6.4-jdk14 | gradle:6.4-jdk14 |
 | snyk/snyk:gradle-6.4-jdk8 | gradle:6.4-jdk8 |
 | snyk/snyk:gradle-jdk11 | gradle:jdk11 |
