@@ -1,6 +1,7 @@
 ARG IMAGE
 
 FROM ${IMAGE} as parent
+ENV MAVEN_CONFIG ""
 WORKDIR /app
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
