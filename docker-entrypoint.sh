@@ -17,16 +17,16 @@ else
     # If pipenv is present on the path, and we find a Pipfile without a Pipfile.lock, run pipenv update
     if [ -x "$(command -v pip)" ]; then
         if [ -f "requirements.txt" ]; then
-            cat requirements.txt | sed -e '/^\s*#.*$/d' -e '/^\s*$/d' | xargs -n 1 pip install || true # Skipping the dependencies which aren't Installable
+            out=$(cat requirements.txt | sed -e '/^\s*#.*$/d' -e '/^\s*$/d' | xargs -n 1 pip install 2>&1 || true) # Skipping the dependencies which aren't Installable
         fi
         if [ -f "Pipfile" ]; then
             if ! [ -x "$(command -v pipenv)" ]; then
-                pip install pipenv
+                pip install pipenv > /dev/null 2>&1
             fi
             if [ -f "Pipfile.lock" ]; then
-                pipenv sync
+                out=$(pipenv sync)
             else
-                pipenv update
+                out=$(pipenv update)
             fi
         fi
     fi
@@ -36,7 +36,7 @@ else
     # If mvn is present on the path, and we find a pom.xml, run mvn install
     if [ -x "$(command -v mvn)" ]; then
         if [ -f "pom.xml" ]; then
-            mvn install --no-transfer-progress -DskipTests
+            out=$(mvn install --no-transfer-progress -DskipTests)
         fi
     fi
 
@@ -46,12 +46,19 @@ else
     if [ -x "$(command -v go)" ]; then
         if [ -f "Gopkg.toml" ]; then
             if ! [ -x "$(command -v dep)" ]; then
-                curl -s https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+                curl -s https://raw.githubusercontent.com/golang/dep/master/install.sh | sh > /dev/null 2>&1
             fi
-            dep ensure
+            out=$(dep ensure)
         fi
     fi
 
+fi
+
+# By default we don't output any of the commands needed to run before Snyk
+# but when debugging it can be useful to trigger that output to be shown.
+# To do so simply set the DEBUG environment variable.
+if ! [ -z "${DEBUG}" ]; then
+    printf '%s\n' "$out"
 fi
 
 # This is in place for GitHub Actions, in order to build a nice

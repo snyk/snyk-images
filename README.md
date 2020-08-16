@@ -226,9 +226,14 @@ In some cases you may want to run a command before Snyk tests your dependencies.
 
 If you have specific requirements you can pass the command to run (which replaces any of the above) using the `COMMAND` environment variable. For instance, if you have a Python project with dependencies specified in a file called `dependencies.txt` you could run:
 
-
 ```
 docker run --rm -it --env SNYK_TOKEN --env COMMAND="pip install -r dependencies.txt" -v $(PWD):/app snyk/snyk:python snyk test --file=dependencies.txt
+```
+
+By default the output for these bootstrap commands is not shown, so the output should just be that from Snyk. However if you're debugging an installation problem then you can pass the `DEBUG` environment variable to trigger the output from the intermediary commands.
+
+```
+docker run --rm -it --env SNYK_TOKEN --env DEBUG=1 -v $(PWD):/app snyk/snyk:python
 ```
 
 ## Toolchain
