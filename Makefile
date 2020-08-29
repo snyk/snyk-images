@@ -12,10 +12,10 @@ ifndef DOCKER_BUILDKIT
 endif
 
 build-linux: check-buildkit
-	@awk '{ print "docker build --build-arg IMAGE="$$1" -t "$(PREFIX)":"$$NF" ." | "/bin/sh"}' $(NAME)
+	@awk '{ print "docker build --build-arg IMAGE="$$1" --build-arg TAG="$$NF" -t "$(PREFIX)":"$$NF" ." | "/bin/sh"}' $(NAME)
 
 build-alpine: check-buildkit
-	@awk '{ print "docker build --target alpine --build-arg IMAGE="$$1" -t "$(PREFIX)":"$$NF" ." | "/bin/sh"}' $(NAME)
+	@awk '{ print "docker build --target alpine --build-arg IMAGE="$$1" --build-arg TAG="$$NF" -t "$(PREFIX)":"$$NF" ." | "/bin/sh"}' $(NAME)
 
 test: test-linux test-alpine
 
