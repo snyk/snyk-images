@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 # Note that this script is implemented in sh, *not* bash. This is to aid portability
 # for environments which may have the minimal shell
@@ -54,10 +53,17 @@ else
 
 fi
 
+exit_code=$?
+
+# If an error occurs in the command run then print the error and
+# exit with the same exit code
+if [ $exit_code -ne 0 ]; then
+    printf '%s\n' "$out"
+    exit $exit_code
 # By default we don't output any of the commands needed to run before Snyk
 # but when debugging it can be useful to trigger that output to be shown.
 # To do so simply set the DEBUG environment variable.
-if ! [ -z "${DEBUG}" ]; then
+elif ! [ -z "${DEBUG}" ]; then
     printf '%s\n' "$out"
 fi
 
