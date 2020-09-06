@@ -4,7 +4,8 @@ ARG TAG
 FROM ${IMAGE} as parent
 ENV MAVEN_CONFIG="" \
     SNYK_INTEGRATION_NAME="DOCKER_SNYK" \
-    SNYK_INTEGRATION_VERSION=${TAG}
+    SNYK_INTEGRATION_VERSION=${TAG} \
+    SNYK_CFG_DISABLESUGGESTIONS=true
 WORKDIR /app
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
