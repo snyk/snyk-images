@@ -76,7 +76,8 @@ fi
 
 if [ "$INPUT_COMMAND" = "test" -a "$INPUT_SARIF" = "true" ]; then
     # SARIF output is only relevant if a file is specified as well
-    if [[ "$@" == *--file=* ]]; then
+    args=$@
+    if [ "${args/--file}" != "$args" ] ; then
         SARIF_OUTPUT="--sarif-file-output=snyk.sarif"
     fi
 fi
