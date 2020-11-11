@@ -28,6 +28,12 @@ else
                 out=$(pipenv update)
             fi
         fi
+        if [ -f "pyproject.toml" ]; then
+            if ! [ -x "$(command -v poetry)" ]; then
+                pip install poetry > /dev/null 2>&1
+            fi
+            out=$(poetry config virtualenvs.create false && poetry install)
+        fi
     fi
 
     # Maven
