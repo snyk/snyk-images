@@ -223,6 +223,7 @@ In some cases you may want to run a command before Snyk tests your dependencies.
 * If Maven is installed and a `pom.xml` file is found, `mvn install` is run
 * If Pip is present and a `requirements.txt` file is found, run `pip install -r requirements.txt`
 * If Pipenv is present, run `pipenv sync` (if we find a `Pipfile.lock`) or `pipenv update` (if we find only a `Pipfile`)
+* If `pyproject.toml` is present then run `poetry install`. Will install `poetry` if not already present
 
 If you have specific requirements you can pass the command to run (which replaces any of the above) using the `COMMAND` environment variable. For instance, if you have a Python project with dependencies specified in a file called `dependencies.txt` you could run:
 
