@@ -81,12 +81,7 @@ if [ "$INPUT_COMMAND" = "test" -a "$INPUT_JSON" = "true" ]; then
 fi
 
 if [ "$INPUT_COMMAND" = "test" -a "$INPUT_SARIF" = "true" ]; then
-    # SARIF output is only relevant if a file is specified as well
-    # The IaC Action uses a property, while will use a flag
-    args=$@
-    if [ "${args/--file}" != "$args" ] || ! [ -z "$INPUT_FILE" ] ; then
-        SARIF_OUTPUT="--sarif-file-output=snyk.sarif"
-    fi
+    SARIF_OUTPUT="--sarif-file-output=snyk.sarif"
 fi
 
 exec $@ $JSON_OUTPUT $SARIF_OUTPUT
