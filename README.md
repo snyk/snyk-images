@@ -37,6 +37,7 @@ Please note that the nuber of images is relatively small at present, and not all
 | snyk/snyk:golang-1.12 | golang:1.12 |
 | snyk/snyk:golang-1.13 | golang:1.13 |
 | snyk/snyk:golang-1.14 | golang:1.14 |
+| snyk/snyk:golang-1.15 | golang:1.15 |
 | snyk/snyk:gradle | gradle |
 | snyk/snyk:gradle-6.4 | gradle:6.4 |
 | snyk/snyk:gradle-6.4-jdk11 | gradle:6.4-jdk11 |
