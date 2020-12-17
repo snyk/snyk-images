@@ -210,7 +210,7 @@ jobs:
             tag: ruby-alpine
             target: alpine
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - uses: docker/build-push-action@v1
       env:
         DOCKER_BUILDKIT: "1"
@@ -221,4 +221,4 @@ jobs:
         target: ${{ matrix.target }}
         repository: snyk/snyk
         tags: ${{ matrix.tag }}
-        build_args: IMAGE=${{ matrix.base }}
+        build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }}
