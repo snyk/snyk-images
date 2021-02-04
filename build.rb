@@ -6,7 +6,13 @@
 require "date"
 require "erb"
 require "fileutils"
+require "json"
+require 'net/http'
 
+uri = "https://api.github.com/repos/snyk/snyk/releases/latest"
+result = JSON.parse(Net::HTTP.get(URI.parse(uri)))
+
+@snyk_version = result['tag_name']
 
 @images = []
 

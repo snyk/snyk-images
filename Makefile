@@ -12,10 +12,10 @@ ifndef DOCKER_BUILDKIT
 endif
 
 build-linux: check-buildkit
-	@awk '{ print "docker build --build-arg IMAGE="$$1" --build-arg TAG="$$NF" -t "$(PREFIX)":"$$NF" ." | "/bin/sh"}' $(NAME)
+	@awk '{ print "docker build --build-arg IMAGE="$$1" --build-arg TAG="$$NF" --build-arg SNYK_VERSION="$(SNYK_VERSION)" -t "$(PREFIX)":"$$NF"-"$(SNYK_VERSION)" ." | "/bin/sh"}' $(NAME)
 
 build-alpine: check-buildkit
-	@awk '{ print "docker build --target alpine --build-arg IMAGE="$$1" --build-arg TAG="$$NF" -t "$(PREFIX)":"$$NF" ." | "/bin/sh"}' $(NAME)
+	@awk '{ print "docker build --target alpine --build-arg IMAGE="$$1" --build-arg TAG="$$NF" --build-arg SNYK_VERSION="$(SNYK_VERSION)" -t "$(PREFIX)":"$$NF"-"$(SNYK_VERSION)" ." | "/bin/sh"}' $(NAME)
 
 test: test-linux test-alpine
 
@@ -33,6 +33,6 @@ markdown: sort
 	@cat linux alpine | sort | awk '{ print "| "$(PREFIX)":"$$NF" | "$$1" |" }'
 
 push:
-	@cat linux alpine | sort | awk '{ print "docker push "$(PREFIX)":"$$NF"" | "/bin/bash"}'
+	@cat linux alpine | sort | awk '{ print "docker push "$(PREFIX)":"$$NF"-"$(SNYK_VERSION)"" | "/bin/bash"}'
 
 .PHONY: default build build-linux build-alpine build-alpine-push check-buildkit sort sort-% test test-% markdown push
