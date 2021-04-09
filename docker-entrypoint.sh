@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Note that this script is implemented in sh, *not* bash. This is to aid portability
 # for environments which may have the minimal shell
