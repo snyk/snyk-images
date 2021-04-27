@@ -2,11 +2,16 @@ clojure
 clojure:boot clojure-boot
 clojure:lein clojure-lein
 clojure:tools-deps clojure-tools-deps
+elixir
+elixir:1.12 elixir-1.12
+elixir:1.11 elixir-1.11
+elixir:1.10 elixir-1.10
 golang
 golang:1.12 golang-1.12
 golang:1.13 golang-1.13
 golang:1.14 golang-1.14
 golang:1.15 golang-1.15
+golang:1.16 golang-1.16
 gradle
 gradle:6.4 gradle-6.4
 gradle:6.4-jdk11 gradle-6.4-jdk11
@@ -36,6 +41,8 @@ node:10 node-10
 node:12 node-12
 node:13 node-13
 node:14 node-14
+node:15 node-15
+node:16 node-16
 node:8 node-8
 python
 python:2.7 python-2.7
