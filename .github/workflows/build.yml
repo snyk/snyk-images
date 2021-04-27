@@ -35,6 +35,18 @@ jobs:
           - base: clojure:tools-deps
             tag: clojure-tools-deps
             target: linux
+          - base: elixir
+            tag: elixir
+            target: linux
+          - base: elixir:1.12
+            tag: elixir-1.12
+            target: linux
+          - base: elixir:1.11
+            tag: elixir-1.11
+            target: linux
+          - base: elixir:1.10
+            tag: elixir-1.10
+            target: linux
           - base: golang
             tag: golang
             target: linux
@@ -49,6 +61,9 @@ jobs:
             target: linux
           - base: golang:1.15
             tag: golang-1.15
+            target: linux
+          - base: golang:1.16
+            tag: golang-1.16
             target: linux
           - base: gradle
             tag: gradle
@@ -136,6 +151,12 @@ jobs:
             target: linux
           - base: node:14
             tag: node-14
+            target: linux
+          - base: node:15
+            tag: node-15
+            target: linux
+          - base: node:16
+            tag: node-16
             target: linux
           - base: node:8
             tag: node-8
