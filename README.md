@@ -1,4 +1,4 @@
-An *experimental* build toolchain for Snyk Docker images.
+An build toolchain for Snyk Docker images.
 
 ![Build and push images](https://github.com/snyk/snyk-images/workflows/Build%20and%20push%20images/badge.svg) ![Generate Actions to build Snyk images](https://github.com/snyk/snyk-images/workflows/Generate%20Actions%20to%20build%20Snyk%20images/badge.svg)
 
@@ -13,8 +13,6 @@ An *experimental* build toolchain for Snyk Docker images.
 
 
 ## Images
-
-Please note that the nuber of images is relatively small at present, and not all of them are expected to work. This is very much work-in-progress, but the following demonstrates how these images are intended to work.
 
 ## Current images
 
