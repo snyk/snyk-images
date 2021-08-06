@@ -45,6 +45,7 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:gradle-jdk12 | gradle:jdk12 |
 | snyk/snyk:gradle-jdk13 | gradle:jdk13 |
 | snyk/snyk:gradle-jdk14 | gradle:jdk14 |
+| snyk/snyk:gradle-jdk16 | gradle:jdk16 |
 | snyk/snyk:gradle-jdk8 | gradle:jdk8 |
 | snyk/snyk:sbt | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
 | snyk/snyk:scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
