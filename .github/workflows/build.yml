@@ -224,7 +224,7 @@ jobs:
           - base: docker:latest
             tag: docker-latest
             target: alpine
-          - base: docker:stable
+          - base: docker:latest
             tag: docker
             target: alpine
           - base: python:alpine
