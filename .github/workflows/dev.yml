@@ -1,0 +1,37 @@
+name: Dev
+
+on: 
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  build-images:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install npm dependencies
+      run: npm install
+    
+    - name: Lint - check formatting
+      run: npm run lint:formatting
+
+    - name: Build `python-3.8` image for test
+      uses: docker/build-push-action@v2
+      with:
+        push: false
+        tags: python-3.8
+        file: Dockerfile
+        target: linux
+        build-args: |
+          IMAGE=python:3.8
+          TAG=python-3.8
+   
+    - name: Show images
+      run: docker image ls
+  
+    - name: Run tests
+      run: npm run test
+      env:
+        SNYK_TOKEN: ${{secrets.SNYK_TOKEN}}
