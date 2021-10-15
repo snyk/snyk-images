@@ -3,6 +3,7 @@
   "description": "Used for testing only",
   "scripts": {
     "test": "jest",
+    "test:smoke": "jest test/smoke.spec.ts",
     "format": "prettier --write '**/*.{js,ts}'",
     "lint:formatting": "prettier --check '**/*.{js,ts}'"
   },

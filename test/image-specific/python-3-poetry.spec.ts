@@ -1,4 +1,4 @@
-import { runContainer } from './runContainer';
+import { runContainer } from '../runContainer';
 
 jest.setTimeout(1000 * 60);
 
