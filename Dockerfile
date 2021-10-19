@@ -13,16 +13,17 @@ CMD ["snyk", "test"]
 
 
 FROM ubuntu as snyk
-RUN apt-get update && apt-get install -y curl wget
-RUN curl -s https://api.github.com/repos/snyk/snyk/releases/latest | grep "browser_download_url" | grep linux | cut -d '"' -f 4 | wget -i - && \
+RUN apt-get update && apt-get install -y curl
+RUN curl -o ./snyk-linux https://static.snyk.io/cli/latest/snyk-linux && \
+    curl -o ./snyk-linux.sha256 https://static.snyk.io/cli/latest/snyk-linux.sha256 && \
     sha256sum -c snyk-linux.sha256 && \
     mv snyk-linux /usr/local/bin/snyk && \
     chmod +x /usr/local/bin/snyk
 
-
 FROM alpine as snyk-alpine
-RUN apk add --no-cache curl wget
-RUN curl -s https://api.github.com/repos/snyk/snyk/releases/latest | grep "browser_download_url" | grep alpine | cut -d '"' -f 4 | wget -i - && \
+RUN apk add --no-cache curl
+RUN curl -o ./snyk-alpine https://static.snyk.io/cli/latest/snyk-alpine && \
+    curl -o ./snyk-alpine.sha256 https://static.snyk.io/cli/latest/snyk-alpine.sha256 && \
     sha256sum -c snyk-alpine.sha256 && \
     mv snyk-alpine /usr/local/bin/snyk && \
     chmod +x /usr/local/bin/snyk
