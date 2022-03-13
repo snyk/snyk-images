@@ -124,7 +124,7 @@ $ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app snyk/snyk:node
   From: ejs-locals@1.0.2 > ejs@0.8.8
   Remediation:
     Upgrade direct dependency ejs@1.0.0 to ejs@2.5.3 (triggers upgrades to ejs@2.5.3)
-    Some paths have no direct dependency upgrade that can address this issue. Run `snyk wizard` to explore remediation options.
+    Some paths have no direct dependency upgrade that can address this issue.
 
 ✗ High severity vulnerability found in dustjs-linkedin
   Description: Code Injection
@@ -153,7 +153,6 @@ Licenses:          enabled
 
 Tested 448 dependencies for known issues, found 47 issues, 90 vulnerable paths.
 
-Run `snyk wizard` to address these issues.
 ```
 
 ### Testing Docker images
