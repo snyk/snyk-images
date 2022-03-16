@@ -80,6 +80,7 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:ruby-2.6 | ruby:2.6 |
 | snyk/snyk:ruby-2.7 | ruby:2.7 |
 | snyk/snyk:ruby-alpine | ruby:alpine |
+| snyk/snyk:driftctl | snyk/driftctl:v0.23.1 |
 | snyk/snyk:linux | ubuntu |
 
 ### Usage

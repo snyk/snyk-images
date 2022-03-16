@@ -233,6 +233,9 @@ jobs:
           - base: ruby:alpine
             tag: ruby-alpine
             target: alpine
+          - base: snyk/driftctl:v0.23.1
+            tag: driftctl
+            target: alpine
     steps:
     - uses: actions/checkout@v2
     - uses: docker/build-push-action@v1

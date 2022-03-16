@@ -10,4 +10,17 @@ describe('smoke tests', () => {
     expect(stdout).toMatch(versionRegex);
     expect(stderr).toBe('');
   });
+
+  if (process.env.IMAGE_TAG === 'driftctl') {
+    it('ensure we have a proper driftctl binary installed in /bin/', async () => {
+      const imageName = process.env.IMAGE_TAG;
+      const { stdout, stderr } = await runContainer(
+        imageName,
+        '/bin/driftctl version',
+      );
+
+      expect(stdout).toContain('v0.23.1');
+      expect(stderr).toBe('');
+    });
+  }
 });

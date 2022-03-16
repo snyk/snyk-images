@@ -9,3 +9,4 @@ docker:latest docker-latest
 docker:latest docker
 python:alpine python-alpine
 ruby:alpine ruby-alpine
+snyk/driftctl:v0.23.1 driftctl

@@ -1,6 +1,6 @@
 name: Dev
 
-on: 
+on:
   push:
     branches-ignore:
       - master
@@ -13,7 +13,7 @@ jobs:
 
     - name: Install npm dependencies
       run: npm install
-    
+
     - name: Lint - check formatting
       run: npm run lint:formatting
 
@@ -238,6 +238,9 @@ jobs:
           - base: ruby:alpine
             tag: ruby-alpine
             target: alpine
+          - base: snyk/driftctl:v0.23.1
+            tag: driftctl
+            target: alpine
     steps:
     - uses: actions/checkout@v2
 
@@ -257,7 +260,7 @@ jobs:
 
     - name: Install npm dependencies
       run: npm install
-    
+
     - name: Run tests
       run: npm run test:smoke
       env:
