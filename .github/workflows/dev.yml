@@ -103,10 +103,10 @@ jobs:
           - base: gradle:jdk8
             tag: gradle-jdk8
             target: linux
-          - base: hseeberger/scala-sbt:8u212_1.2.8_2.13.0
+          - base: hseeberger/scala-sbt:8u312_1.6.2_3.1.1
             tag: sbt
             target: linux
-          - base: hseeberger/scala-sbt:8u212_1.2.8_2.13.0
+          - base: hseeberger/scala-sbt:8u312_1.6.2_3.1.1
             tag: scala
             target: linux
           - base: java

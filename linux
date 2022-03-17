@@ -23,8 +23,8 @@ gradle:jdk13 gradle-jdk13
 gradle:jdk14 gradle-jdk14
 gradle:jdk16 gradle-jdk16
 gradle:jdk8 gradle-jdk8
-hseeberger/scala-sbt:8u212_1.2.8_2.13.0 sbt
-hseeberger/scala-sbt:8u212_1.2.8_2.13.0 scala
+hseeberger/scala-sbt:8u312_1.6.2_3.1.1 sbt
+hseeberger/scala-sbt:8u312_1.6.2_3.1.1 scala
 java
 maven
 maven:3-jdk-11 maven-3-jdk-11
