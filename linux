@@ -13,6 +13,7 @@ golang:1.14 golang-1.14
 golang:1.15 golang-1.15
 golang:1.16 golang-1.16
 golang:1.17 golang-1.17
+golang:1.18 golang-1.18
 gradle
 gradle:6.4 gradle-6.4
 gradle:6.4-jdk11 gradle-6.4-jdk11
