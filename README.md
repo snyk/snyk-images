@@ -36,6 +36,8 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:golang-1.13 | golang:1.13 |
 | snyk/snyk:golang-1.14 | golang:1.14 |
 | snyk/snyk:golang-1.15 | golang:1.15 |
+| snyk/snyk:golang-1.16 | golang:1.16 |
+| snyk/snyk:golang-1.17 | golang:1.17 |
 | snyk/snyk:gradle | gradle |
 | snyk/snyk:gradle-6.4 | gradle:6.4 |
 | snyk/snyk:gradle-6.4-jdk11 | gradle:6.4-jdk11 |
@@ -88,7 +90,7 @@ These images are published on Docker Hub at [snyk/snyk](https://hub.docker.com/r
 
 Usage requires a Snyk API token stored in an environment variable called `SNYK_TOKEN`.
 
-I've picked a somewhat random example Golang respository which is setup to use Go Modules. 
+I've picked a somewhat random example Golang respository which is setup to use Go Modules.
 
 ```console
 $ git clone git@github.com:puppetlabs/wash.git
@@ -263,4 +265,3 @@ As well as knowing the images build correctly it's useful to have a basic test s
 ```
 make test
 ```
-
