@@ -75,7 +75,8 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:python-3.6 | python:3.6 |
 | snyk/snyk:python-3.7 | python:3.7 |
 | snyk/snyk:python-3.8 | python:3.8 |
-| snyk/snyk:python-3.9 | python:3.9-rc |
+| snyk/snyk:python-3.9 | python:3.9 |
+| snyk/snyk:python-3.10 | python:3.10 |
 | snyk/snyk:python-alpine | python:alpine |
 | snyk/snyk:ruby | ruby |
 | snyk/snyk:ruby-2.4 | ruby:2.4 |
