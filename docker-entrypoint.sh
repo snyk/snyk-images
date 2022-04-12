@@ -28,7 +28,7 @@ else
                 out=$(pipenv update)
             fi
         fi
-        if [ -f "pyproject.toml" ]; then
+        if [ -f "pyproject.toml" ] && ! [ -f "poetry.lock" ]; then
             if ! [ -x "$(command -v poetry)" ]; then
                 pip install poetry > /dev/null 2>&1
             fi
