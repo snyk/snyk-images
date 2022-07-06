@@ -101,6 +101,9 @@ jobs:
           - base: gradle:jdk16
             tag: gradle-jdk16
             target: linux
+          - base: gradle:jdk17
+            tag: gradle-jdk17
+            target: linux
           - base: gradle:jdk8
             tag: gradle-jdk8
             target: linux

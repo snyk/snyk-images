@@ -24,6 +24,7 @@ gradle:jdk12 gradle-jdk12
 gradle:jdk13 gradle-jdk13
 gradle:jdk14 gradle-jdk14
 gradle:jdk16 gradle-jdk16
+gradle:jdk17 gradle-jdk17
 gradle:jdk8 gradle-jdk8
 hseeberger/scala-sbt:8u212_1.2.8_2.13.0 sbt
 hseeberger/scala-sbt:8u212_1.2.8_2.13.0 scala
