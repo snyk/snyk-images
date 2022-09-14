@@ -127,6 +127,9 @@ jobs:
           - base: maven:3-jdk-14
             tag: maven-3-jdk-14
             target: linux
+          - base: maven:3-openjdk-17
+            tag: maven-3-openjdk-17
+            target: linux
           - base: maven:3-jdk-8
             tag: maven-3-jdk-8
             target: linux
