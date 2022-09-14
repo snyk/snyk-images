@@ -53,7 +53,6 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:gradle-jdk8 | gradle:jdk8 |
 | snyk/snyk:sbt | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
 | snyk/snyk:scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
-| snyk/snyk:java | java |
 | snyk/snyk:maven | maven |
 | snyk/snyk:maven-3-jdk-11 | maven:3-jdk-11 |
 | snyk/snyk:maven-3-jdk-12 | maven:3-jdk-12 |
@@ -219,6 +218,8 @@ Next steps:
 - Run `snyk test` as part of your CI/test.
 ```
 
+#### `snyk/snyk:java` image
+Following [the deprecation of the docker Java image](https://github.com/docker-library/openjdk/issues/505) and with a lack of an alternative image, we had to remove the Java image.
 
 ### Running bootstrap commands
 

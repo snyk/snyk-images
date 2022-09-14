@@ -112,9 +112,6 @@ jobs:
           - base: hseeberger/scala-sbt:8u212_1.2.8_2.13.0
             tag: scala
             target: linux
-          - base: java
-            tag: java
-            target: linux
           - base: maven
             tag: maven
             target: linux
