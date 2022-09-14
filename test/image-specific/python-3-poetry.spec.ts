@@ -1,6 +1,6 @@
 import { runContainer } from '../runContainer';
 
-jest.setTimeout(1000 * 60);
+jest.setTimeout(1000 * 90);
 
 it('can do `snyk test` on a poetry project', async () => {
   const imageName = 'python-3.8';
@@ -13,7 +13,7 @@ it('can do `snyk test` on a poetry project', async () => {
   expect(stdout).toContain('Testing /app...');
   expect(stdout).toContain('poetry-fixtures-project');
   expect(stdout).toContain(
-    'Regular Expression Denial of Service (ReDoS) [Medium Severity][https://snyk.io/vuln/SNYK-PYTHON-JINJA2-1012994] in jinja2@2.11.2',
+    'Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-PYTHON-JINJA2-1012994]',
   );
   expect(stderr).toBe('');
 });
@@ -29,7 +29,7 @@ it('can do `snyk test` on a poetry project with lockfile', async () => {
   expect(stdout).toContain('Testing /app...');
   expect(stdout).toContain('poetry-fixtures-project');
   expect(stdout).toContain(
-    'Regular Expression Denial of Service (ReDoS) [Medium Severity][https://snyk.io/vuln/SNYK-PYTHON-JINJA2-1012994] in jinja2@2.11.2',
+    'Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-PYTHON-JINJA2-1012994]',
   );
   expect(stderr).toBe('');
 });
