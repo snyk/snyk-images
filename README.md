@@ -220,6 +220,13 @@ Next steps:
 - Run `snyk test` as part of your CI/test.
 ```
 
+#### Note on using spaces in arguments
+When using argument values that include spaces please wrap the whole command in quotes as well as the individual argument itself.
+
+```console
+$ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app snyk/snyk:golang 'snyk code test --project-name="My Project" --org=MyOrg'
+```
+
 #### `snyk/snyk:java` image
 Following [the deprecation of the docker Java image](https://github.com/docker-library/openjdk/issues/505) and with a lack of an alternative image, we had to remove the Java image.
 
