@@ -89,4 +89,4 @@ if [ "$INPUT_COMMAND" = "test" -a "$INPUT_SARIF" = "true" ]; then
     fi
 fi
 
-exec $@ $JSON_OUTPUT $SARIF_OUTPUT
+sh -c "$* $JSON_OUTPUT $SARIF_OUTPUT"
