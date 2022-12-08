@@ -1,0 +1,58 @@
+version: "1.0"
+
+stages:
+  - prepare
+  - build
+  - test
+  - publish
+
+steps:
+  main_clone:
+    title: Clone Repo
+    stage: prepare
+    type: git-clone
+    git: goodrx
+    repo: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}"
+    revision: "${{CF_REVISION}}"
+
+  build_images:
+    title: "Build Images"
+    stage: build
+    type: build
+    registry: goodrx
+    dockerfile: Dockerfile
+    image_name: snyk/snyk
+    buildkit: true
+    disable_push: true
+    scale:
+      build_golang_1_19_4:
+        title: Build for Go 1.19.4
+        build_arguments:
+          - IMAGE=golang
+          - TAG=1.19.4
+        tags:
+          [
+            "${{CF_BRANCH_TAG_NORMALIZED_LOWER_CASE}}-${{CF_SHORT_REVISION}}-${{CF_BUILD_ID}}",
+            "main-golang-1.19.4",
+          ]
+
+  push_images:
+    title: Push Images
+    stage: publish
+    type: push
+    registry: goodrx
+    fail_fast: false
+    when:
+      branch:
+        only:
+          - main
+    scale:
+      golang_1_19_4:
+        title: Push Image for Go 1.19.4
+        candidate: ${{build_golang_1_19_4}}
+        image_name: snyk/snyk
+        tags:
+          [
+            "${{CF_BRANCH_TAG_NORMALIZED_LOWER_CASE}}-${{CF_SHORT_REVISION}}-${{CF_BUILD_ID}}",
+            "main-golang-1.19.4",
+          ]
