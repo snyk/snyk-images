@@ -176,12 +176,6 @@ jobs:
           - base: python
             tag: python
             target: linux
-          - base: python:2.7
-            tag: python-2.7
-            target: linux
-          - base: python:3.6
-            tag: python-3.6
-            target: linux
           - base: python:3.7
             tag: python-3.7
             target: linux
