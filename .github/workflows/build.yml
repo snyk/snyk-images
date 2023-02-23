@@ -74,23 +74,14 @@ jobs:
           - base: gradle
             tag: gradle
             target: linux
-          - base: gradle:6.4
-            tag: gradle-6.4
-            target: linux
           - base: gradle:6.4-jdk11
             tag: gradle-6.4-jdk11
             target: linux
           - base: gradle:6.4-jdk14
             tag: gradle-6.4-jdk14
             target: linux
-          - base: gradle:6.4-jdk8
-            tag: gradle-6.4-jdk8
-            target: linux
           - base: gradle:jdk11
             tag: gradle-jdk11
-            target: linux
-          - base: gradle:jdk12
-            tag: gradle-jdk12
             target: linux
           - base: gradle:jdk13
             tag: gradle-jdk13
@@ -118,15 +109,6 @@ jobs:
             target: linux
           - base: maven:3-jdk-11
             tag: maven-3-jdk-11
-            target: linux
-          - base: maven:3-jdk-12
-            tag: maven-3-jdk-12
-            target: linux
-          - base: maven:3-jdk-13
-            tag: maven-3-jdk-13
-            target: linux
-          - base: maven:3-jdk-14
-            tag: maven-3-jdk-14
             target: linux
           - base: maven:3-openjdk-17
             tag: maven-3-openjdk-17
@@ -211,6 +193,52 @@ jobs:
             target: linux
           - base: ubuntu
             tag: linux
+            target: linux
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v1
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    - uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        platforms: linux/amd64, linux/arm64
+        target: ${{ matrix.target }}
+        tags: ${{ format('{0}/snyk:{1}', secrets.DOCKER_USERNAME, matrix.tag) }}
+        build-args: |
+          IMAGE=${{ matrix.base }}
+          TAG=${{ matrix.tag }}
+          
+  build-amd64-only:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - base: gradle:6.4
+            tag: gradle-6.4
+            target: linux
+          - base: gradle:6.4-jdk8
+            tag: gradle-6.4-jdk8
+            target: linux
+          - base: gradle:jdk12
+            tag: gradle-jdk12
+            target: linux
+          - base: maven:3-jdk-12
+            tag: maven-3-jdk-12
+            target: linux
+          - base: maven:3-jdk-13
+            tag: maven-3-jdk-13
+            target: linux
+          - base: maven:3-jdk-14
+            tag: maven-3-jdk-14
             target: linux
           - base: alpine
             tag: alpine

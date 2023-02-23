@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 ARG IMAGE
 ARG TAG
 
@@ -13,13 +15,23 @@ CMD ["snyk", "test"]
 
 
 FROM ubuntu as snyk
+ARG TARGETPLATFORM
 RUN apt-get update && apt-get install -y curl
-RUN curl -o ./snyk-linux https://static.snyk.io/cli/latest/snyk-linux && \
-    curl -o ./snyk-linux.sha256 https://static.snyk.io/cli/latest/snyk-linux.sha256 && \
-    sha256sum -c snyk-linux.sha256 && \
-    mv snyk-linux /usr/local/bin/snyk && \
-    chmod +x /usr/local/bin/snyk
+RUN <<EOF
+case $TARGETPLATFORM in
+    "linux/arm64") curl -o ./snyk-linux "https://static.snyk.io/cli/latest/snyk-linux-arm64"
+        curl -o ./snyk-linux.sha256 "https://static.snyk.io/cli/latest/snyk-linux-arm64.sha256" ;;        
+    "linux/amd64") curl -o ./snyk-linux "https://static.snyk.io/cli/latest/snyk-linux"
+        curl -o ./snyk-linux.sha256 "https://static.snyk.io/cli/latest/snyk-linux.sha256" ;;
+    *) echo "Unknown TARGETPLATFORM: ${TARGETPLATFORM}"
+       exit 1 ;;
+esac;
+sha256sum -c snyk-linux.sha256
+mv snyk-linux /usr/local/bin/snyk
+chmod +x /usr/local/bin/snyk
+EOF
 
+# As of now, no arm64 binaries for arm are available
 FROM alpine as snyk-alpine
 RUN apk add --no-cache curl
 RUN curl -o ./snyk-alpine https://static.snyk.io/cli/latest/snyk-alpine && \
