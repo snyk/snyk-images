@@ -13,7 +13,7 @@ CMD ["snyk", "test"]
 
 
 FROM ubuntu as snyk
-RUN apt-get update && apt-get install -y curl
+RUN apt-get update && apt-get install -y curl ca-certificates
 RUN curl -o ./snyk-linux https://static.snyk.io/cli/latest/snyk-linux && \
     curl -o ./snyk-linux.sha256 https://static.snyk.io/cli/latest/snyk-linux.sha256 && \
     sha256sum -c snyk-linux.sha256 && \
