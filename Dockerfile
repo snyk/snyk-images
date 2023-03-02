@@ -36,3 +36,4 @@ COPY --from=snyk-alpine /usr/local/bin/snyk /usr/local/bin/snyk
 
 FROM parent as linux
 COPY --from=snyk /usr/local/bin/snyk /usr/local/bin/snyk
+RUN apt-get update && apt-get install -y ca-certificates
