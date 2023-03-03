@@ -39,6 +39,8 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:golang-1.16 | golang:1.16 |
 | snyk/snyk:golang-1.17 | golang:1.17 |
 | snyk/snyk:golang-1.18 | golang:1.18 |
+| snyk/snyk:golang-1.19 | golang:1.19 |
+| snyk/snyk:golang-1.20 | golang:1.20 |
 | snyk/snyk:gradle | gradle |
 | snyk/snyk:gradle-6.4 | gradle:6.4 |
 | snyk/snyk:gradle-6.4-jdk11 | gradle:6.4-jdk11 |
@@ -55,10 +57,8 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:scala | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
 | snyk/snyk:maven | maven |
 | snyk/snyk:maven-3-jdk-11 | maven:3-jdk-11 |
-| snyk/snyk:maven-3-jdk-12 | maven:3-jdk-12 |
-| snyk/snyk:maven-3-jdk-13 | maven:3-jdk-13 |
-| snyk/snyk:maven-3-jdk-14 | maven:3-jdk-14 |
-| snyk/snyk:maven-3-openjdk-17 | maven:3-openjdk-17 |
+| snyk/snyk:maven-3-jdk-17 | maven:3-eclipse-temurin-17 |
+| snyk/snyk:maven-3-jdk-19 | maven:3-eclipse-temurin-19 |
 | snyk/snyk:maven-3-jdk-8 | maven:3-jdk-8 |
 | snyk/snyk:dotnet | mcr.microsoft.com/dotnet/core/sdk |
 | snyk/snyk:dotnet-2.1 | mcr.microsoft.com/dotnet/core/sdk:2.1 |
@@ -229,6 +229,9 @@ $ docker run --rm -it --env SNYK_TOKEN -v $(PWD):/app snyk/snyk:golang 'snyk cod
 
 #### `snyk/snyk:java` image
 Following [the deprecation of the docker Java image](https://github.com/docker-library/openjdk/issues/505) and with a lack of an alternative image, we had to remove the Java image.
+
+#### `snyk/snyk:maven` image
+Following the deprecation of the docker OpenJDK images of version 12, 13, 14, 17 we don't update these images anymore.
 
 ### Running bootstrap commands
 
