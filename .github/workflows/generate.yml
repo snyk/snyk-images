@@ -1,5 +1,6 @@
 name: "Generate Actions to build Snyk images"
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
