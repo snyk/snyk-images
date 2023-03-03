@@ -35,11 +35,12 @@ maven:3-jdk-13 maven-3-jdk-13
 maven:3-jdk-14 maven-3-jdk-14
 maven:3-openjdk-17 maven-3-openjdk-17
 maven:3-jdk-8 maven-3-jdk-8
-mcr.microsoft.com/dotnet/core/sdk dotnet
+mcr.microsoft.com/dotnet/sdk dotnet
 mcr.microsoft.com/dotnet/core/sdk:2.1 dotnet-2.1
 mcr.microsoft.com/dotnet/core/sdk:2.2 dotnet-2.2
 mcr.microsoft.com/dotnet/core/sdk:3.0 dotnet-3.0
 mcr.microsoft.com/dotnet/core/sdk:3.1 dotnet-3.1
+mcr.microsoft.com/dotnet/core/sdk:6.0 dotnet-6.0
 node
 node:10 node-10
 node:12 node-12
