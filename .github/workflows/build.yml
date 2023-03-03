@@ -240,7 +240,7 @@ jobs:
             tag: ruby-alpine
             target: alpine
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: docker/build-push-action@v1
       env:
         DOCKER_BUILDKIT: "1"
