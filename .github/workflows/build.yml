@@ -71,6 +71,12 @@ jobs:
           - base: golang:1.18
             tag: golang-1.18
             target: linux
+          - base: golang:1.19
+            tag: golang-1.19
+            target: linux
+          - base: golang:1.20
+            tag: golang-1.20
+            target: linux
           - base: gradle
             tag: gradle
             target: linux
@@ -119,17 +125,11 @@ jobs:
           - base: maven:3-jdk-11
             tag: maven-3-jdk-11
             target: linux
-          - base: maven:3-jdk-12
-            tag: maven-3-jdk-12
+          - base: maven:3-eclipse-temurin-17
+            tag: maven-3-jdk-17
             target: linux
-          - base: maven:3-jdk-13
-            tag: maven-3-jdk-13
-            target: linux
-          - base: maven:3-jdk-14
-            tag: maven-3-jdk-14
-            target: linux
-          - base: maven:3-openjdk-17
-            tag: maven-3-openjdk-17
+          - base: maven:3-eclipse-temurin-19
+            tag: maven-3-jdk-19
             target: linux
           - base: maven:3-jdk-8
             tag: maven-3-jdk-8
@@ -246,7 +246,7 @@ jobs:
             tag: ruby-alpine
             target: alpine
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: docker/build-push-action@v1
       env:
         DOCKER_BUILDKIT: "1"

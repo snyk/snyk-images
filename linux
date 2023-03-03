@@ -14,6 +14,8 @@ golang:1.15 golang-1.15
 golang:1.16 golang-1.16
 golang:1.17 golang-1.17
 golang:1.18 golang-1.18
+golang:1.19 golang-1.19
+golang:1.20 golang-1.20
 gradle
 gradle:6.4 gradle-6.4
 gradle:6.4-jdk11 gradle-6.4-jdk11
@@ -29,12 +31,10 @@ gradle:jdk8 gradle-jdk8
 hseeberger/scala-sbt:8u212_1.2.8_2.13.0 sbt
 hseeberger/scala-sbt:8u212_1.2.8_2.13.0 scala
 maven
-maven:3-jdk-11 maven-3-jdk-11
-maven:3-jdk-12 maven-3-jdk-12
-maven:3-jdk-13 maven-3-jdk-13
-maven:3-jdk-14 maven-3-jdk-14
-maven:3-openjdk-17 maven-3-openjdk-17
 maven:3-jdk-8 maven-3-jdk-8
+maven:3-jdk-11 maven-3-jdk-11
+maven:3-eclipse-temurin-17 maven-3-jdk-17
+maven:3-eclipse-temurin-19 maven-3-jdk-19
 mcr.microsoft.com/dotnet/core/sdk dotnet
 mcr.microsoft.com/dotnet/core/sdk:2.1 dotnet-2.1
 mcr.microsoft.com/dotnet/core/sdk:2.2 dotnet-2.2
