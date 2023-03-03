@@ -13,7 +13,7 @@ CMD ["snyk", "test"]
 
 
 FROM ubuntu as snyk
-RUN apt-get update && apt-get upgrade -y && apt-get install -y curl ca-certificates git
+RUN apt-get update  && apt-get install -y curl ca-certificates
 RUN curl -o ./snyk-linux https://static.snyk.io/cli/latest/snyk-linux && \
     curl -o ./snyk-linux.sha256 https://static.snyk.io/cli/latest/snyk-linux.sha256 && \
     sha256sum -c snyk-linux.sha256 && \
@@ -21,14 +21,12 @@ RUN curl -o ./snyk-linux https://static.snyk.io/cli/latest/snyk-linux && \
     chmod +x /usr/local/bin/snyk
 
 FROM alpine as snyk-alpine
-RUN apk update && apk upgrade --no-cache
-RUN apk add --no-cache curl git
+RUN apk update && apk add --no-cache curl git
 RUN curl -o ./snyk-alpine https://static.snyk.io/cli/latest/snyk-alpine && \
     curl -o ./snyk-alpine.sha256 https://static.snyk.io/cli/latest/snyk-alpine.sha256 && \
     sha256sum -c snyk-alpine.sha256 && \
     mv snyk-alpine /usr/local/bin/snyk && \
     chmod +x /usr/local/bin/snyk
-
 
 FROM parent as alpine
 RUN apk update && apk upgrade --no-cache
@@ -38,4 +36,7 @@ COPY --from=snyk-alpine /usr/local/bin/snyk /usr/local/bin/snyk
 
 FROM parent as linux
 COPY --from=snyk /usr/local/bin/snyk /usr/local/bin/snyk
-RUN apt-get update && apt-get upgrade -y && apt-get install -y ca-certificates git
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install -y ca-certificates git
+RUN apt-get auto-remove -y && apt-get clean -y && rm -rf /var/lib/apt/
