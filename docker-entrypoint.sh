@@ -89,6 +89,9 @@ if [ "$INPUT_COMMAND" = "test" -a "$INPUT_SARIF" = "true" ]; then
     fi
 fi
 
+# add workdir as git safe directory
+git config --global --add safe.directory * || true # don't fail
+
 # create the command to invocate as an intermediate string and use eval to run exec with a single string
 # This supports both arguments with spaces and usages where multiple CLI arguments are given as one argument to the entrypoint script.
 cmd_string="$* $JSON_OUTPUT $SARIF_OUTPUT"
