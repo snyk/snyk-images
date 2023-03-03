@@ -32,10 +32,10 @@ RUN curl -o ./snyk-alpine https://static.snyk.io/cli/latest/snyk-alpine && \
 
 FROM parent as alpine
 RUN apk update && apk upgrade --no-cache
-RUN apk add --no-cache libstdc++
+RUN apk add --no-cache libstdc++ git
 COPY --from=snyk-alpine /usr/local/bin/snyk /usr/local/bin/snyk
 
 
 FROM parent as linux
 COPY --from=snyk /usr/local/bin/snyk /usr/local/bin/snyk
-RUN apt-get update && apt-get upgrade -y && apt-get install -y ca-certificates
+RUN apt-get update && apt-get upgrade -y && apt-get install -y ca-certificates git
