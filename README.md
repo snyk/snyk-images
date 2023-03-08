@@ -89,8 +89,8 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:linux | ubuntu |
 
 ### Security
-Please be advised, that the docker image disables git trusted directory checks for all
-directory mounted or accessible within the docker image. Only mount directories into the
+Please be advised, that the docker images disable git trusted directory checks for all
+directories mounted or accessible within the docker image. Only mount directories into the
 docker image that you trust.
 
 ### Usage
