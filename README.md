@@ -14,7 +14,7 @@ A build toolchain for Snyk Docker images.
 
 ## Images
 
-## Current images
+### Current images
 
 | Image | Based on |
 | --- | --- |
@@ -87,6 +87,11 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:ruby-2.7 | ruby:2.7 |
 | snyk/snyk:ruby-alpine | ruby:alpine |
 | snyk/snyk:linux | ubuntu |
+
+### Security
+Please be advised, that the docker image disables git trusted directory checks for all
+directory mounted or accessible within the docker image. Only mount directories into the
+docker image that you trust.
 
 ### Usage
 
