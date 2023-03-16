@@ -193,6 +193,9 @@ jobs:
           - base: python:3.8
             tag: python-3.8
             target: linux
+          - base: python:3.11
+            tag: python-3.11
+            target: linux
           - base: python:3.9-rc
             tag: python-3.9
             target: linux
