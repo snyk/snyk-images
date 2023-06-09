@@ -131,6 +131,9 @@ jobs:
           - base: maven:3-eclipse-temurin-19
             tag: maven-3-jdk-19
             target: linux
+          - base: maven:3-eclipse-temurin-20
+            tag: maven-3-jdk-20
+            target: linux
           - base: maven:3-jdk-8
             tag: maven-3-jdk-8
             target: linux
