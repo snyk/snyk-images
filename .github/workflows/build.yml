@@ -110,6 +110,12 @@ jobs:
           - base: gradle:jdk17
             tag: gradle-jdk17
             target: linux
+          - base: gradle:jdk18
+            tag: gradle-jdk18
+            target: linux
+          - base: gradle:jdk19
+            tag: gradle-jdk19
+            target: linux
           - base: gradle:jdk8
             tag: gradle-jdk8
             target: linux
