@@ -12,6 +12,8 @@ on:
     # every week in order to pick up new parent images and new versions of Snyk
     - cron:  "0 0 * * 0"
   workflow_dispatch:
+  repository_dispatch:
+    types: [build_and_push_images]
 
 jobs:
   build:
@@ -131,6 +133,9 @@ jobs:
           - base: maven
             tag: maven
             target: linux
+          - base: maven:3-jdk-8
+            tag: maven-3-jdk-8
+            target: linux
           - base: maven:3-jdk-11
             tag: maven-3-jdk-11
             target: linux
@@ -142,9 +147,6 @@ jobs:
             target: linux
           - base: maven:3-eclipse-temurin-20
             tag: maven-3-jdk-20
-            target: linux
-          - base: maven:3-jdk-8
-            tag: maven-3-jdk-8
             target: linux
           - base: mcr.microsoft.com/dotnet/core/sdk
             tag: dotnet
