@@ -12,6 +12,8 @@ on:
     # every week in order to pick up new parent images and new versions of Snyk
     - cron:  "0 0 * * 0"
   workflow_dispatch:
+  repository_dispatch:
+    types: [build_and_push_images]
 
 jobs:
   build:
@@ -30,7 +32,7 @@ jobs:
             tag: <%= tag %>
             target: <%= target %><% end %>
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: docker/build-push-action@v1
       env:
         DOCKER_BUILDKIT: "1"
