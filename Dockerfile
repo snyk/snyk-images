@@ -8,20 +8,19 @@ ENV MAVEN_CONFIG="" \
     SNYK_CFG_DISABLESUGGESTIONS=true
 WORKDIR /app
 COPY docker-entrypoint.sh /usr/local/bin/
-# RUN curl --compressed --output install-snyk.py https://raw.githubusercontent.com/snyk/cli/master/scripts/install-snyk.py
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["snyk", "test"]
 
 
 FROM ubuntu as snyk
 RUN apt-get update && apt-get install -y curl python3 python3-requests
-RUN curl --compressed --output /usr/local/bin/install-snyk.py https://raw.githubusercontent.com/snyk/cli/b3c4926867de9e0d9d930c33bc02a49329a7bba2/scripts/install-snyk.py
+RUN curl --compressed --output /usr/local/bin/install-snyk.py https://raw.githubusercontent.com/snyk/cli/master/scripts/install-snyk.py
 RUN chmod +x /usr/local/bin/install-snyk.py
 RUN install-snyk.py latest
 
 FROM alpine as snyk-alpine
 RUN apk update && apk add --no-cache git curl python3 py3-requests
-RUN curl --compressed --output /usr/local/bin/install-snyk.py https://raw.githubusercontent.com/snyk/cli/b3c4926867de9e0d9d930c33bc02a49329a7bba2/scripts/install-snyk.py
+RUN curl --compressed --output /usr/local/bin/install-snyk.py https://raw.githubusercontent.com/snyk/cli/master/scripts/install-snyk.py
 RUN chmod +x /usr/local/bin/install-snyk.py
 RUN install-snyk.py latest
 
