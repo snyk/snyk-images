@@ -13,29 +13,24 @@ CMD ["snyk", "test"]
 
 
 FROM ubuntu as snyk
-RUN apt-get update  && apt-get install -y curl ca-certificates
-RUN curl -o ./snyk-linux https://static.snyk.io/cli/latest/snyk-linux && \
-    curl -o ./snyk-linux.sha256 https://static.snyk.io/cli/latest/snyk-linux.sha256 && \
-    sha256sum -c snyk-linux.sha256 && \
-    mv snyk-linux /usr/local/bin/snyk && \
-    chmod +x /usr/local/bin/snyk
+RUN apt-get update && apt-get install -y curl python3 python3-requests
+RUN curl --compressed --output /usr/local/bin/install-snyk.py https://raw.githubusercontent.com/snyk/cli/master/scripts/install-snyk.py
+RUN chmod +x /usr/local/bin/install-snyk.py
+RUN install-snyk.py latest
 
 FROM alpine as snyk-alpine
-RUN apk update && apk add --no-cache curl git
-RUN curl -o ./snyk-alpine https://static.snyk.io/cli/latest/snyk-alpine && \
-    curl -o ./snyk-alpine.sha256 https://static.snyk.io/cli/latest/snyk-alpine.sha256 && \
-    sha256sum -c snyk-alpine.sha256 && \
-    mv snyk-alpine /usr/local/bin/snyk && \
-    chmod +x /usr/local/bin/snyk
+RUN apk update && apk add --no-cache git curl python3 py3-requests
+RUN curl --compressed --output /usr/local/bin/install-snyk.py https://raw.githubusercontent.com/snyk/cli/master/scripts/install-snyk.py
+RUN chmod +x /usr/local/bin/install-snyk.py
+RUN install-snyk.py latest
 
 FROM parent as alpine
 RUN apk update && apk upgrade --no-cache
 RUN apk add --no-cache libstdc++ git
-COPY --from=snyk-alpine /usr/local/bin/snyk /usr/local/bin/snyk
-
+COPY --from=snyk-alpine ./snyk /usr/local/bin/snyk
 
 FROM parent as linux
-COPY --from=snyk /usr/local/bin/snyk /usr/local/bin/snyk
+COPY --from=snyk ./snyk /usr/local/bin/snyk
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y ca-certificates git
