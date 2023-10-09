@@ -1,3 +1,8 @@
+# +-----------------------------------------------+
+# | WARNING: This file is generated, do not edit!  |
+# | Edit _templates/build.yml.erb instead.        |
+# +-----------------------------------------------+
+
 name: Build and push images
 on:
   push:
@@ -18,6 +23,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CLI_VERSION: ${{ github.event.client_payload.version || 'latest' }}
     strategy:
       fail-fast: false
       matrix:
@@ -274,4 +281,4 @@ jobs:
         target: ${{ matrix.target }}
         repository: snyk/snyk
         tags: ${{ matrix.tag }}
-        build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }}
+        build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }},CLI_VERSION=${{ env.CLI_VERSION }}
