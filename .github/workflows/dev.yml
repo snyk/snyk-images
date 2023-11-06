@@ -184,6 +184,12 @@ jobs:
           - base: node:16
             tag: node-16
             target: linux
+          - base: node:18
+            tag: node-18
+            target: linux
+          - base: node:20
+            tag: node-20
+            target: linux
           - base: node:8
             tag: node-8
             target: linux
