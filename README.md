@@ -10,6 +10,7 @@ A build toolchain for Snyk Docker images.
 
 
 ## Images
+### 
 
 ### Current images
 
@@ -55,8 +56,6 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:gradle-jdk20       | gradle:jdk20                            |
 | snyk/snyk:gradle-jdk21       | gradle:jdk21                            |
 | snyk/snyk:gradle-jdk8        | gradle:jdk8                             |
-| snyk/snyk:sbt                | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
-| snyk/snyk:scala              | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
 | snyk/snyk:maven              | maven                                   |
 | snyk/snyk:maven-3-jdk-11     | maven:3-jdk-11                          |
 | snyk/snyk:maven-3-jdk-17     | maven:3-eclipse-temurin-17              |
@@ -65,19 +64,13 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:maven-3-jdk-21     | maven:3-eclipse-temurin-21              |
 | snyk/snyk:maven-3-jdk-8      | maven:3-jdk-8                           |
 | snyk/snyk:dotnet             | mcr.microsoft.com/dotnet/core/sdk       |
-| snyk/snyk:dotnet-2.1         | mcr.microsoft.com/dotnet/core/sdk:2.1   |
-| snyk/snyk:dotnet-2.2         | mcr.microsoft.com/dotnet/core/sdk:2.2   |
 | snyk/snyk:dotnet-3.0         | mcr.microsoft.com/dotnet/core/sdk:3.0   |
 | snyk/snyk:dotnet-3.1         | mcr.microsoft.com/dotnet/core/sdk:3.1   |
 | snyk/snyk:node               | node                                    |
-| snyk/snyk:node-10            | node:10                                 |
-| snyk/snyk:node-12            | node:12                                 |
-| snyk/snyk:node-13            | node:13                                 |
 | snyk/snyk:node-14            | node:14                                 |
 | snyk/snyk:node-16            | node:16                                 |
 | snyk/snyk:node-18            | node:18                                 |
 | snyk/snyk:node-20            | node:20                                 |
-| snyk/snyk:node-8             | node:8                                  |
 | snyk/snyk:python             | python                                  |
 | snyk/snyk:python-2.7         | python:2.7                              |
 | snyk/snyk:python-3.6         | python:3.6                              |
@@ -94,6 +87,20 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:ruby-2.7           | ruby:2.7                                |
 | snyk/snyk:ruby-alpine        | ruby:alpine                             |
 | snyk/snyk:linux              | ubuntu                                  |
+
+### Deprecated images (not built and updated anymore)
+| Image                        | Based on                                |
+|------------------------------|-----------------------------------------|
+| snyk/snyk:dotnet-2.1         | mcr.microsoft.com/dotnet/core/sdk:2.1   |
+| snyk/snyk:dotnet-2.2         | mcr.microsoft.com/dotnet/core/sdk:2.2   |
+| snyk/snyk:node-8             | node:8                                  |
+| snyk/snyk:node-10            | node:10                                 |
+| snyk/snyk:node-12            | node:12                                 |
+| snyk/snyk:node-13            | node:13                                 |
+| snyk/snyk:node-15            | node:15                                 |
+| snyk/snyk:sbt                | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
+| snyk/snyk:scala              | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
+
 
 ### Security
 Please be advised, that the docker images disable git trusted directory checks for all
