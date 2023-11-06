@@ -128,6 +128,12 @@ jobs:
           - base: gradle:jdk19
             tag: gradle-jdk19
             target: linux
+          - base: gradle:jdk20
+            tag: gradle-jdk20
+            target: linux
+          - base: gradle:jdk21
+            tag: gradle-jdk21
+            target: linux
           - base: gradle:jdk8
             tag: gradle-jdk8
             target: linux
@@ -154,6 +160,9 @@ jobs:
             target: linux
           - base: maven:3-eclipse-temurin-20
             tag: maven-3-jdk-20
+            target: linux
+          - base: maven:3-eclipse-temurin-21
+            tag: maven-3-jdk-21
             target: linux
           - base: mcr.microsoft.com/dotnet/core/sdk
             tag: dotnet
@@ -190,6 +199,12 @@ jobs:
             target: linux
           - base: node:16
             tag: node-16
+            target: linux
+          - base: node:18
+            tag: node-18
+            target: linux
+          - base: node:20
+            tag: node-20
             target: linux
           - base: node:8
             tag: node-8
