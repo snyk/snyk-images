@@ -137,12 +137,6 @@ jobs:
           - base: gradle:jdk8
             tag: gradle-jdk8
             target: linux
-          - base: hseeberger/scala-sbt:8u212_1.2.8_2.13.0
-            tag: sbt
-            target: linux
-          - base: hseeberger/scala-sbt:8u212_1.2.8_2.13.0
-            tag: scala
-            target: linux
           - base: maven
             tag: maven
             target: linux
@@ -167,12 +161,6 @@ jobs:
           - base: mcr.microsoft.com/dotnet/core/sdk
             tag: dotnet
             target: linux
-          - base: mcr.microsoft.com/dotnet/core/sdk:2.1
-            tag: dotnet-2.1
-            target: linux
-          - base: mcr.microsoft.com/dotnet/core/sdk:2.2
-            tag: dotnet-2.2
-            target: linux
           - base: mcr.microsoft.com/dotnet/core/sdk:3.0
             tag: dotnet-3.0
             target: linux
@@ -182,20 +170,8 @@ jobs:
           - base: node
             tag: node
             target: linux
-          - base: node:10
-            tag: node-10
-            target: linux
-          - base: node:12
-            tag: node-12
-            target: linux
-          - base: node:13
-            tag: node-13
-            target: linux
           - base: node:14
             tag: node-14
-            target: linux
-          - base: node:15
-            tag: node-15
             target: linux
           - base: node:16
             tag: node-16
@@ -205,9 +181,6 @@ jobs:
             target: linux
           - base: node:20
             tag: node-20
-            target: linux
-          - base: node:8
-            tag: node-8
             target: linux
           - base: python
             tag: python
@@ -247,6 +220,12 @@ jobs:
             target: linux
           - base: ruby:2.7
             tag: ruby-2.7
+            target: linux
+          - base: sbtscala/scala-sbt
+            tag: scala-sbt
+            target: linux
+          - base: sbtscala/eclipse-temurin-jammy-21.0.1_12_1.9.7_3.3.1
+            tag: scala-sbt-jdk21-1.9.7_3.3.1
             target: linux
           - base: ubuntu
             tag: linux
