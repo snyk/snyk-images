@@ -221,12 +221,6 @@ jobs:
           - base: ruby:2.7
             tag: ruby-2.7
             target: linux
-          - base: sbtscala/scala-sbt
-            tag: scala-sbt
-            target: linux
-          - base: sbtscala/eclipse-temurin-jammy-21.0.1_12_1.9.7_3.3.1
-            tag: scala-sbt-jdk21-1.9.7_3.3.1
-            target: linux
           - base: ubuntu
             tag: linux
             target: linux

@@ -86,8 +86,6 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:ruby-2.6           | ruby:2.6                                |
 | snyk/snyk:ruby-2.7           | ruby:2.7                                |
 | snyk/snyk:ruby-alpine        | ruby:alpine                             |
-| snyk/snyk:scala-sbt          | sbtscala/scala-sbt
-| snyk/snyk:scala-sbt-jdk21-1.9.7_3.3.1 | sbtscala/eclipse-temurin-jammy-21.0.1_12_1.9.7_3.3.1 |
 | snyk/snyk:linux              | ubuntu                                  |
 
 ### Deprecated images (not built and updated anymore)

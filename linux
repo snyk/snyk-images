@@ -61,6 +61,4 @@ ruby:2.4 ruby-2.4
 ruby:2.5 ruby-2.5
 ruby:2.6 ruby-2.6
 ruby:2.7 ruby-2.7
-sbtscala/scala-sbt scala-sbt
-sbtscala/eclipse-temurin-jammy-21.0.1_12_1.9.7_3.3.1 scala-sbt-jdk21-1.9.7_3.3.1
 ubuntu linux
