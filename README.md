@@ -18,7 +18,7 @@ A build toolchain for Snyk Docker images.
 |------------------------------|-----------------------------------------|
 | snyk/snyk:alpine             | alpine                                  |
 | snyk/snyk:cocoapods          | alpine                                  |
-| snyk/snyk:swift              | alpine                                  |
+| snyk/snyk:swift              | swift                                   |
 | snyk/snyk:clojure            | clojure                                 |
 | snyk/snyk:clojure-boot       | clojure:boot                            |
 | snyk/snyk:clojure-lein       | clojure:lein                            |

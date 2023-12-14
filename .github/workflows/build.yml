@@ -221,6 +221,9 @@ jobs:
           - base: ruby:2.7
             tag: ruby-2.7
             target: linux
+          - base: swift
+            tag: swift
+            target: linux
           - base: ubuntu
             tag: linux
             target: linux
@@ -229,9 +232,6 @@ jobs:
             target: alpine
           - base: alpine
             tag: cocoapods
-            target: alpine
-          - base: alpine
-            tag: swift
             target: alpine
           - base: composer
             tag: composer

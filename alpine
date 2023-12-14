@@ -1,6 +1,5 @@
 alpine
 alpine cocoapods
-alpine swift
 composer
 composer php
 docker:18.09 docker-18.09
