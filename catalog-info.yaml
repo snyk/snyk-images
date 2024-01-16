@@ -4,8 +4,8 @@ metadata:
   name: snyk-images
   annotations:
     github.com/project-slug: snyk/snyk-images
-    github.com/team-slug: snyk/hammerhead
+    github.com/team-slug: snyk/cli
 spec:
   type: external-tooling
   lifecycle: "-"
-  owner: hammerhead
+  owner: cli
