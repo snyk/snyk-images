@@ -6,7 +6,7 @@ associated tag.
 Afterwards, please run `ruby build.rb` to generate the dev.yml anew. If you don't have ruby install you can also use a
 docker container.
 ```bash
-docker run -it --rm -v $(pwd):/app ruby:2.6-slim bash
+docker run -it --rm -v $(pwd):/app ruby:slim bash
 $ cd /app && ruby build.rb
 ```
 

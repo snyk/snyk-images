@@ -2,8 +2,6 @@ alpine
 alpine cocoapods
 composer
 composer php
-docker:18.09 docker-18.09
-docker:19.03 docker-19.03
 docker:latest docker-latest
 docker:latest docker
 python:alpine python-alpine
