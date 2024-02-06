@@ -4,10 +4,24 @@ clojure:lein clojure-lein
 clojure:tools-deps clojure-tools-deps
 elixir
 elixir:1.12 elixir-1.12
+elixir:1.11 elixir-1.11
+elixir:1.10 elixir-1.10
 golang
+golang:1.12 golang-1.12
+golang:1.13 golang-1.13
+golang:1.14 golang-1.14
+golang:1.15 golang-1.15
+golang:1.16 golang-1.16
+golang:1.17 golang-1.17
+golang:1.18 golang-1.18
+golang:1.19 golang-1.19
 golang:1.20 golang-1.20
 golang:1.21 golang-1.21
 gradle
+gradle:6.4 gradle-6.4
+gradle:6.4-jdk11 gradle-6.4-jdk11
+gradle:6.4-jdk14 gradle-6.4-jdk14
+gradle:6.4-jdk8 gradle-6.4-jdk8
 gradle:jdk11 gradle-jdk11
 gradle:jdk12 gradle-jdk12
 gradle:jdk13 gradle-jdk13
@@ -23,19 +37,29 @@ maven
 maven:3-jdk-8 maven-3-jdk-8
 maven:3-jdk-11 maven-3-jdk-11
 maven:3-eclipse-temurin-17 maven-3-jdk-17
+maven:3-eclipse-temurin-19 maven-3-jdk-19
 maven:3-eclipse-temurin-20 maven-3-jdk-20
 maven:3-eclipse-temurin-21 maven-3-jdk-21
 mcr.microsoft.com/dotnet/core/sdk dotnet
 mcr.microsoft.com/dotnet/core/sdk:3.0 dotnet-3.0
 mcr.microsoft.com/dotnet/core/sdk:3.1 dotnet-3.1
 node
+node:14 node-14
+node:16 node-16
 node:18 node-18
 node:20 node-20
 python
+python:2.7 python-2.7
+python:3.6 python-3.6
+python:3.7 python-3.7
 python:3.8 python-3.8
 python:3.9 python-3.9
 python:3.10 python-3.10
 python:3.11 python-3.11
 ruby
+ruby:2.4 ruby-2.4
+ruby:2.5 ruby-2.5
+ruby:2.6 ruby-2.6
+ruby:2.7 ruby-2.7
 swift
 ubuntu linux
