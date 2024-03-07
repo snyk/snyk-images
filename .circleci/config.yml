@@ -23,4 +23,5 @@ workflows:
           channel: cli-alerts
 
       - security-scans:
-          context: devex_cli
+          context: devex_cli-public-images
+
