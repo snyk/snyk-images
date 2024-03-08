@@ -45,5 +45,5 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     git \
     && apt-get auto-remove -y \
-    && apt-get clean \
+    && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
