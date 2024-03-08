@@ -62,27 +62,10 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:ruby-alpine        | ruby:alpine                             |
 | snyk/snyk:linux              | ubuntu                                  |
 
-### Images not recommended to use
-We do not recommend using the following images as they are not supported by their vendors anymore, and we will deprecate them in the future.
-we will share a deprecation schedule in due time. 
+### Vendor unsupported base images
+These images are no longer supported by the upstream vendor and should no longer be used. Users of these images should move to a vendor-supported upstream image base immediately.
 
-#### Following images are neither built nor maintained anymore by us
-The following images are due to be deprecated in the future. 
-
-| Image                        | Based on                                |
-|------------------------------|-----------------------------------------|
-| snyk/snyk:dotnet-2.1         | mcr.microsoft.com/dotnet/core/sdk:2.1   |
-| snyk/snyk:dotnet-2.2         | mcr.microsoft.com/dotnet/core/sdk:2.2   |
-| snyk/snyk:node-8             | node:8                                  |
-| snyk/snyk:node-10            | node:10                                 |
-| snyk/snyk:node-12            | node:12                                 |
-| snyk/snyk:node-13            | node:13                                 |
-| snyk/snyk:node-15            | node:15                                 |
-| snyk/snyk:sbt                | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
-| snyk/snyk:scala              | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
-
-#### Following images not supported by their vendors
-The following images will not be maintained in the future, followed by a deprecation process.
+The following images will not be maintained in the future, followed by a sunset process.
 
 | Image                        | Based on                                |
 |------------------------------|-----------------------------------------|
@@ -101,9 +84,16 @@ The following images will not be maintained in the future, followed by a depreca
 | snyk/snyk:gradle-6.4-jdk14   | gradle:6.4-jdk14                        |
 | snyk/snyk:gradle-6.4-jdk8    | gradle:6.4-jdk8                         |
 | snyk/snyk:maven-3-jdk-19     | maven:3-eclipse-temurin-19              |
+| snyk/snyk:dotnet-2.1         | mcr.microsoft.com/dotnet/core/sdk:2.1   |
+| snyk/snyk:dotnet-2.2         | mcr.microsoft.com/dotnet/core/sdk:2.2   |
 | snyk/snyk:dotnet-3.0         | mcr.microsoft.com/dotnet/core/sdk:3.0   |
 | snyk/snyk:dotnet-3.1         | mcr.microsoft.com/dotnet/core/sdk:3.1   |
+| snyk/snyk:node-8             | node:8                                  |
+| snyk/snyk:node-10            | node:10                                 |
+| snyk/snyk:node-12            | node:12                                 |
+| snyk/snyk:node-13            | node:13                                 |
 | snyk/snyk:node-14            | node:14                                 |
+| snyk/snyk:node-15            | node:15                                 |
 | snyk/snyk:node-16            | node:16                                 |
 | snyk/snyk:python-2.7         | python:2.7                              |
 | snyk/snyk:python-3.6         | python:3.6                              |
@@ -112,6 +102,8 @@ The following images will not be maintained in the future, followed by a depreca
 | snyk/snyk:ruby-2.5           | ruby:2.5                                |
 | snyk/snyk:ruby-2.6           | ruby:2.6                                |
 | snyk/snyk:ruby-2.7           | ruby:2.7                                |
+| snyk/snyk:sbt                | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
+| snyk/snyk:scala              | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
 
 ### Security
 Please be advised, that the docker images disable git trusted directory checks for all
