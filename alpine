@@ -4,7 +4,7 @@ composer
 composer php
 docker:18.09 docker-18.09
 docker:19.03 docker-19.03
-docker:latest docker-latest
 docker:latest docker
+docker:latest docker-latest
 python:alpine python-alpine
 ruby:alpine ruby-alpine

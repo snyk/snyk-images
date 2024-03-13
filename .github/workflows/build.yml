@@ -47,14 +47,14 @@ jobs:
           - base: elixir
             tag: elixir
             target: linux
-          - base: elixir:1.12
-            tag: elixir-1.12
+          - base: elixir:1.10
+            tag: elixir-1.10
             target: linux
           - base: elixir:1.11
             tag: elixir-1.11
             target: linux
-          - base: elixir:1.10
-            tag: elixir-1.10
+          - base: elixir:1.12
+            tag: elixir-1.12
             target: linux
           - base: golang
             tag: golang
@@ -140,12 +140,6 @@ jobs:
           - base: maven
             tag: maven
             target: linux
-          - base: maven:3-jdk-8
-            tag: maven-3-jdk-8
-            target: linux
-          - base: maven:3-jdk-11
-            tag: maven-3-jdk-11
-            target: linux
           - base: maven:3-eclipse-temurin-17
             tag: maven-3-jdk-17
             target: linux
@@ -157,6 +151,12 @@ jobs:
             target: linux
           - base: maven:3-eclipse-temurin-21
             tag: maven-3-jdk-21
+            target: linux
+          - base: maven:3-jdk-11
+            tag: maven-3-jdk-11
+            target: linux
+          - base: maven:3-jdk-8
+            tag: maven-3-jdk-8
             target: linux
           - base: mcr.microsoft.com/dotnet/core/sdk
             tag: dotnet
@@ -188,6 +188,12 @@ jobs:
           - base: python:2.7
             tag: python-2.7
             target: linux
+          - base: python:3.10
+            tag: python-3.10
+            target: linux
+          - base: python:3.11
+            tag: python-3.11
+            target: linux
           - base: python:3.6
             tag: python-3.6
             target: linux
@@ -199,12 +205,6 @@ jobs:
             target: linux
           - base: python:3.9
             tag: python-3.9
-            target: linux
-          - base: python:3.10
-            tag: python-3.10
-            target: linux
-          - base: python:3.11
-            tag: python-3.11
             target: linux
           - base: ruby
             tag: ruby
@@ -246,10 +246,10 @@ jobs:
             tag: docker-19.03
             target: alpine
           - base: docker:latest
-            tag: docker-latest
+            tag: docker
             target: alpine
           - base: docker:latest
-            tag: docker
+            tag: docker-latest
             target: alpine
           - base: python:alpine
             tag: python-alpine
@@ -270,3 +270,9 @@ jobs:
         repository: snyk/snyk
         tags: ${{ matrix.tag }}
         build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }},CLI_VERSION=${{ env.CLI_VERSION }}
+    - name: Update docker hub readme
+      uses: peter-evans/dockerhub-description@v4
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: snyk/snyk

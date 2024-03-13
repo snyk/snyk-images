@@ -3,9 +3,9 @@ clojure:boot clojure-boot
 clojure:lein clojure-lein
 clojure:tools-deps clojure-tools-deps
 elixir
-elixir:1.12 elixir-1.12
-elixir:1.11 elixir-1.11
 elixir:1.10 elixir-1.10
+elixir:1.11 elixir-1.11
+elixir:1.12 elixir-1.12
 golang
 golang:1.12 golang-1.12
 golang:1.13 golang-1.13
@@ -34,12 +34,12 @@ gradle:jdk20 gradle-jdk20
 gradle:jdk21 gradle-jdk21
 gradle:jdk8 gradle-jdk8
 maven
-maven:3-jdk-8 maven-3-jdk-8
-maven:3-jdk-11 maven-3-jdk-11
 maven:3-eclipse-temurin-17 maven-3-jdk-17
 maven:3-eclipse-temurin-19 maven-3-jdk-19
 maven:3-eclipse-temurin-20 maven-3-jdk-20
 maven:3-eclipse-temurin-21 maven-3-jdk-21
+maven:3-jdk-11 maven-3-jdk-11
+maven:3-jdk-8 maven-3-jdk-8
 mcr.microsoft.com/dotnet/core/sdk dotnet
 mcr.microsoft.com/dotnet/core/sdk:3.0 dotnet-3.0
 mcr.microsoft.com/dotnet/core/sdk:3.1 dotnet-3.1
@@ -50,12 +50,12 @@ node:18 node-18
 node:20 node-20
 python
 python:2.7 python-2.7
+python:3.10 python-3.10
+python:3.11 python-3.11
 python:3.6 python-3.6
 python:3.7 python-3.7
 python:3.8 python-3.8
 python:3.9 python-3.9
-python:3.10 python-3.10
-python:3.11 python-3.11
 ruby
 ruby:2.4 ruby-2.4
 ruby:2.5 ruby-2.5
