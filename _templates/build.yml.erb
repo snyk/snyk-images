@@ -51,6 +51,9 @@ jobs:
         repository: snyk/snyk
         tags: ${{ matrix.tag }}
         build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }},CLI_VERSION=${{ env.CLI_VERSION }}
+  docs:
+    runs-on: ubuntu-latest
+    steps:
     - name: Update docker hub readme
       uses: peter-evans/dockerhub-description@v4
       with:
