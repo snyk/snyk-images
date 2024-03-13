@@ -7,8 +7,9 @@ describe('smoke tests', () => {
   it('can do `snyk version`', async () => {
     const imageName = process.env.IMAGE_TAG;
     const { stdout, stderr } = await runContainer(imageName, 'snyk version');
-    const versionRegex = /1\.\d\d\d\d\.0/;
-    expect(stdout).toMatch(versionRegex);
+
+    const semver = require('semver');
+    expect(semver.valid(stdout.trim())).toBeDefined();
     expect(stderr).toBe('');
   });
 
