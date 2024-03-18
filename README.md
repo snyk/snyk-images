@@ -1,13 +1,4 @@
-A build toolchain for Snyk Docker images.
-
-## Design goals
-
-* Make it easy to provide images which match upstream development environments, for example
-  covering the range of different software versions and operating systems in common usage
-* Minimize the amount of configuration we need to maintain per image
-* Avoid the need to install a Node development environment for non-Node users
-* Enable images to be automatically built (and rebuilt) regularly
-
+Snyk images is a set of convenience images to include Snyk CLI in your build pipeline.
 
 ## Images
 
