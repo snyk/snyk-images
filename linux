@@ -39,6 +39,7 @@ maven:3-eclipse-temurin-17 maven-3-jdk-17
 maven:3-eclipse-temurin-19 maven-3-jdk-19
 maven:3-eclipse-temurin-20 maven-3-jdk-20
 maven:3-eclipse-temurin-21 maven-3-jdk-21
+maven:3-eclipse-temurin-21 maven-3-jdk-22
 maven:3-jdk-11 maven-3-jdk-11
 maven:3-jdk-8 maven-3-jdk-8
 mcr.microsoft.com/dotnet/core/sdk dotnet

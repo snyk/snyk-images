@@ -47,6 +47,7 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:maven-3-jdk-17     | maven:3-eclipse-temurin-17              |
 | snyk/snyk:maven-3-jdk-20     | maven:3-eclipse-temurin-20              |
 | snyk/snyk:maven-3-jdk-21     | maven:3-eclipse-temurin-21              |
+| snyk/snyk:maven-3-jdk-21     | maven:3-eclipse-temurin-22              |
 | snyk/snyk:maven-3-jdk-8      | maven:3-jdk-8                           |
 | snyk/snyk:dotnet             | mcr.microsoft.com/dotnet/core/sdk       |
 | snyk/snyk:node               | node                                    |
