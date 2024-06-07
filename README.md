@@ -64,9 +64,10 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:linux              | ubuntu                                  |
 
 ### Vendor unsupported base images
-These images are no longer supported by the upstream vendor and should no longer be used. Users of these images should move to a vendor-supported upstream image base immediately.
-
-The following images will not be maintained in the future, followed by a sunset process.
+These images are no longer supported by the upstream vendor and should no longer be used, as such, the images below are no longer maintained, meaning:
+- they will no longer be built and deployed
+- they will be removed from Docker completely on 12th August 2024
+- users of these images should move to a vendor-supported upstream image base immediately
 
 | Image                        | Based on                                |
 |------------------------------|-----------------------------------------|
