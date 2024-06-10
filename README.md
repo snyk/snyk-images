@@ -194,21 +194,7 @@ docker run --rm -it --env SNYK_TOKEN -v /var/run/docker.sock:/var/run/docker.soc
 
 ### Including Snyk in your own images
 
-The easiest way of adding Snyk into your own custom images is to copy the binary from one of the above images. If you're using a `glibc` flavour of Linux (most of them) then add the following `COPY` line to your Dockerfile.
-
-```dockerfile
-FROM ubuntu
-
-COPY --from=snyk/snyk:linux /usr/local/bin/snyk /usr/local/bin/snyk
-```
-
-If you're using a `musl` based distribution like Alpine then you need a different binary.
-
-```dockerfile
-FROM alpine
-
-COPY --from=snyk/snyk:alpine /usr/local/bin/snyk /usr/local/bin/snyk
-```
+A guide on adding Snyk into your own custom images can be found in the Snyk Docs under [User-defined custom images for CLI](https://docs.snyk.io/snyk-scm-ide-and-ci-cd-integrations/snyk-ci-cd-integrations/user-defined-custom-images-for-cli).
 
 #### A note on Go dep support
 
