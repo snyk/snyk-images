@@ -59,30 +59,6 @@ jobs:
           - base: golang
             tag: golang
             target: linux
-          - base: golang:1.12
-            tag: golang-1.12
-            target: linux
-          - base: golang:1.13
-            tag: golang-1.13
-            target: linux
-          - base: golang:1.14
-            tag: golang-1.14
-            target: linux
-          - base: golang:1.15
-            tag: golang-1.15
-            target: linux
-          - base: golang:1.16
-            tag: golang-1.16
-            target: linux
-          - base: golang:1.17
-            tag: golang-1.17
-            target: linux
-          - base: golang:1.18
-            tag: golang-1.18
-            target: linux
-          - base: golang:1.19
-            tag: golang-1.19
-            target: linux
           - base: golang:1.20
             tag: golang-1.20
             target: linux
@@ -94,18 +70,6 @@ jobs:
             target: linux
           - base: gradle
             tag: gradle
-            target: linux
-          - base: gradle:6.4
-            tag: gradle-6.4
-            target: linux
-          - base: gradle:6.4-jdk11
-            tag: gradle-6.4-jdk11
-            target: linux
-          - base: gradle:6.4-jdk14
-            tag: gradle-6.4-jdk14
-            target: linux
-          - base: gradle:6.4-jdk8
-            tag: gradle-6.4-jdk8
             target: linux
           - base: gradle:jdk11
             tag: gradle-jdk11
@@ -146,9 +110,6 @@ jobs:
           - base: maven:3-eclipse-temurin-17
             tag: maven-3-jdk-17
             target: linux
-          - base: maven:3-eclipse-temurin-19
-            tag: maven-3-jdk-19
-            target: linux
           - base: maven:3-eclipse-temurin-20
             tag: maven-3-jdk-20
             target: linux
@@ -167,20 +128,8 @@ jobs:
           - base: mcr.microsoft.com/dotnet/core/sdk
             tag: dotnet
             target: linux
-          - base: mcr.microsoft.com/dotnet/core/sdk:3.0
-            tag: dotnet-3.0
-            target: linux
-          - base: mcr.microsoft.com/dotnet/core/sdk:3.1
-            tag: dotnet-3.1
-            target: linux
           - base: node
             tag: node
-            target: linux
-          - base: node:14
-            tag: node-14
-            target: linux
-          - base: node:16
-            tag: node-16
             target: linux
           - base: node:18
             tag: node-18
@@ -191,8 +140,11 @@ jobs:
           - base: python
             tag: python
             target: linux
-          - base: python:2.7
-            tag: python-2.7
+          - base: python:3.8
+            tag: python-3.8
+            target: linux
+          - base: python:3.9
+            tag: python-3.9
             target: linux
           - base: python:3.10
             tag: python-3.10
@@ -200,32 +152,8 @@ jobs:
           - base: python:3.11
             tag: python-3.11
             target: linux
-          - base: python:3.6
-            tag: python-3.6
-            target: linux
-          - base: python:3.7
-            tag: python-3.7
-            target: linux
-          - base: python:3.8
-            tag: python-3.8
-            target: linux
-          - base: python:3.9
-            tag: python-3.9
-            target: linux
           - base: ruby
             tag: ruby
-            target: linux
-          - base: ruby:2.4
-            tag: ruby-2.4
-            target: linux
-          - base: ruby:2.5
-            tag: ruby-2.5
-            target: linux
-          - base: ruby:2.6
-            tag: ruby-2.6
-            target: linux
-          - base: ruby:2.7
-            tag: ruby-2.7
             target: linux
           - base: swift
             tag: swift
@@ -244,12 +172,6 @@ jobs:
             target: alpine
           - base: composer
             tag: php
-            target: alpine
-          - base: docker:18.09
-            tag: docker-18.09
-            target: alpine
-          - base: docker:19.03
-            tag: docker-19.03
             target: alpine
           - base: docker:latest
             tag: docker
