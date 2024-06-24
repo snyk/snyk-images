@@ -13,55 +13,56 @@ A build toolchain for Snyk Docker images.
 
 ### Current images
 
-| Image                        | Based on                                |
-|------------------------------|-----------------------------------------|
-| snyk/snyk:alpine             | alpine                                  |
-| snyk/snyk:cocoapods          | alpine                                  |
-| snyk/snyk:swift              | swift                                   |
-| snyk/snyk:clojure            | clojure                                 |
-| snyk/snyk:clojure-boot       | clojure:boot                            |
-| snyk/snyk:clojure-lein       | clojure:lein                            |
-| snyk/snyk:clojure-tools-deps | clojure:tools-deps                      |
-| snyk/snyk:composer           | composer                                |
-| snyk/snyk:php                | composer                                |
-| snyk/snyk:docker-latest      | docker:latest                           |
-| snyk/snyk:docker             | docker:stable                           |
-| snyk/snyk:golang             | golang                                  |
-| snyk/snyk:golang-1.20        | golang:1.20                             |
-| snyk/snyk:golang-1.21        | golang:1.21                             |
-| snyk/snyk:golang-1.22        | golang:1.22                             |
-| snyk/snyk:gradle             | gradle                                  |
-| snyk/snyk:gradle-jdk11       | gradle:jdk11                            |
-| snyk/snyk:gradle-jdk12       | gradle:jdk12                            |
-| snyk/snyk:gradle-jdk13       | gradle:jdk13                            |
-| snyk/snyk:gradle-jdk14       | gradle:jdk14                            |
-| snyk/snyk:gradle-jdk16       | gradle:jdk16                            |
-| snyk/snyk:gradle-jdk17       | gradle:jdk17                            |
-| snyk/snyk:gradle-jdk18       | gradle:jdk18                            |
-| snyk/snyk:gradle-jdk19       | gradle:jdk19                            |
-| snyk/snyk:gradle-jdk20       | gradle:jdk20                            |
-| snyk/snyk:gradle-jdk21       | gradle:jdk21                            |
-| snyk/snyk:gradle-jdk8        | gradle:jdk8                             |
-| snyk/snyk:maven              | maven                                   |
-| snyk/snyk:maven-3-jdk-11     | maven:3-jdk-11                          |
-| snyk/snyk:maven-3-jdk-17     | maven:3-eclipse-temurin-17              |
-| snyk/snyk:maven-3-jdk-20     | maven:3-eclipse-temurin-20              |
-| snyk/snyk:maven-3-jdk-21     | maven:3-eclipse-temurin-21              |
-| snyk/snyk:maven-3-jdk-22     | maven:3-eclipse-temurin-22              |
-| snyk/snyk:maven-3-jdk-8      | maven:3-jdk-8                           |
-| snyk/snyk:dotnet             | mcr.microsoft.com/dotnet/core/sdk       |
-| snyk/snyk:node               | node                                    |
-| snyk/snyk:node-18            | node:18                                 |
-| snyk/snyk:node-20            | node:20                                 |
-| snyk/snyk:python             | python                                  |
-| snyk/snyk:python-3.8         | python:3.8                              |
-| snyk/snyk:python-3.9         | python:3.9                              |
-| snyk/snyk:python-3.10        | python:3.10                             |
-| snyk/snyk:python-3.11        | python:3.11                             |
-| snyk/snyk:python-alpine      | python:alpine                           |
-| snyk/snyk:ruby               | ruby                                    |
-| snyk/snyk:ruby-alpine        | ruby:alpine                             |
-| snyk/snyk:linux              | ubuntu                                  |
+| Image                        | Based on                          |
+|------------------------------|-----------------------------------|
+| snyk/snyk:alpine             | alpine                            |
+| snyk/snyk:cocoapods          | alpine                            |
+| snyk/snyk:swift              | swift                             |
+| snyk/snyk:clojure            | clojure                           |
+| snyk/snyk:clojure-boot       | clojure:boot                      |
+| snyk/snyk:clojure-lein       | clojure:lein                      |
+| snyk/snyk:clojure-tools-deps | clojure:tools-deps                |
+| snyk/snyk:composer           | composer                          |
+| snyk/snyk:php                | composer                          |
+| snyk/snyk:docker-latest      | docker:latest                     |
+| snyk/snyk:docker             | docker:stable                     |
+| snyk/snyk:golang             | golang                            |
+| snyk/snyk:golang-1.20        | golang:1.20                       |
+| snyk/snyk:golang-1.21        | golang:1.21                       |
+| snyk/snyk:golang-1.22        | golang:1.22                       |
+| snyk/snyk:gradle             | gradle                            |
+| snyk/snyk:gradle-jdk11       | gradle:jdk11                      |
+| snyk/snyk:gradle-jdk12       | gradle:jdk12                      |
+| snyk/snyk:gradle-jdk13       | gradle:jdk13                      |
+| snyk/snyk:gradle-jdk14       | gradle:jdk14                      |
+| snyk/snyk:gradle-jdk16       | gradle:jdk16                      |
+| snyk/snyk:gradle-jdk17       | gradle:jdk17                      |
+| snyk/snyk:gradle-jdk18       | gradle:jdk18                      |
+| snyk/snyk:gradle-jdk19       | gradle:jdk19                      |
+| snyk/snyk:gradle-jdk20       | gradle:jdk20                      |
+| snyk/snyk:gradle-jdk21       | gradle:jdk21                      |
+| snyk/snyk:gradle-jdk8        | gradle:jdk8                       |
+| snyk/snyk:maven              | maven                             |
+| snyk/snyk:maven-3-jdk-11     | maven:3-jdk-11                    |
+| snyk/snyk:maven-3-jdk-17     | maven:3-eclipse-temurin-17        |
+| snyk/snyk:maven-3-jdk-20     | maven:3-eclipse-temurin-20        |
+| snyk/snyk:maven-3-jdk-21     | maven:3-eclipse-temurin-21        |
+| snyk/snyk:maven-3-jdk-22     | maven:3-eclipse-temurin-22        |
+| snyk/snyk:maven-3-jdk-8      | maven:3-jdk-8                     |
+| snyk/snyk:dotnet             | mcr.microsoft.com/dotnet/core/sdk |
+| snyk/snyk:node               | node                              |
+| snyk/snyk:node-18            | node:18                           |
+| snyk/snyk:node-20            | node:20                           |
+| snyk/snyk:node-22            | node:22                           |
+| snyk/snyk:python             | python                            |
+| snyk/snyk:python-3.8         | python:3.8                        |
+| snyk/snyk:python-3.9         | python:3.9                        |
+| snyk/snyk:python-3.10        | python:3.10                       |
+| snyk/snyk:python-3.11        | python:3.11                       |
+| snyk/snyk:python-alpine      | python:alpine                     |
+| snyk/snyk:ruby               | ruby                              |
+| snyk/snyk:ruby-alpine        | ruby:alpine                       |
+| snyk/snyk:linux              | ubuntu                            |
 
 ### Vendor unsupported base images
 These images are no longer supported by the upstream vendor and should no longer be used, as such, the images below are no longer maintained, meaning:
