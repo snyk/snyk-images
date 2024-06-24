@@ -137,6 +137,9 @@ jobs:
           - base: node:20
             tag: node-20
             target: linux
+          - base: node:22
+            tag: node-22
+            target: linux
           - base: python
             tag: python
             target: linux

@@ -33,6 +33,7 @@ mcr.microsoft.com/dotnet/core/sdk dotnet
 node
 node:18 node-18
 node:20 node-20
+node:22 node-22
 python
 python:3.8 python-3.8
 python:3.9 python-3.9
