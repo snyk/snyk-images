@@ -69,6 +69,8 @@ These images are no longer supported by the upstream vendor and should no longer
 - they will be removed from Docker completely on 12th August 2024
 - users of these images should move to a vendor-supported upstream image base immediately
 
+You can read our product documentation outlining product announcement and instructions on how to build your own image [here](https://docs.snyk.io/scm-ide-and-ci-cd-workflow-and-integrations/snyk-ci-cd-integrations/user-defined-custom-images-for-cli).
+
 | Image                        | Based on                                |
 |------------------------------|-----------------------------------------|
 | snyk/snyk:docker-18.09       | docker:18.09                            |
