@@ -1,4 +1,4 @@
-A build toolchain for Snyk Docker images.
+A build toolchain for Snyk Docker images. 
 
 ## Design goals
 
