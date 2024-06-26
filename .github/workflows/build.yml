@@ -128,9 +128,6 @@ jobs:
           - base: mcr.microsoft.com/dotnet/core/sdk
             tag: dotnet
             target: linux
-          - base: mcr.microsoft.com/dotnet/sdk:6.0
-            tag: dotnet-6.0
-            target: linux
           - base: mcr.microsoft.com/dotnet/sdk:8.0
             tag: dotnet-8.0
             target: linux
