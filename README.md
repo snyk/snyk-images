@@ -50,16 +50,20 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:maven-3-jdk-22     | maven:3-eclipse-temurin-22              |
 | snyk/snyk:maven-3-jdk-8      | maven:3-jdk-8                           |
 | snyk/snyk:dotnet             | mcr.microsoft.com/dotnet/core/sdk       |
+| snyk/snyk:dotnet-8.0         | mcr.microsoft.com/dotnet/sdk:8.0        |
 | snyk/snyk:node               | node                                    |
 | snyk/snyk:node-18            | node:18                                 |
 | snyk/snyk:node-20            | node:20                                 |
+| snyk/snyk:node-22            | node:22                                 |
 | snyk/snyk:python             | python                                  |
 | snyk/snyk:python-3.8         | python:3.8                              |
 | snyk/snyk:python-3.9         | python:3.9                              |
 | snyk/snyk:python-3.10        | python:3.10                             |
 | snyk/snyk:python-3.11        | python:3.11                             |
+| snyk/snyk:python-3.13        | python:3.13                             |
 | snyk/snyk:python-alpine      | python:alpine                           |
 | snyk/snyk:ruby               | ruby                                    |
+| snyk/snyk:ruby-3.3           | ruby:3.3                                |
 | snyk/snyk:ruby-alpine        | ruby:alpine                             |
 | snyk/snyk:linux              | ubuntu                                  |
 
