@@ -65,7 +65,7 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:ruby-3.3                                 | ruby:3.3                          |
 | snyk/snyk:ruby-alpine                              | ruby:alpine                       |
 | snyk/snyk:linux                                    | ubuntu                            |
-| snyk/snyk:eclipse-temurin-jammy-22_36_1.10.0_3.4.2 | sbtscala/scala-sbt                |
+| snyk/snyk:eclipse-temurin-jammy-22_36_1.10.0_3.4.2 | scala:3.4.2-sbt:1.10.0            |
 
 ### Vendor unsupported base images
 These images are no longer supported by the upstream vendor and should no longer be used, as such, the images below are no longer maintained, meaning:
