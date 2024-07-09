@@ -171,6 +171,9 @@ jobs:
           - base: ubuntu
             tag: linux
             target: linux
+          - base: sbtscala/scala-sbt:eclipse-temurin-jammy-22_36_1.10.0_3.4.2
+            tag: sbt1.10.0-scala3.4.2
+            target: linux
           - base: alpine
             tag: alpine
             target: alpine
