@@ -44,4 +44,4 @@ ruby
 ruby:3.3 ruby-3.3
 swift
 ubuntu linux
-sbtscala/scala-sbt eclipse-temurin-jammy-22_36_1.10.0_3.4.2
+sbtscala/scala-sbt:eclipse-temurin-jammy-22_36_1.10.0_3.4.2 sbt1.10.0-scala3.4.2
