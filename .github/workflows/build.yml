@@ -12,6 +12,10 @@ on:
     - "*"
     - "!README.md"
     - "!build.rb"
+  schedule:
+    # As well as running when we make changes we should run at least
+    # every week in order to pick up new parent images and new versions of Snyk
+    - cron:  "0 0 * * 0"
   workflow_dispatch:
   repository_dispatch:
     types: [build_and_push_images]
@@ -153,6 +157,9 @@ jobs:
             target: linux
           - base: python:3.11
             tag: python-3.11
+            target: linux
+          - base: python:3.12
+            tag: python-3.12
             target: linux
           - base: ruby
             tag: ruby
