@@ -12,6 +12,7 @@ jobs:
       - checkout
       - prodsec/security_scans:
           mode: auto
+          release-branch: master
 
 workflows:
   CICD:
@@ -21,6 +22,7 @@ workflows:
           context:
             - snyk-bot-slack
           channel: cli-alerts
+          
 
       - security-scans:
           context: devex_cli-public-images
