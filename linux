@@ -10,6 +10,7 @@ golang
 golang:1.20 golang-1.20
 golang:1.21 golang-1.21
 golang:1.22 golang-1.22
+golang:1.23 golang-1.23
 gradle
 gradle:jdk11 gradle-jdk11
 gradle:jdk12 gradle-jdk12
