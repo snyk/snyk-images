@@ -30,6 +30,7 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:golang-1.20          | golang:1.20                       |
 | snyk/snyk:golang-1.21          | golang:1.21                       |
 | snyk/snyk:golang-1.22          | golang:1.22                       |
+| snyk/snyk:golang-1.23          | golang:1.23                       |
 | snyk/snyk:gradle               | gradle                            |
 | snyk/snyk:gradle-jdk11         | gradle:jdk11                      |
 | snyk/snyk:gradle-jdk12         | gradle:jdk12                      |
