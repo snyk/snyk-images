@@ -1,0 +1,228 @@
+# +-----------------------------------------------+
+# | WARNING: This file is generated, do not edit!  |
+# | Edit _templates/distribution-channel.yml.erb instead.        |
+# +-----------------------------------------------+
+
+name: Build and push images (rc)
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - "**/*"
+    - "!README.md"
+    - "!build.rb"
+  schedule:
+    # As well as running when we make changes we should run at least
+    # every week in order to pick up new parent images and new versions of Snyk
+    - cron:  "0 0 * * 0"
+  workflow_dispatch:
+  repository_dispatch:
+    types: [build_and_push_images]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      CLI_VERSION: ${{ github.event.client_payload.version || 'rc' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        base:
+          - clojure
+        tag:
+          - clojure-rc
+        target:
+          - linux
+        include:
+          - base: clojure:boot
+            tag: clojure-boot-rc
+            target: linux
+          - base: clojure:lein
+            tag: clojure-lein-rc
+            target: linux
+          - base: clojure:tools-deps
+            tag: clojure-tools-deps-rc
+            target: linux
+          - base: elixir
+            tag: elixir-rc
+            target: linux
+          - base: elixir:1.10
+            tag: elixir-1.10-rc
+            target: linux
+          - base: elixir:1.11
+            tag: elixir-1.11-rc
+            target: linux
+          - base: elixir:1.12
+            tag: elixir-1.12-rc
+            target: linux
+          - base: golang
+            tag: golang-rc
+            target: linux
+          - base: golang:1.20
+            tag: golang-1.20-rc
+            target: linux
+          - base: golang:1.21
+            tag: golang-1.21-rc
+            target: linux
+          - base: golang:1.22
+            tag: golang-1.22-rc
+            target: linux
+          - base: golang:1.23
+            tag: golang-1.23-rc
+            target: linux
+          - base: gradle
+            tag: gradle-rc
+            target: linux
+          - base: gradle:jdk11
+            tag: gradle-jdk11-rc
+            target: linux
+          - base: gradle:jdk12
+            tag: gradle-jdk12-rc
+            target: linux
+          - base: gradle:jdk13
+            tag: gradle-jdk13-rc
+            target: linux
+          - base: gradle:jdk14
+            tag: gradle-jdk14-rc
+            target: linux
+          - base: gradle:jdk16
+            tag: gradle-jdk16-rc
+            target: linux
+          - base: gradle:jdk17
+            tag: gradle-jdk17-rc
+            target: linux
+          - base: gradle:jdk18
+            tag: gradle-jdk18-rc
+            target: linux
+          - base: gradle:jdk19
+            tag: gradle-jdk19-rc
+            target: linux
+          - base: gradle:jdk20
+            tag: gradle-jdk20-rc
+            target: linux
+          - base: gradle:jdk21
+            tag: gradle-jdk21-rc
+            target: linux
+          - base: gradle:jdk8
+            tag: gradle-jdk8-rc
+            target: linux
+          - base: maven
+            tag: maven-rc
+            target: linux
+          - base: maven:3-eclipse-temurin-17
+            tag: maven-3-jdk-17-rc
+            target: linux
+          - base: maven:3-eclipse-temurin-20
+            tag: maven-3-jdk-20-rc
+            target: linux
+          - base: maven:3-eclipse-temurin-21
+            tag: maven-3-jdk-21-rc
+            target: linux
+          - base: maven:3-eclipse-temurin-22
+            tag: maven-3-jdk-22-rc
+            target: linux
+          - base: maven:3-jdk-11
+            tag: maven-3-jdk-11-rc
+            target: linux
+          - base: maven:3-jdk-8
+            tag: maven-3-jdk-8-rc
+            target: linux
+          - base: mcr.microsoft.com/dotnet/core/sdk
+            tag: dotnet-rc
+            target: linux
+          - base: mcr.microsoft.com/dotnet/sdk:8.0
+            tag: dotnet-8.0-rc
+            target: linux
+          - base: node
+            tag: node-rc
+            target: linux
+          - base: node:18
+            tag: node-18-rc
+            target: linux
+          - base: node:20
+            tag: node-20-rc
+            target: linux
+          - base: node:22
+            tag: node-22-rc
+            target: linux
+          - base: python
+            tag: python-rc
+            target: linux
+          - base: python:3.8
+            tag: python-3.8-rc
+            target: linux
+          - base: python:3.9
+            tag: python-3.9-rc
+            target: linux
+          - base: python:3.10
+            tag: python-3.10-rc
+            target: linux
+          - base: python:3.11
+            tag: python-3.11-rc
+            target: linux
+          - base: python:3.12
+            tag: python-3.12-rc
+            target: linux
+          - base: ruby
+            tag: ruby-rc
+            target: linux
+          - base: ruby:3.3
+            tag: ruby-3.3-rc
+            target: linux
+          - base: swift
+            tag: swift-rc
+            target: linux
+          - base: ubuntu
+            tag: linux-rc
+            target: linux
+          - base: sbtscala/scala-sbt:eclipse-temurin-jammy-22_36_1.10.0_3.4.2
+            tag: sbt1.10.0-scala3.4.2-rc
+            target: linux
+          - base: alpine
+            tag: alpine-rc
+            target: alpine
+          - base: alpine
+            tag: cocoapods-rc
+            target: alpine
+          - base: composer
+            tag: composer-rc
+            target: alpine
+          - base: composer
+            tag: php-rc
+            target: alpine
+          - base: docker:latest
+            tag: docker-rc
+            target: alpine
+          - base: docker:latest
+            tag: docker-latest-rc
+            target: alpine
+          - base: python:alpine
+            tag: python-alpine-rc
+            target: alpine
+          - base: ruby:alpine
+            tag: ruby-alpine-rc
+            target: alpine
+    steps:
+    - uses: actions/checkout@v3
+    - uses: docker/build-push-action@v1
+      env:
+        DOCKER_BUILDKIT: "1"
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        add_git_labels: true
+        target: ${{ matrix.target }}
+        repository: snyk/snyk
+        tags: ${{ matrix.tag }}
+        build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }},CLI_VERSION=${{ env.CLI_VERSION }}
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Update docker hub readme
+      uses: peter-evans/dockerhub-description@v4
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: snyk/snyk
