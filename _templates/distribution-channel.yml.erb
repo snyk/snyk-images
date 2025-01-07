@@ -31,12 +31,12 @@ jobs:
         base:
           - <%= @seed[0] %>
         tag:
-          - <%= @seed[1] %>-<%= @distribution_channel %>
+          - <%= @seed[1] %>
         target:
           - <%= @seed[2] %>
         include:<% @images.each do |base,tag,target| %>
           - base: <%= base %>
-            tag: <%= tag %>-<%= @distribution_channel %>
+            tag: <%= tag %>
             target: <%= target %><% end %>
     steps:
     - uses: actions/checkout@v3
@@ -50,7 +50,7 @@ jobs:
         target: ${{ matrix.target }}
         repository: snyk/snyk
         tags: ${{ matrix.tag }}
-        build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }},CLI_VERSION=${{ env.CLI_VERSION }}
+        build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }}<%= @post_fix %>,CLI_VERSION=${{ env.CLI_VERSION }}
   docs:
     runs-on: ubuntu-latest
     steps:

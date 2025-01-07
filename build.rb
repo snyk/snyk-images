@@ -31,17 +31,25 @@ File.open(".github/workflows/dev.yml", "w") { |file| file.puts renderer.result()
 # contents of workflow doesn't trigger it
 File.open(".generated", "w") { |file| file.puts DateTime.now.iso8601 }
 
-# Generate the build.yml
-templatename = File.join("_templates", "build.yml.erb")
-renderer = ERB.new(File.read(templatename))
-File.open(".github/workflows/build.yml", "w") { |file| file.puts renderer.result() }
 
-# Generate workflows for the other distribution channels
-["preview", "rc"].each do |distribution|
+# Available distributions of snyk
+# https://docs.snyk.io/snyk-cli/releases-and-channels-for-the-snyk-cli
+distribution_map = {
+  "stable" => "",
+  "preview" => "-preview",
+  "rc" => "-rc"
+}
+
+
+# Generate workflows for each distribution channel
+distribution_map.each do |distribution, post_fix|
   @distribution_channel = distribution
+  @post_fix = post_fix
+  
   # Generate the workflow .yml
   templatename = File.join("_templates", "distribution-channel.yml.erb")
   renderer = ERB.new(File.read(templatename))
+
   File.open(".github/workflows/" + distribution + ".yml", "w") { |file| file.puts renderer.result() }
 end
 
