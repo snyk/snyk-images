@@ -1,6 +1,6 @@
 # +-----------------------------------------------+
 # | WARNING: This file is generated, do not edit!  |
-# | Edit _templates/preview.yml.erb instead.        |
+# | Edit _templates/distribution-channel.yml.erb instead.        |
 # +-----------------------------------------------+
 
 name: Build and push images (preview)
@@ -35,14 +35,11 @@ jobs:
         target:
           - linux
         include:
+          - base: ubuntu
+            tag: linux-preview
+            target: linux
           - base: alpine
             tag: alpine-preview
-            target: alpine
-          - base: docker:latest
-            tag: docker-preview
-            target: alpine
-          - base: docker:latest
-            tag: docker-latest-preview
             target: alpine
     steps:
     - uses: actions/checkout@v3
