@@ -1,0 +1,63 @@
+# +-----------------------------------------------+
+# | WARNING: This file is generated, do not edit!  |
+# | Edit _templates/distribution-channel.yml.erb instead.        |
+# +-----------------------------------------------+
+
+name: Build and push images (rc)
+on:
+  push:
+    branches:
+    - "**"
+    paths:
+    - "*"
+    - "!README.md"
+    - "!build.rb"
+  schedule:
+    # As well as running when we make changes we should run at least
+    # every week in order to pick up new parent images and new versions of Snyk
+    - cron:  "0 0 * * 0"
+  workflow_dispatch:
+  repository_dispatch:
+    types: [build_and_push_images]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      CLI_VERSION: ${{ github.event.client_payload.version || 'rc' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        base:
+          - clojure
+        tag:
+          - clojure-rc
+        target:
+          - linux
+        include:
+          - base: alpine
+            tag: alpine-rc
+            target: alpine
+    steps:
+    - uses: actions/checkout@v3
+    - uses: docker/build-push-action@v1
+      env:
+        DOCKER_BUILDKIT: "1"
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        add_git_labels: true
+        target: ${{ matrix.target }}
+        repository: snyk/snyk
+        tags: ${{ matrix.tag }}
+        build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }},CLI_VERSION=${{ env.CLI_VERSION }}
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Update docker hub readme
+      uses: peter-evans/dockerhub-description@v4
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: snyk/snyk
