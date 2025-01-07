@@ -7,9 +7,9 @@ name: Build and push images (<%= @distribution_channel %>)
 on:
   push:
     branches:
-    - "**"
+    - master
     paths:
-    - "*"
+    - "**/*"
     - "!README.md"
     - "!build.rb"
   schedule:
