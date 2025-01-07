@@ -2,7 +2,6 @@
 # | WARNING: This file is generated, do not edit!  |
 # | Edit _templates/distribution-channel.yml.erb instead.        |
 # +-----------------------------------------------+
-
 name: Build and push images (preview)
 on:
   push:
