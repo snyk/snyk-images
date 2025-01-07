@@ -36,10 +36,14 @@ templatename = File.join("_templates", "build.yml.erb")
 renderer = ERB.new(File.read(templatename))
 File.open(".github/workflows/build.yml", "w") { |file| file.puts renderer.result() }
 
-# Generate the build.yml
-templatename = File.join("_templates", "preview.yml.erb")
-renderer = ERB.new(File.read(templatename))
-File.open(".github/workflows/preview.yml", "w") { |file| file.puts renderer.result() }
+# Generate workflows for the other distribution channels
+["preview", "rc"].each do |distribution|
+  @distribution_channel = distribution
+  # Generate the workflow .yml
+  templatename = File.join("_templates", "distribution-channel.yml.erb")
+  renderer = ERB.new(File.read(templatename))
+  File.open(".github/workflows/" + distribution + ".yml", "w") { |file| file.puts renderer.result() }
+end
 
 # We need to write a file to trigger the image build action, as just changing the
 # contents of workflow doesn't trigger it

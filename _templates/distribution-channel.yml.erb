@@ -1,11 +1,13 @@
 # +-----------------------------------------------+
 # | WARNING: This file is generated, do not edit!  |
-# | Edit _templates/preview.yml.erb instead.        |
+# | Edit _templates/distribution-channel.yml.erb instead.        |
 # +-----------------------------------------------+
 
-name: Build and push images (preview)
+name: Build and push images (<%= @distribution_channel %>)
 on:
   push:
+    branches:
+    - "**"
     paths:
     - "*"
     - "!README.md"
@@ -22,19 +24,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      CLI_VERSION: ${{ github.event.client_payload.version || 'preview' }}
+      CLI_VERSION: ${{ github.event.client_payload.version || '<%= @distribution_channel %>' }}
     strategy:
       fail-fast: false
       matrix:
         base:
           - <%= @seed[0] %>
         tag:
-          - <%= @seed[1] %>
+          - <%= @seed[1] %>-<%= @distribution_channel %>
         target:
           - <%= @seed[2] %>
         include:<% @images.each do |base,tag,target| %>
           - base: <%= base %>
-            tag: <%= tag %>-preview
+            tag: <%= tag %>-<%= @distribution_channel %>
             target: <%= target %><% end %>
     steps:
     - uses: actions/checkout@v3
