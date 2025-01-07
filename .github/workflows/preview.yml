@@ -3,7 +3,7 @@
 # | Edit _templates/preview.yml.erb instead.        |
 # +-----------------------------------------------+
 
-name: Build and push images
+name: Build and push images (preview)
 on:
   push:
     branches:
@@ -31,7 +31,7 @@ jobs:
         base:
           - clojure
         tag:
-          - clojure
+          - clojure-preview
         target:
           - linux
         include:
