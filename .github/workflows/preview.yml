@@ -6,8 +6,6 @@
 name: Build and push images (preview)
 on:
   push:
-    branches:
-    - master
     paths:
     - "**/*"
     - "!README.md"
