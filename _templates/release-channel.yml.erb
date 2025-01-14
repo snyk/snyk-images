@@ -53,7 +53,7 @@ jobs:
         add_git_labels: true
         target: ${{ matrix.target }}
         repository: snyk/snyk
-        tags: ${{ matrix.tag }}
+        tags: ${{ matrix.tag }}<%= @post_fix %>
         build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }}<%= @post_fix %>,CLI_VERSION=${{ env.CLI_VERSION }}
   docs:
     runs-on: ubuntu-latest
