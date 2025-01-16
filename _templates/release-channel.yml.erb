@@ -1,15 +1,15 @@
 # +-----------------------------------------------+
 # | WARNING: This file is generated, do not edit!  |
-# | Edit _templates/build.yml.erb instead.        |
+# | Edit _templates/release-channel.yml.erb instead.        |
 # +-----------------------------------------------+
 
-name: Build and push images
+name: Build and push images (<%= @release_channel %>)
 on:
   push:
     branches:
     - master
     paths:
-    - "*"
+    - "**/*"
     - "!README.md"
     - "!build.rb"
   schedule:
@@ -23,8 +23,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'schedule' || 
+      github.event_name == 'push' ||
+      (github.event_name == 'repository_dispatch' && github.event.client_payload.release_channel == '<%= @release_channel %>')
     env:
-      CLI_VERSION: ${{ github.event.client_payload.version || 'latest' }}
+      CLI_VERSION: ${{ github.event.client_payload.version || '<%= @release_channel %>' }}
     strategy:
       fail-fast: false
       matrix:
@@ -49,8 +53,8 @@ jobs:
         add_git_labels: true
         target: ${{ matrix.target }}
         repository: snyk/snyk
-        tags: ${{ matrix.tag }}
-        build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }},CLI_VERSION=${{ env.CLI_VERSION }}
+        tags: ${{ matrix.tag }}<%= @post_fix %>
+        build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }}<%= @post_fix %>,CLI_VERSION=${{ env.CLI_VERSION }}
   docs:
     runs-on: ubuntu-latest
     steps:

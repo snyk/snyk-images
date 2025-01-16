@@ -1,15 +1,15 @@
 # +-----------------------------------------------+
 # | WARNING: This file is generated, do not edit!  |
-# | Edit _templates/build.yml.erb instead.        |
+# | Edit _templates/release-channel.yml.erb instead.        |
 # +-----------------------------------------------+
 
-name: Build and push images
+name: Build and push images (stable)
 on:
   push:
     branches:
     - master
     paths:
-    - "*"
+    - "**/*"
     - "!README.md"
     - "!build.rb"
   schedule:
@@ -23,8 +23,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'schedule' || 
+      github.event_name == 'push' ||
+      (github.event_name == 'repository_dispatch' && github.event.client_payload.release_channel == 'stable')
     env:
-      CLI_VERSION: ${{ github.event.client_payload.version || 'latest' }}
+      CLI_VERSION: ${{ github.event.client_payload.version || 'stable' }}
     strategy:
       fail-fast: false
       matrix:
