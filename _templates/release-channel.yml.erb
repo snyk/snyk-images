@@ -55,6 +55,15 @@ jobs:
         repository: snyk/snyk
         tags: ${{ matrix.tag }}<%= @post_fix %>
         build_args: IMAGE=${{ matrix.base }},TAG=${{ matrix.tag }}<%= @post_fix %>,CLI_VERSION=${{ env.CLI_VERSION }}
+    - name: Run Snyk to check Docker image for vulnerabilities
+      uses: snyk/actions/docker@master
+      continue-on-error: true
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        image: ${{ matrix.tag }}
+        command: monitor
+        args: --project-name=snyk/${{ matrix.tag }}<%= @post_fix %>
   docs:
     runs-on: ubuntu-latest
     steps:
