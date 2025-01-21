@@ -228,6 +228,7 @@ jobs:
       with:
         image: snyk/snyk:${{ matrix.tag }}-rc
         command: monitor
+        args: --target-reference=${{ matrix.tag }}-rc --project-name=${{ matrix.tag }}-rc
   docs:
     runs-on: ubuntu-latest
     steps:

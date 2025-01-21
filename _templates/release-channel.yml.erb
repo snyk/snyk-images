@@ -63,6 +63,7 @@ jobs:
       with:
         image: snyk/snyk:${{ matrix.tag }}<%= @post_fix %>
         command: monitor
+        args: --target-reference=${{ matrix.tag }}<%= @post_fix %> --project-name=${{ matrix.tag }}<%= @post_fix %>
   docs:
     runs-on: ubuntu-latest
     steps:
