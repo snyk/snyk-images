@@ -61,9 +61,8 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-        image: ${{ matrix.tag }}<%= @post_fix %>
+        image: snyk/snyk:${{ matrix.tag }}<%= @post_fix %>
         command: monitor
-        args: --project-name=snyk/${{ matrix.tag }}<%= @post_fix %>
   docs:
     runs-on: ubuntu-latest
     steps:

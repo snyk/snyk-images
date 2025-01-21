@@ -226,9 +226,8 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-        image: ${{ matrix.tag }}-rc
+        image: snyk/snyk:${{ matrix.tag }}-rc
         command: monitor
-        args: --project-name=snyk/${{ matrix.tag }}-rc
   docs:
     runs-on: ubuntu-latest
     steps:
