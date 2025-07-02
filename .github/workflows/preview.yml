@@ -5,7 +5,6 @@
 
 name: Build and push images (preview)
 on:
-  workflow_dispatch:
   push:
     branches:
     - master
@@ -21,14 +20,33 @@ on:
   # See more: https://github.com/snyk/cli/blob/cb8c5b44ca3fe05b0e15145eb1fd3cb63c0e56af/release-scripts/upload-artifacts.sh#L124
   repository_dispatch:
     types: [build_and_push_images]
+  workflow_run:
+    workflows: [Build Base Images]
+    types: [completed]
+  workflow_dispatch:
 
 jobs:
+  on-base-images-build-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - run: echo 'The triggering workflow passed'
+  on-base-images-build-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: |
+          echo 'The triggering workflow failed'
+          exit 1
   build:
     runs-on: ubuntu-latest
+    # Since we want to trigger these builds with specific payload events from the CLI release process
+    # we need to duplicate the conditions from the `on` section.
     if: |
       github.event_name == 'schedule' ||
       github.event_name == 'push' ||
       github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
       (github.event_name == 'repository_dispatch' && github.event.client_payload.release_channel == 'preview')
     env:
       CLI_VERSION: ${{ github.event.client_payload.version || 'preview' }}
