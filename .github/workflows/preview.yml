@@ -1,10 +1,11 @@
-# +-----------------------------------------------+
-# | WARNING: This file is generated, do not edit!  |
-# | Edit _templates/release-channel.yml.erb instead.        |
-# +-----------------------------------------------+
+# +-------------------------------------------------+
+# | WARNING: This file is generated, do not edit!   |
+# | Edit _templates/release-channel.yml.erb instead.|
+# +-------------------------------------------------+
 
 name: Build and push images (preview)
 on:
+  workflow_dispatch:
   push:
     branches:
     - master
@@ -14,9 +15,10 @@ on:
     - "!build.rb"
   schedule:
     # As well as running when we make changes we should run at least
-    # every week in order to pick up new parent images and new versions of Snyk
+    # every week in order to pick up new parent images and new versions of Snyk.
     - cron:  "0 0 * * 0"
-  workflow_dispatch:
+  # Manually trigger this through the Github API. Is done when a new version of the CLI is released.
+  # See more: https://github.com/snyk/cli/blob/cb8c5b44ca3fe05b0e15145eb1fd3cb63c0e56af/release-scripts/upload-artifacts.sh#L124
   repository_dispatch:
     types: [build_and_push_images]
 
@@ -234,10 +236,12 @@ jobs:
       env:
         DOCKER_BUILDKIT: "1"
       with:
-        platforms: linux/amd64,linux/arm64
         push: true
+        platforms: linux/amd64,linux/arm64
         tags: snyk/snyk:${{ matrix.tag }}-preview
         target: ${{ matrix.target }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
         labels: |
           org.opencontainers.image.title=Snyk CLI
           org.opencontainers.image.description=Snyk CLI Docker image
