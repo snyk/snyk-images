@@ -1,18 +1,33 @@
-# +-----------------------------------------------+
-# | WARNING: This file is generated, do not edit! |
-# | Edit _templates/dev.yml.erb instead.          |
-# +-----------------------------------------------+
+# +-----------------------------------------------------------+
+# | WARNING: This file is generated, do not edit!             |
+# | Edit _templates/build-and-run-smoke-tests.yml.erb instead.|
+# +-----------------------------------------------------------+
 
 name: Build and run smoke tests
 
 on:
   workflow_dispatch:
-  push:
+  workflow_run:
+    workflows: [Build Base Images]
+    types: [completed]
     branches-ignore:
     - master
 
 jobs:
+  on-base-images-build-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - run: echo 'The triggering workflow passed'
+  on-base-images-build-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: |
+          echo 'The triggering workflow failed'
+          exit 1
   lint:
+    needs: [on-base-images-build-success]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
