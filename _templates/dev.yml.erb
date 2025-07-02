@@ -54,6 +54,8 @@ jobs:
         tags: ${{ matrix.tag }}
         file: Dockerfile
         target: ${{ matrix.target }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
         build-args: |
           IMAGE=${{ matrix.base }}
           TAG=${{ matrix.tag }}

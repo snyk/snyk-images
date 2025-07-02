@@ -60,10 +60,12 @@ jobs:
       env:
         DOCKER_BUILDKIT: "1"
       with:
-        platforms: linux/amd64,linux/arm64
         push: true
+        platforms: linux/amd64,linux/arm64
         tags: snyk/snyk:${{ matrix.tag }}<%= @post_fix %>
         target: ${{ matrix.target }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
         labels: |
           org.opencontainers.image.title=Snyk CLI
           org.opencontainers.image.description=Snyk CLI Docker image
