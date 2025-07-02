@@ -56,14 +56,17 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          if [[ -z "$(git status --porcelain)" ]]; then
-            echo "No changes detected, exiting."
+          # .generated is always updated whenever build.rb is run, so ignore that
+          CHANGED_FILES=$(git status --porcelain | grep -v "^.* \.generated$" || true)
+          
+          if [[ -z "$CHANGED_FILES" ]]; then
+            echo "No changes detected (excluding .generated file), exiting."
             echo "continue=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           
           echo "Changes detected:"
-          git --no-pager diff --color=always
+          git --no-pager diff --color=always -- . ':!.generated'
           echo "continue=true" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push changes (if any)
@@ -96,4 +99,3 @@ jobs:
             --body="Automatic PR controlled by a GitHub Action" \
             --head "${{ env.DESTINATION_BRANCH }}" \
             --base ${{ github.ref_name || 'master' }}
-  

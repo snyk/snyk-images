@@ -15,11 +15,11 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Install npm dependencies
       run: npm install
-    
+
     - name: Lint - check formatting
       run: npm run lint:formatting
 
@@ -209,51 +209,63 @@ jobs:
             tag: ruby-alpine
             target: alpine
     steps:
-    - uses: actions/checkout@v2
-    
+    - uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
     - name: Build all images
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v6
       with:
         push: false
+        load: true
         tags: ${{ matrix.tag }}
         file: Dockerfile
         target: ${{ matrix.target }}
         build-args: |
           IMAGE=${{ matrix.base }}
           TAG=${{ matrix.tag }}
-    
+
     - name: Show images
       run: docker image ls
-    
+
     - name: Install npm dependencies
       run: npm install
-    
+
     - name: Run tests
       run: npm run test:smoke
       env:
         SNYK_TOKEN: ${{secrets.SNYK_TOKEN}}
         IMAGE_TAG: ${{ matrix.tag }}
-  
+
   # Select tests against specific images
   image-specific-tests:
     needs: [lint]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
     - name: Build `python-3.8` image for test
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v6
       with:
         push: false
+        load: true
         tags: python-3.8
         file: Dockerfile
         target: linux
         build-args: |
           IMAGE=python:3.8
           TAG=python-3.8
+
     - name: Show images
       run: docker image ls
+
     - name: Install npm dependencies
       run: npm install
+
     - name: Run tests
       run: npx jest test/image-specific/python-3-poetry.spec.ts
       env:
