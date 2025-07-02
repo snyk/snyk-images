@@ -3,7 +3,7 @@
 # | Edit _templates/dev.yml.erb instead.          |
 # +-----------------------------------------------+
 
-name: Dev
+name: Build and run smoke tests
 
 on:
   workflow_dispatch:
@@ -228,6 +228,8 @@ jobs:
         tags: ${{ matrix.tag }}
         file: Dockerfile
         target: ${{ matrix.target }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
         build-args: |
           IMAGE=${{ matrix.base }}
           TAG=${{ matrix.tag }}
