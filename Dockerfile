@@ -2,7 +2,7 @@ ARG IMAGE
 ARG TAG
 ARG CLI_VERSION=latest
 
-FROM ${IMAGE} as parent
+FROM ${IMAGE} AS parent
 ENV MAVEN_CONFIG="" \
     SNYK_INTEGRATION_NAME="DOCKER_SNYK" \
     SNYK_INTEGRATION_VERSION=${TAG} \
@@ -13,8 +13,7 @@ COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["snyk", "test"]
 
-
-FROM ubuntu as snyk
+FROM ubuntu AS snyk
 ARG CLI_VERSION
 ENV SNYK_CLI_VERSION=$CLI_VERSION
 RUN echo "SNYK_CLI_VERSION=${SNYK_CLI_VERSION}"
@@ -24,7 +23,7 @@ RUN curl --compressed --output /usr/local/bin/install-snyk.py https://raw.github
 RUN chmod +x /usr/local/bin/install-snyk.py
 RUN install-snyk.py $SNYK_CLI_VERSION
 
-FROM alpine as snyk-alpine
+FROM alpine AS snyk-alpine
 ARG CLI_VERSION
 ENV SNYK_CLI_VERSION=$CLI_VERSION
 RUN echo "SNYK_CLI_VERSION=${SNYK_CLI_VERSION}"
@@ -34,12 +33,12 @@ RUN curl --compressed --output /usr/local/bin/install-snyk.py https://raw.github
 RUN chmod +x /usr/local/bin/install-snyk.py
 RUN install-snyk.py $SNYK_CLI_VERSION
 
-FROM parent as alpine
+FROM parent AS alpine
 RUN apk update && apk upgrade --no-cache
 RUN apk add --no-cache libstdc++ git
 COPY --from=snyk-alpine ./snyk /usr/local/bin/snyk
 
-FROM parent as linux
+FROM parent AS linux
 COPY --from=snyk ./snyk /usr/local/bin/snyk
 RUN apt-get update && apt-get install -y \
     ca-certificates \
