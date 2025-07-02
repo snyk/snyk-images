@@ -71,7 +71,7 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:sbt1.10.0-scala3.4.2 | scala:3.4.2-sbt:1.10.0            |
 
 ### Vendor unsupported base images
-These images are no longer supported by the upstream vendor and should no longer be used, as such, the images below are no longer maintained. As a general practice, Snyk does not remove images once published. However, Snyk will not build or maintain images based on EoL softwareusers of these images should move to a vendor-supported upstream image base immediately.
+These images are no longer supported by the upstream vendor and should no longer be used, as such, the images below are no longer maintained. As a general practice, Snyk does not remove images once published. However, Snyk will not build or maintain images based on EoL software users of these images should move to a vendor-supported upstream image base immediately.
 
 | Image                        | Based on                                |
 |------------------------------|-----------------------------------------|
