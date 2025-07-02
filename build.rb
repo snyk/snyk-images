@@ -31,7 +31,6 @@ File.open(".github/workflows/dev.yml", "w") { |file| file.puts renderer.result()
 # contents of workflow doesn't trigger it
 File.open(".generated", "w") { |file| file.puts DateTime.now.iso8601 }
 
-
 # Available distributions of snyk
 # https://docs.snyk.io/snyk-cli/releases-and-channels-for-the-snyk-cli
 release_channel_map = {
@@ -40,18 +39,22 @@ release_channel_map = {
   "rc" => "-rc"
 }
 
-
 # Generate workflows for each distribution channel
 release_channel_map.each do |release_channel, post_fix|
   @release_channel = release_channel
   @post_fix = post_fix
-  
+
   # Generate the workflow .yml
   templatename = File.join("_templates", "release-channel.yml.erb")
   renderer = ERB.new(File.read(templatename))
 
   File.open(".github/workflows/" + release_channel + ".yml", "w") { |file| file.puts renderer.result() }
 end
+
+# Update the README.md if needed
+templatename = File.join("_templates", "BASE.md.erb")
+renderer = ERB.new(File.read(templatename))
+File.open("README.md", "w") { |file| file.puts renderer.result() }
 
 # We need to write a file to trigger the image build action, as just changing the
 # contents of workflow doesn't trigger it
