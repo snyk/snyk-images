@@ -8,73 +8,70 @@ A build toolchain for Snyk Docker images.
 * Avoid the need to install a Node development environment for non-Node users
 * Enable images to be automatically built (and rebuilt) regularly
 
+
 ## Images
 
 ### Current images
 
 | Image                          | Based on                          |
 |--------------------------------|-----------------------------------|
-| snyk/snyk:clojure-boot | clojure:boot |
-| snyk/snyk:clojure-lein | clojure:lein |
-| snyk/snyk:clojure-tools-deps | clojure:tools-deps |
-| snyk/snyk:elixir | elixir |
-| snyk/snyk:elixir-1.10 | elixir:1.10 |
-| snyk/snyk:elixir-1.11 | elixir:1.11 |
-| snyk/snyk:elixir-1.12 | elixir:1.12 |
-| snyk/snyk:golang | golang |
-| snyk/snyk:golang-1.20 | golang:1.20 |
-| snyk/snyk:golang-1.21 | golang:1.21 |
-| snyk/snyk:golang-1.22 | golang:1.22 |
-| snyk/snyk:golang-1.23 | golang:1.23 |
-| snyk/snyk:golang-1.24 | golang:1.24 |
-| snyk/snyk:gradle | gradle |
-| snyk/snyk:gradle-jdk11 | gradle:jdk11 |
-| snyk/snyk:gradle-jdk12 | gradle:jdk12 |
-| snyk/snyk:gradle-jdk13 | gradle:jdk13 |
-| snyk/snyk:gradle-jdk14 | gradle:jdk14 |
-| snyk/snyk:gradle-jdk16 | gradle:jdk16 |
-| snyk/snyk:gradle-jdk17 | gradle:jdk17 |
-| snyk/snyk:gradle-jdk18 | gradle:jdk18 |
-| snyk/snyk:gradle-jdk19 | gradle:jdk19 |
-| snyk/snyk:gradle-jdk20 | gradle:jdk20 |
-| snyk/snyk:gradle-jdk21 | gradle:jdk21 |
-| snyk/snyk:gradle-jdk8 | gradle:jdk8 |
-| snyk/snyk:maven | maven |
-| snyk/snyk:maven-3-jdk-17 | maven:3-eclipse-temurin-17 |
-| snyk/snyk:maven-3-jdk-20 | maven:3-eclipse-temurin-20 |
-| snyk/snyk:maven-3-jdk-21 | maven:3-eclipse-temurin-21 |
-| snyk/snyk:maven-3-jdk-22 | maven:3-eclipse-temurin-22 |
-| snyk/snyk:maven-3-jdk-11 | maven:3-jdk-11 |
-| snyk/snyk:maven-3-jdk-8 | maven:3-jdk-8 |
-| snyk/snyk:dotnet | mcr.microsoft.com/dotnet/core/sdk |
-| snyk/snyk:dotnet-8.0 | mcr.microsoft.com/dotnet/sdk:8.0 |
-| snyk/snyk:node | node |
-| snyk/snyk:node-18 | node:18 |
-| snyk/snyk:node-20 | node:20 |
-| snyk/snyk:node-22 | node:22 |
-| snyk/snyk:python | python |
-| snyk/snyk:python-3.8 | python:3.8 |
-| snyk/snyk:python-3.9 | python:3.9 |
-| snyk/snyk:python-3.10 | python:3.10 |
-| snyk/snyk:python-3.11 | python:3.11 |
-| snyk/snyk:python-3.12 | python:3.12 |
-| snyk/snyk:ruby | ruby |
-| snyk/snyk:ruby-3.3 | ruby:3.3 |
-| snyk/snyk:swift | swift |
-| snyk/snyk:linux | ubuntu |
-| snyk/snyk:sbt1.10.0-scala3.4.2 | sbtscala/scala-sbt:eclipse-temurin-jammy-22_36_1.10.0_3.4.2 |
-| snyk/snyk:alpine | alpine |
-| snyk/snyk:cocoapods | alpine |
-| snyk/snyk:composer | composer |
-| snyk/snyk:php | composer |
-| snyk/snyk:docker | docker:latest |
-| snyk/snyk:docker-latest | docker:latest |
-| snyk/snyk:python-alpine | python:alpine |
-| snyk/snyk:ruby-alpine | ruby:alpine |
-
+| snyk/snyk:alpine               | alpine                            |
+| snyk/snyk:cocoapods            | alpine                            |
+| snyk/snyk:swift                | swift                             |
+| snyk/snyk:clojure              | clojure                           |
+| snyk/snyk:clojure-boot         | clojure:boot                      |
+| snyk/snyk:clojure-lein         | clojure:lein                      |
+| snyk/snyk:clojure-tools-deps   | clojure:tools-deps                |
+| snyk/snyk:composer             | composer                          |
+| snyk/snyk:php                  | composer                          |
+| snyk/snyk:docker-latest        | docker:latest                     |
+| snyk/snyk:docker               | docker:stable                     |
+| snyk/snyk:golang               | golang                            |
+| snyk/snyk:golang-1.20          | golang:1.20                       |
+| snyk/snyk:golang-1.21          | golang:1.21                       |
+| snyk/snyk:golang-1.22          | golang:1.22                       |
+| snyk/snyk:golang-1.23          | golang:1.23                       |
+| snyk/snyk:golang-1.24          | golang:1.24                       |
+| snyk/snyk:gradle               | gradle                            |
+| snyk/snyk:gradle-jdk11         | gradle:jdk11                      |
+| snyk/snyk:gradle-jdk12         | gradle:jdk12                      |
+| snyk/snyk:gradle-jdk13         | gradle:jdk13                      |
+| snyk/snyk:gradle-jdk14         | gradle:jdk14                      |
+| snyk/snyk:gradle-jdk16         | gradle:jdk16                      |
+| snyk/snyk:gradle-jdk17         | gradle:jdk17                      |
+| snyk/snyk:gradle-jdk18         | gradle:jdk18                      |
+| snyk/snyk:gradle-jdk19         | gradle:jdk19                      |
+| snyk/snyk:gradle-jdk20         | gradle:jdk20                      |
+| snyk/snyk:gradle-jdk21         | gradle:jdk21                      |
+| snyk/snyk:gradle-jdk8          | gradle:jdk8                       |
+| snyk/snyk:maven                | maven                             |
+| snyk/snyk:maven-3-jdk-11       | maven:3-jdk-11                    |
+| snyk/snyk:maven-3-jdk-17       | maven:3-eclipse-temurin-17        |
+| snyk/snyk:maven-3-jdk-20       | maven:3-eclipse-temurin-20        |
+| snyk/snyk:maven-3-jdk-21       | maven:3-eclipse-temurin-21        |
+| snyk/snyk:maven-3-jdk-22       | maven:3-eclipse-temurin-22        |
+| snyk/snyk:maven-3-jdk-8        | maven:3-jdk-8                     |
+| snyk/snyk:dotnet               | mcr.microsoft.com/dotnet/core/sdk |
+| snyk/snyk:dotnet-8.0           | mcr.microsoft.com/dotnet/sdk:8.0  |
+| snyk/snyk:node                 | node                              |
+| snyk/snyk:node-18              | node:18                           |
+| snyk/snyk:node-20              | node:20                           |
+| snyk/snyk:node-22              | node:22                           |
+| snyk/snyk:python               | python                            |
+| snyk/snyk:python-3.8           | python:3.8                        |
+| snyk/snyk:python-3.9           | python:3.9                        |
+| snyk/snyk:python-3.10          | python:3.10                       |
+| snyk/snyk:python-3.11          | python:3.11                       |
+| snyk/snyk:python-3.12          | python:3.12                       |
+| snyk/snyk:python-alpine        | python:alpine                     |
+| snyk/snyk:ruby                 | ruby                              |
+| snyk/snyk:ruby-3.3             | ruby:3.3                          |
+| snyk/snyk:ruby-alpine          | ruby:alpine                       |
+| snyk/snyk:linux                | ubuntu                            |
+| snyk/snyk:sbt1.10.0-scala3.4.2 | scala:3.4.2-sbt:1.10.0            |
 
 ### Vendor unsupported base images
-These images are no longer supported by the upstream vendor and should no longer be used, as such, the images below are no longer maintained. As a general practice, Snyk does not remove images once published. However, Snyk will not build or maintain images based on EoL software users of these images should move to a vendor-supported upstream image base immediately.
+These images are no longer supported by the upstream vendor and should no longer be used, as such, the images below are no longer maintained. As a general practice, Snyk does not remove images once published. However, Snyk will not build or maintain images based on EoL softwareusers of these images should move to a vendor-supported upstream image base immediately.
 
 | Image                        | Based on                                |
 |------------------------------|-----------------------------------------|
@@ -297,9 +294,3 @@ As well as knowing the images build correctly it's useful to have a basic test s
 ```
 make test
 ```
-
-Made with 💜 by Snyk
-
-[cli-gh]: https://github.com/snyk/snyk 'Snyk CLI'
-[cli-ref]: https://docs.snyk.io/snyk-cli/cli-reference 'Snyk CLI Reference documentation'
-[snyk-docker-images]: https://hub.docker.com/r/snyk/snyk 'Snyk Docker Images'
