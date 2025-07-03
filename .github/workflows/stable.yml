@@ -82,6 +82,9 @@ jobs:
           - base: gradle
             tag: gradle
             target: linux
+          - base: gradle:jdk8
+            tag: gradle-jdk8
+            target: linux
           - base: gradle:jdk11
             tag: gradle-jdk11
             target: linux
@@ -114,9 +117,6 @@ jobs:
             target: linux
           - base: gradle:jdk23
             tag: gradle-jdk23
-            target: linux
-          - base: gradle:jdk8
-            tag: gradle-jdk8
             target: linux
           - base: maven
             tag: maven
