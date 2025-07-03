@@ -9,11 +9,20 @@ require "fileutils"
 
 
 @images = []
+@images_deprecated = []
 
 ["linux", "alpine"].each do |target|
   File.open(target).each do |line|
-    base,tag = line.split
-    @images.append [base, tag ? tag : base, target]
+    parts = line.split
+    base = parts[0]
+    tag = parts[1] ? parts[1] : base
+    deprecated = parts[2] == "DEPRECATED"
+
+    if deprecated
+      @images_deprecated.append [base, tag, target]
+    else
+      @images.append [base, tag, target]
+    end
   end
 end
 
