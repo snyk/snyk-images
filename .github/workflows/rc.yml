@@ -52,26 +52,11 @@ jobs:
           - base: elixir
             tag: elixir
             target: linux
-          - base: elixir:1.10
-            tag: elixir-1.10
-            target: linux
-          - base: elixir:1.11
-            tag: elixir-1.11
-            target: linux
           - base: elixir:1.12
             tag: elixir-1.12
             target: linux
           - base: golang
             tag: golang
-            target: linux
-          - base: golang:1.20
-            tag: golang-1.20
-            target: linux
-          - base: golang:1.21
-            tag: golang-1.21
-            target: linux
-          - base: golang:1.22
-            tag: golang-1.22
             target: linux
           - base: golang:1.23
             tag: golang-1.23
@@ -88,56 +73,35 @@ jobs:
           - base: gradle:jdk11
             tag: gradle-jdk11
             target: linux
-          - base: gradle:jdk12
-            tag: gradle-jdk12
-            target: linux
-          - base: gradle:jdk13
-            tag: gradle-jdk13
-            target: linux
-          - base: gradle:jdk14
-            tag: gradle-jdk14
-            target: linux
-          - base: gradle:jdk16
-            tag: gradle-jdk16
-            target: linux
           - base: gradle:jdk17
             tag: gradle-jdk17
-            target: linux
-          - base: gradle:jdk18
-            tag: gradle-jdk18
-            target: linux
-          - base: gradle:jdk19
-            tag: gradle-jdk19
-            target: linux
-          - base: gradle:jdk20
-            tag: gradle-jdk20
             target: linux
           - base: gradle:jdk21
             tag: gradle-jdk21
             target: linux
+          - base: gradle:jdk23
+            tag: gradle-jdk23
+            target: linux
+          - base: gradle:jdk24
+            tag: gradle-jdk24
+            target: linux
           - base: maven
             tag: maven
+            target: linux
+          - base: maven:3-eclipse-temurin-8
+            tag: maven-3-jdk-8
+            target: linux
+          - base: maven:3-eclipse-temurin-11
+            tag: maven-3-jdk-11
             target: linux
           - base: maven:3-eclipse-temurin-17
             tag: maven-3-jdk-17
             target: linux
-          - base: maven:3-eclipse-temurin-20
-            tag: maven-3-jdk-20
-            target: linux
           - base: maven:3-eclipse-temurin-21
             tag: maven-3-jdk-21
             target: linux
-          - base: maven:3-eclipse-temurin-22
-            tag: maven-3-jdk-22
-            target: linux
           - base: maven:3-eclipse-temurin-24
             tag: maven-3-jdk-24
-            target: linux
-          - base: maven:3-jdk-11
-            tag: maven-3-jdk-11
-            target: linux
-          - base: maven:3-jdk-8
-            tag: maven-3-jdk-8
             target: linux
           - base: mcr.microsoft.com/dotnet/sdk:8.0
             tag: dotnet-8.0
@@ -148,9 +112,6 @@ jobs:
           - base: node
             tag: node
             target: linux
-          - base: node:18
-            tag: node-18
-            target: linux
           - base: node:20
             tag: node-20
             target: linux
@@ -159,9 +120,6 @@ jobs:
             target: linux
           - base: python
             tag: python
-            target: linux
-          - base: python:3.8
-            tag: python-3.8
             target: linux
           - base: python:3.9
             tag: python-3.9

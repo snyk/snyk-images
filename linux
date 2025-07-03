@@ -4,7 +4,7 @@ clojure:lein clojure-lein
 clojure:tools-deps clojure-tools-deps
 elixir
 elixir:1.10 elixir-1.10 DEPRECATED
-elixir:1.11 elixir-1.11
+elixir:1.11 elixir-1.11 DEPRECATED
 elixir:1.12 elixir-1.12
 golang
 golang:1.12 golang-1.12 DEPRECATED
@@ -41,11 +41,13 @@ gradle:jdk24 gradle-jdk24
 maven
 maven:3-jdk-8 maven-3-jdk-8 DEPRECATED
 maven:3-jdk-11 maven-3-jdk-11 DEPRECATED
+maven:3-eclipse-temurin-8 maven-3-jdk-8
+maven:3-eclipse-temurin-11 maven-3-jdk-11
 maven:3-eclipse-temurin-17 maven-3-jdk-17
 maven:3-eclipse-temurin-19 maven-3-jdk-19 DEPRECATED
 maven:3-eclipse-temurin-20 maven-3-jdk-20 DEPRECATED
 maven:3-eclipse-temurin-21 maven-3-jdk-21
-maven:3-eclipse-temurin-22 maven-3-jdk-22
+maven:3-eclipse-temurin-22 maven-3-jdk-22 DEPRECATED
 maven:3-eclipse-temurin-24 maven-3-jdk-24
 mcr.microsoft.com/dotnet/core/sdk dotnet DEPRECATED
 mcr.microsoft.com/dotnet/core/sdk:2.1 dotnet-2.1 DEPRECATED
