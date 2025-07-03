@@ -127,6 +127,9 @@ jobs:
           - base: maven:3-eclipse-temurin-22
             tag: maven-3-jdk-22
             target: linux
+          - base: maven:3-eclipse-temurin-24
+            tag: maven-3-jdk-24
+            target: linux
           - base: maven:3-jdk-11
             tag: maven-3-jdk-11
             target: linux
