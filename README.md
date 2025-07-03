@@ -45,6 +45,7 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:gradle-jdk19 | gradle:jdk19 |
 | snyk/snyk:gradle-jdk20 | gradle:jdk20 |
 | snyk/snyk:gradle-jdk21 | gradle:jdk21 |
+| snyk/snyk:gradle-jdk23 | gradle:jdk23 |
 | snyk/snyk:gradle-jdk8 | gradle:jdk8 |
 | snyk/snyk:maven | maven |
 | snyk/snyk:maven-3-jdk-17 | maven:3-eclipse-temurin-17 |
