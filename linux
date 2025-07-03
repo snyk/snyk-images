@@ -3,7 +3,7 @@ clojure:boot clojure-boot
 clojure:lein clojure-lein
 clojure:tools-deps clojure-tools-deps
 elixir
-elixir:1.10 elixir-1.10
+elixir:1.10 elixir-1.10 DEPRECATED
 elixir:1.11 elixir-1.11
 elixir:1.12 elixir-1.12
 golang
@@ -15,9 +15,9 @@ golang:1.16 golang-1.16 DEPRECATED
 golang:1.17 golang-1.17 DEPRECATED
 golang:1.18 golang-1.18 DEPRECATED
 golang:1.19 golang-1.19 DEPRECATED
-golang:1.20 golang-1.20
-golang:1.21 golang-1.21
-golang:1.22 golang-1.22
+golang:1.20 golang-1.20 DEPRECATED
+golang:1.21 golang-1.21 DEPRECATED
+golang:1.22 golang-1.22 DEPRECATED
 golang:1.23 golang-1.23
 golang:1.24 golang-1.24
 gradle
@@ -27,25 +27,26 @@ gradle:6.4-jdk14 gradle-6.4-jdk14 DEPRECATED
 gradle:6.4-jdk8 gradle-6.4-jdk8 DEPRECATED
 gradle:jdk8 gradle-jdk8
 gradle:jdk11 gradle-jdk11
-gradle:jdk12 gradle-jdk12
-gradle:jdk13 gradle-jdk13
-gradle:jdk14 gradle-jdk14
-gradle:jdk16 gradle-jdk16
+gradle:jdk12 gradle-jdk12 DEPRECATED
+gradle:jdk13 gradle-jdk13 DEPRECATED
+gradle:jdk14 gradle-jdk14 DEPRECATED
+gradle:jdk16 gradle-jdk16 DEPRECATED
 gradle:jdk17 gradle-jdk17
-gradle:jdk18 gradle-jdk18
-gradle:jdk19 gradle-jdk19
-gradle:jdk20 gradle-jdk20
+gradle:jdk18 gradle-jdk18 DEPRECATED
+gradle:jdk19 gradle-jdk19 DEPRECATED
+gradle:jdk20 gradle-jdk20 DEPRECATED
 gradle:jdk21 gradle-jdk21
 gradle:jdk23 gradle-jdk23
+gradle:jdk24 gradle-jdk24
 maven
+maven:3-jdk-8 maven-3-jdk-8 DEPRECATED
+maven:3-jdk-11 maven-3-jdk-11 DEPRECATED
 maven:3-eclipse-temurin-17 maven-3-jdk-17
 maven:3-eclipse-temurin-19 maven-3-jdk-19 DEPRECATED
-maven:3-eclipse-temurin-20 maven-3-jdk-20
+maven:3-eclipse-temurin-20 maven-3-jdk-20 DEPRECATED
 maven:3-eclipse-temurin-21 maven-3-jdk-21
 maven:3-eclipse-temurin-22 maven-3-jdk-22
 maven:3-eclipse-temurin-24 maven-3-jdk-24
-maven:3-jdk-11 maven-3-jdk-11
-maven:3-jdk-8 maven-3-jdk-8
 mcr.microsoft.com/dotnet/core/sdk dotnet DEPRECATED
 mcr.microsoft.com/dotnet/core/sdk:2.1 dotnet-2.1 DEPRECATED
 mcr.microsoft.com/dotnet/core/sdk:2.2 dotnet-2.2 DEPRECATED
@@ -61,14 +62,14 @@ node:13 node-13 DEPRECATED
 node:14 node-14 DEPRECATED
 node:15 node-15 DEPRECATED
 node:16 node-16 DEPRECATED
-node:18 node-18
+node:18 node-18 DEPRECATED
 node:20 node-20
 node:22 node-22
 python
 python:2.7 python-2.7 DEPRECATED
 python:3.6 python-3.6 DEPRECATED
 python:3.7 python-3.7 DEPRECATED
-python:3.8 python-3.8
+python:3.8 python-3.8 DEPRECATED
 python:3.9 python-3.9
 python:3.10 python-3.10
 python:3.11 python-3.11
