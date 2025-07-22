@@ -22,10 +22,10 @@ end
 # Everything else is used as explicitly included jobs.
 @seed = @images.shift
 
-# Generate the dev.yml
-templatename = File.join("_templates", "dev.yml.erb")
+# Generate the build-and-run-smoke-tests.yml
+templatename = File.join("_templates", "build-and-run-smoke-tests.yml.erb")
 renderer = ERB.new(File.read(templatename))
-File.open(".github/workflows/dev.yml", "w") { |file| file.puts renderer.result() }
+File.open(".github/workflows/build-and-run-smoke-tests.yml", "w") { |file| file.puts renderer.result() }
 
 # We need to write a file to trigger the image build action, as just changing the
 # contents of workflow doesn't trigger it
