@@ -139,15 +139,6 @@ jobs:
           - base: maven:3-jdk-8
             tag: maven-3-jdk-8
             target: linux
-          - base: mcr.microsoft.com/dotnet/sdk
-            tag: dotnet
-            target: linux
-          - base: mcr.microsoft.com/dotnet/sdk:6.0
-            tag: dotnet-6.0
-            target: linux
-          - base: mcr.microsoft.com/dotnet/sdk:7.0
-            tag: dotnet-7.0
-            target: linux
           - base: mcr.microsoft.com/dotnet/sdk:8.0
             tag: dotnet-8.0
             target: linux
