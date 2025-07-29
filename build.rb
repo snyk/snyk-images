@@ -16,7 +16,14 @@ require "fileutils"
     parts = line.split
     base = parts[0]
     tag = parts[1] ? parts[1] : base
-    deprecated = parts[2] == "DEPRECATED"
+
+    deprecated = false
+    if parts.length > 2
+        if parts[2] != "DEPRECATED"
+            raise "Invalid third part '#{parts[2]}' in #{target}: '#{line.strip}'. Only 'DEPRECATED' is allowed."
+        end
+        deprecated = true
+    end
 
     if deprecated
       @images_deprecated.append [base, tag, target]
