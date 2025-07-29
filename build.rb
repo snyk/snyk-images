@@ -9,11 +9,27 @@ require "fileutils"
 
 
 @images = []
+@images_deprecated = []
 
 ["linux", "alpine"].each do |target|
   File.open(target).each do |line|
-    base,tag = line.split
-    @images.append [base, tag ? tag : base, target]
+    parts = line.split
+    base = parts[0]
+    tag = parts[1] ? parts[1] : base
+
+    deprecated = false
+    if parts.length > 2
+        if parts[2] != "DEPRECATED"
+            raise "Invalid third part '#{parts[2]}' in #{target}: '#{line.strip}'. Only 'DEPRECATED' is allowed."
+        end
+        deprecated = true
+    end
+
+    if deprecated
+      @images_deprecated.append [base, tag, target]
+    else
+      @images.append [base, tag, target]
+    end
   end
 end
 
