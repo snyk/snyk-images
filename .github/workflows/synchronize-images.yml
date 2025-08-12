@@ -17,6 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.TEAM_CLI_BOT_GITHUB_PAT }}
           fetch-depth: 0
 
       - name: Configure Git user
@@ -71,6 +72,8 @@ jobs:
 
       - name: Commit and push changes (if any)
         if: steps.check_changes.outputs.continue == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.TEAM_CLI_BOT_GITHUB_PAT }}
         run: |
           git add .
           git commit -S -m "${{ env.COMMIT_MESSAGE }}"
