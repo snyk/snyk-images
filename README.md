@@ -25,7 +25,7 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:clojure-lein         | clojure:lein                      |
 | snyk/snyk:clojure-tools-deps   | clojure:tools-deps                |
 | snyk/snyk:elixir               | elixir                            |
-| snyk/snyk:elixir-1.12          | elixir:1.12                       |
+| snyk/snyk:elixir-1.18          | elixir:1.18                       |
 | snyk/snyk:golang               | golang                            |
 | snyk/snyk:golang-1.23          | golang:1.23                       |
 | snyk/snyk:golang-1.24          | golang:1.24                       |
@@ -76,6 +76,7 @@ These images are no longer supported by the upstream vendor and should no longer
 | snyk/snyk:docker-19.03       | docker:19.03                            |
 | snyk/snyk:elixir-1.10        | elixir:1.10                             |
 | snyk/snyk:elixir-1.11        | elixir:1.11                             |
+| snyk/snyk:elixir-1.12        | elixir:1.12                             |
 | snyk/snyk:golang-1.12        | golang:1.12                             |
 | snyk/snyk:golang-1.13        | golang:1.13                             |
 | snyk/snyk:golang-1.14        | golang:1.14                             |

@@ -49,8 +49,8 @@ jobs:
           - base: elixir
             tag: elixir
             target: linux
-          - base: elixir:1.12
-            tag: elixir-1.12
+          - base: elixir:1.18
+            tag: elixir-1.18
             target: linux
           - base: golang
             tag: golang
