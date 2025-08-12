@@ -5,7 +5,8 @@ clojure:tools-deps clojure-tools-deps
 elixir
 elixir:1.10 elixir-1.10 DEPRECATED
 elixir:1.11 elixir-1.11 DEPRECATED
-elixir:1.12 elixir-1.12
+elixir:1.12 elixir-1.12 DEPRECATED
+elixir:1.18 elixir-1.18
 golang
 golang:1.12 golang-1.12 DEPRECATED
 golang:1.13 golang-1.13 DEPRECATED
