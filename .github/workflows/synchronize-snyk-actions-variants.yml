@@ -1,0 +1,17 @@
+name: Trigger Snyk Variants Workflow
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  trigger-workflow:
+    name: trigger-snyk-variants
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger workflow in snyk/actions repository
+        env:
+          GITHUB_TOKEN: ${{ secrets.TEAM_CLI_BOT_GITHUB_PAT }}
+        run: |
+          gh workflow run synchronize-snyk-variants.yml \
+            --repo snyk/actions
