@@ -64,23 +64,29 @@ jobs:
           - base: gradle
             tag: gradle
             target: linux
-          - base: gradle:jdk8
-            tag: gradle-jdk8
+          - base: gradle:8-jdk8
+            tag: gradle-8-jdk8
             target: linux
-          - base: gradle:jdk11
-            tag: gradle-jdk11
+          - base: gradle:8-jdk11
+            tag: gradle-8-jdk11
             target: linux
-          - base: gradle:jdk17
-            tag: gradle-jdk17
+          - base: gradle:8-jdk17
+            tag: gradle-8-jdk17
             target: linux
-          - base: gradle:jdk21
-            tag: gradle-jdk21
+          - base: gradle:8-jdk21
+            tag: gradle-8-jdk21
             target: linux
-          - base: gradle:jdk23
-            tag: gradle-jdk23
+          - base: gradle:8-jdk24
+            tag: gradle-8-jdk24
             target: linux
-          - base: gradle:jdk24
-            tag: gradle-jdk24
+          - base: gradle:9-jdk17
+            tag: gradle-9-jdk17
+            target: linux
+          - base: gradle:9-jdk21
+            tag: gradle-9-jdk21
+            target: linux
+          - base: gradle:9-jdk24
+            tag: gradle-9-jdk24
             target: linux
           - base: maven
             tag: maven

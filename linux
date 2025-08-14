@@ -46,7 +46,6 @@ gradle:8-jdk21 gradle-8-jdk21
 gradle:8-jdk24 gradle-8-jdk24
 gradle:9-jdk17 gradle-9-jdk17
 gradle:9-jdk21 gradle-9-jdk21
-gradle:9-jdk23 gradle-9-jdk23
 gradle:9-jdk24 gradle-9-jdk24
 maven
 maven:3-eclipse-temurin-8 maven-3-jdk-8
