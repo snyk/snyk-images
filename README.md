@@ -99,8 +99,6 @@ These images are no longer supported by the upstream vendor and should no longer
 | snyk/snyk:gradle-jdk18       | gradle:jdk18                            |
 | snyk/snyk:gradle-jdk19       | gradle:jdk19                            |
 | snyk/snyk:gradle-jdk20       | gradle:jdk20                            |
-| snyk/snyk:maven-3-jdk-8      | maven:3-jdk-8                           |
-| snyk/snyk:maven-3-jdk-11     | maven:3-jdk-11                          |
 | snyk/snyk:maven-3-jdk-19     | maven:3-eclipse-temurin-19              |
 | snyk/snyk:maven-3-jdk-20     | maven:3-eclipse-temurin-20              |
 | snyk/snyk:maven-3-jdk-22     | maven:3-eclipse-temurin-22              |
