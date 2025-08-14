@@ -3,6 +3,10 @@
 # Generate a GitHub Action with separate builds for every image
 # based on the  contents of the two target files
 
+# Notice that changing the way we parse the linux and alpine files can have consequences
+# for the synchronization actions in the snyk/actions repo.
+# See https://github.com/snyk/actions/blob/master/.github/workflows/synchronize-snyk-variants.yml.
+
 require "date"
 require "erb"
 require "fileutils"
