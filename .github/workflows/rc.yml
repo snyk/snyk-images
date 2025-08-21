@@ -195,7 +195,6 @@ jobs:
       env:
         DOCKER_BUILDKIT: "1"
       with:
-        platforms: linux/amd64,linux/arm64
         push: true
         tags: snyk/snyk:${{ matrix.tag }}-rc
         target: ${{ matrix.target }}
