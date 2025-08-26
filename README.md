@@ -331,6 +331,8 @@ GitHub issues have been disabled on this repository as part of our move to a clo
 
 For help with Snyk products, please use the [Snyk support page](https://support.snyk.io/), which is the fastest way to get assistance.
 
+Made with 💜 by Snyk
+
 [cli-gh]: https://github.com/snyk/snyk 'Snyk CLI'
 [cli-ref]: https://docs.snyk.io/snyk-cli/cli-reference 'Snyk CLI Reference documentation'
 [snyk-docker-images]: https://hub.docker.com/r/snyk/snyk 'Snyk Docker Images'
