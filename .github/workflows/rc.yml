@@ -109,6 +109,9 @@ jobs:
           - base: maven:3-eclipse-temurin-24
             tag: maven-3-jdk-24
             target: linux
+          - base: maven:3-eclipse-temurin-25
+            tag: maven-3-jdk-25
+            target: linux
           - base: mcr.microsoft.com/dotnet/sdk:8.0
             tag: dotnet-8.0
             target: linux
