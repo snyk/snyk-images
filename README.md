@@ -29,6 +29,7 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:golang               | golang                            |
 | snyk/snyk:golang-1.23          | golang:1.23                       |
 | snyk/snyk:golang-1.24          | golang:1.24                       |
+| snyk/snyk:golang-1.25          | golang:1.25                       |
 | snyk/snyk:gradle               | gradle                            |
 | snyk/snyk:gradle-8-jdk8        | gradle:8-jdk8                     |
 | snyk/snyk:gradle-8-jdk11       | gradle:8-jdk11                    |
@@ -38,6 +39,7 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:gradle-9-jdk17       | gradle:9-jdk17                    |
 | snyk/snyk:gradle-9-jdk21       | gradle:9-jdk21                    |
 | snyk/snyk:gradle-9-jdk24       | gradle:9-jdk24                    |
+| snyk/snyk:gradle-9-jdk25       | gradle:9-jdk25                    |
 | snyk/snyk:maven                | maven                             |
 | snyk/snyk:maven-3-jdk-8        | maven:3-eclipse-temurin-8         |
 | snyk/snyk:maven-3-jdk-11       | maven:3-eclipse-temurin-11        |
