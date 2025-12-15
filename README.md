@@ -52,6 +52,7 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:node                 | node                              |
 | snyk/snyk:node-20              | node:20                           |
 | snyk/snyk:node-22              | node:22                           |
+| snyk/snyk:node-24              | node:24                           |
 | snyk/snyk:python               | python                            |
 | snyk/snyk:python-3.9           | python:3.9                        |
 | snyk/snyk:python-3.10          | python:3.10                       |
