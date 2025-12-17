@@ -148,6 +148,9 @@ jobs:
           - base: python:3.12
             tag: python-3.12
             target: linux
+          - base: python:3.13
+            tag: python-3.13
+            target: linux
           - base: ruby
             tag: ruby
             target: linux
