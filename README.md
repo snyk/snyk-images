@@ -59,6 +59,7 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:python-3.11          | python:3.11                       |
 | snyk/snyk:python-3.12          | python:3.12                       |
 | snyk/snyk:python-3.13          | python:3.13                       |
+| snyk/snyk:python-3.14          | python:3.14                       |
 | snyk/snyk:ruby                 | ruby                              |
 | snyk/snyk:ruby-3.3             | ruby:3.3                          |
 | snyk/snyk:swift                | swift                             |
