@@ -96,6 +96,11 @@ ruby:2.7 ruby-2.7 DEPRECATED
 ruby:3.3 ruby-3.3
 swift
 ubuntu linux
+ghcr.io/astral-sh/uv:python3.9-trixie uv-python-3.9-trixie
+ghcr.io/astral-sh/uv:python3.10-trixie uv-python-3.10-trixie
+ghcr.io/astral-sh/uv:python3.11-trixie uv-python-3.11-trixie
+ghcr.io/astral-sh/uv:python3.12-trixie uv-python-3.12-trixie
+ghcr.io/astral-sh/uv:python3.13-trixie uv-python-3.13-trixie
 hseeberger/scala-sbt:8u212_1.2.8_2.13.0 sbt DEPRECATED
 hseeberger/scala-sbt:8u212_1.2.8_2.13.0 scala DEPRECATED
 sbtscala/scala-sbt:eclipse-temurin-jammy-22_36_1.10.0_3.4.2 sbt1.10.0-scala3.4.2
