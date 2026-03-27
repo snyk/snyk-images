@@ -63,6 +63,11 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:ruby-3.3             | ruby:3.3                          |
 | snyk/snyk:swift                | swift                             |
 | snyk/snyk:linux                | ubuntu                            |
+| snyk/snyk:uv-python-3.9-trixie | ghcr.io/astral-sh/uv:python3.9-trixie |
+| snyk/snyk:uv-python-3.10-trixie | ghcr.io/astral-sh/uv:python3.10-trixie |
+| snyk/snyk:uv-python-3.11-trixie | ghcr.io/astral-sh/uv:python3.11-trixie |
+| snyk/snyk:uv-python-3.12-trixie | ghcr.io/astral-sh/uv:python3.12-trixie |
+| snyk/snyk:uv-python-3.13-trixie | ghcr.io/astral-sh/uv:python3.13-trixie |
 | snyk/snyk:sbt1.10.0-scala3.4.2 | sbtscala/scala-sbt:eclipse-temurin-jammy-22_36_1.10.0_3.4.2 |
 | snyk/snyk:alpine               | alpine                            |
 | snyk/snyk:cocoapods            | alpine                            |
@@ -72,6 +77,11 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:docker-latest        | docker:latest                     |
 | snyk/snyk:python-alpine        | python:alpine                     |
 | snyk/snyk:ruby-alpine          | ruby:alpine                       |
+| snyk/snyk:uv-python-3.9-alpine | ghcr.io/astral-sh/uv:python3.9-alpine |
+| snyk/snyk:uv-python-3.10-alpine | ghcr.io/astral-sh/uv:python3.10-alpine |
+| snyk/snyk:uv-python-3.11-alpine | ghcr.io/astral-sh/uv:python3.11-alpine |
+| snyk/snyk:uv-python-3.12-alpine | ghcr.io/astral-sh/uv:python3.12-alpine |
+| snyk/snyk:uv-python-3.13-alpine | ghcr.io/astral-sh/uv:python3.13-alpine |
 
 
 ### Vendor unsupported base images

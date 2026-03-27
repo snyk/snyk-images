@@ -163,6 +163,21 @@ jobs:
           - base: ubuntu
             tag: linux
             target: linux
+          - base: ghcr.io/astral-sh/uv:python3.9-trixie
+            tag: uv-python-3.9-trixie
+            target: linux
+          - base: ghcr.io/astral-sh/uv:python3.10-trixie
+            tag: uv-python-3.10-trixie
+            target: linux
+          - base: ghcr.io/astral-sh/uv:python3.11-trixie
+            tag: uv-python-3.11-trixie
+            target: linux
+          - base: ghcr.io/astral-sh/uv:python3.12-trixie
+            tag: uv-python-3.12-trixie
+            target: linux
+          - base: ghcr.io/astral-sh/uv:python3.13-trixie
+            tag: uv-python-3.13-trixie
+            target: linux
           - base: sbtscala/scala-sbt:eclipse-temurin-jammy-22_36_1.10.0_3.4.2
             tag: sbt1.10.0-scala3.4.2
             target: linux
@@ -189,6 +204,21 @@ jobs:
             target: alpine
           - base: ruby:alpine
             tag: ruby-alpine
+            target: alpine
+          - base: ghcr.io/astral-sh/uv:python3.9-alpine
+            tag: uv-python-3.9-alpine
+            target: alpine
+          - base: ghcr.io/astral-sh/uv:python3.10-alpine
+            tag: uv-python-3.10-alpine
+            target: alpine
+          - base: ghcr.io/astral-sh/uv:python3.11-alpine
+            tag: uv-python-3.11-alpine
+            target: alpine
+          - base: ghcr.io/astral-sh/uv:python3.12-alpine
+            tag: uv-python-3.12-alpine
+            target: alpine
+          - base: ghcr.io/astral-sh/uv:python3.13-alpine
+            tag: uv-python-3.13-alpine
             target: alpine
     steps:
     - uses: actions/checkout@v4
