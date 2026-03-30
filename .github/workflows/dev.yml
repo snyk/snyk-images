@@ -52,6 +52,27 @@ jobs:
           - base: elixir:1.18
             tag: elixir-1.18
             target: linux
+          - base: elixir:1.19
+            tag: elixir-1.19
+            target: linux
+          - base: ghcr.io/astral-sh/uv:python3.9-trixie
+            tag: uv-python-3.9-trixie
+            target: linux
+          - base: ghcr.io/astral-sh/uv:python3.10-trixie
+            tag: uv-python-3.10-trixie
+            target: linux
+          - base: ghcr.io/astral-sh/uv:python3.11-trixie
+            tag: uv-python-3.11-trixie
+            target: linux
+          - base: ghcr.io/astral-sh/uv:python3.12-trixie
+            tag: uv-python-3.12-trixie
+            target: linux
+          - base: ghcr.io/astral-sh/uv:python3.13-trixie
+            tag: uv-python-3.13-trixie
+            target: linux
+          - base: ghcr.io/astral-sh/uv:python3.14-trixie
+            tag: uv-python-3.14-trixie
+            target: linux
           - base: golang
             tag: golang
             target: linux
@@ -63,6 +84,9 @@ jobs:
             target: linux
           - base: golang:1.25
             tag: golang-1.25
+            target: linux
+          - base: golang:1.26
+            tag: golang-1.26
             target: linux
           - base: gradle
             tag: gradle
@@ -121,6 +145,9 @@ jobs:
           - base: mcr.microsoft.com/dotnet/sdk:9.0
             tag: dotnet-9.0
             target: linux
+          - base: mcr.microsoft.com/dotnet/sdk:10.0
+            tag: dotnet-10.0
+            target: linux
           - base: node
             tag: node
             target: linux
@@ -130,14 +157,14 @@ jobs:
           - base: node:22
             tag: node-22
             target: linux
+          - base: node:23
+            tag: node-23
+            target: linux
           - base: node:24
             tag: node-24
             target: linux
           - base: python
             tag: python
-            target: linux
-          - base: python:3.9
-            tag: python-3.9
             target: linux
           - base: python:3.10
             tag: python-3.10
@@ -151,35 +178,26 @@ jobs:
           - base: python:3.13
             tag: python-3.13
             target: linux
+          - base: python:3.14
+            tag: python-3.14
+            target: linux
           - base: ruby
             tag: ruby
             target: linux
           - base: ruby:3.3
             tag: ruby-3.3
             target: linux
+          - base: ruby:3.4
+            tag: ruby-3.4
+            target: linux
+          - base: sbtscala/scala-sbt:eclipse-temurin-jammy-22_36_1.10.0_3.4.2
+            tag: sbt1.10.0-scala3.4.2
+            target: linux
           - base: swift
             tag: swift
             target: linux
           - base: ubuntu
             tag: linux
-            target: linux
-          - base: ghcr.io/astral-sh/uv:python3.9-trixie
-            tag: uv-python-3.9-trixie
-            target: linux
-          - base: ghcr.io/astral-sh/uv:python3.10-trixie
-            tag: uv-python-3.10-trixie
-            target: linux
-          - base: ghcr.io/astral-sh/uv:python3.11-trixie
-            tag: uv-python-3.11-trixie
-            target: linux
-          - base: ghcr.io/astral-sh/uv:python3.12-trixie
-            tag: uv-python-3.12-trixie
-            target: linux
-          - base: ghcr.io/astral-sh/uv:python3.13-trixie
-            tag: uv-python-3.13-trixie
-            target: linux
-          - base: sbtscala/scala-sbt:eclipse-temurin-jammy-22_36_1.10.0_3.4.2
-            tag: sbt1.10.0-scala3.4.2
             target: linux
           - base: alpine
             tag: alpine
@@ -199,12 +217,6 @@ jobs:
           - base: docker:latest
             tag: docker-latest
             target: alpine
-          - base: python:alpine
-            tag: python-alpine
-            target: alpine
-          - base: ruby:alpine
-            tag: ruby-alpine
-            target: alpine
           - base: ghcr.io/astral-sh/uv:python3.9-alpine
             tag: uv-python-3.9-alpine
             target: alpine
@@ -219,6 +231,15 @@ jobs:
             target: alpine
           - base: ghcr.io/astral-sh/uv:python3.13-alpine
             tag: uv-python-3.13-alpine
+            target: alpine
+          - base: ghcr.io/astral-sh/uv:python3.14-alpine
+            tag: uv-python-3.14-alpine
+            target: alpine
+          - base: python:alpine
+            tag: python-alpine
+            target: alpine
+          - base: ruby:alpine
+            tag: ruby-alpine
             target: alpine
     steps:
     - uses: actions/checkout@v4
