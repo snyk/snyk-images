@@ -26,10 +26,18 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:clojure-tools-deps   | clojure:tools-deps                |
 | snyk/snyk:elixir               | elixir                            |
 | snyk/snyk:elixir-1.18          | elixir:1.18                       |
+| snyk/snyk:elixir-1.19          | elixir:1.19                       |
+| snyk/snyk:uv-python-3.9-trixie | ghcr.io/astral-sh/uv:python3.9-trixie |
+| snyk/snyk:uv-python-3.10-trixie | ghcr.io/astral-sh/uv:python3.10-trixie |
+| snyk/snyk:uv-python-3.11-trixie | ghcr.io/astral-sh/uv:python3.11-trixie |
+| snyk/snyk:uv-python-3.12-trixie | ghcr.io/astral-sh/uv:python3.12-trixie |
+| snyk/snyk:uv-python-3.13-trixie | ghcr.io/astral-sh/uv:python3.13-trixie |
+| snyk/snyk:uv-python-3.14-trixie | ghcr.io/astral-sh/uv:python3.14-trixie |
 | snyk/snyk:golang               | golang                            |
 | snyk/snyk:golang-1.23          | golang:1.23                       |
 | snyk/snyk:golang-1.24          | golang:1.24                       |
 | snyk/snyk:golang-1.25          | golang:1.25                       |
+| snyk/snyk:golang-1.26          | golang:1.26                       |
 | snyk/snyk:gradle               | gradle                            |
 | snyk/snyk:gradle-8-jdk8        | gradle:8-jdk8                     |
 | snyk/snyk:gradle-8-jdk11       | gradle:8-jdk11                    |
@@ -49,39 +57,38 @@ A build toolchain for Snyk Docker images.
 | snyk/snyk:maven-3-jdk-25       | maven:3-eclipse-temurin-25        |
 | snyk/snyk:dotnet-8.0           | mcr.microsoft.com/dotnet/sdk:8.0  |
 | snyk/snyk:dotnet-9.0           | mcr.microsoft.com/dotnet/sdk:9.0  |
+| snyk/snyk:dotnet-10.0          | mcr.microsoft.com/dotnet/sdk:10.0 |
 | snyk/snyk:node                 | node                              |
 | snyk/snyk:node-20              | node:20                           |
 | snyk/snyk:node-22              | node:22                           |
+| snyk/snyk:node-23              | node:23                           |
 | snyk/snyk:node-24              | node:24                           |
 | snyk/snyk:python               | python                            |
-| snyk/snyk:python-3.9           | python:3.9                        |
 | snyk/snyk:python-3.10          | python:3.10                       |
 | snyk/snyk:python-3.11          | python:3.11                       |
 | snyk/snyk:python-3.12          | python:3.12                       |
 | snyk/snyk:python-3.13          | python:3.13                       |
+| snyk/snyk:python-3.14          | python:3.14                       |
 | snyk/snyk:ruby                 | ruby                              |
 | snyk/snyk:ruby-3.3             | ruby:3.3                          |
+| snyk/snyk:ruby-3.4             | ruby:3.4                          |
+| snyk/snyk:sbt1.10.0-scala3.4.2 | sbtscala/scala-sbt:eclipse-temurin-jammy-22_36_1.10.0_3.4.2 |
 | snyk/snyk:swift                | swift                             |
 | snyk/snyk:linux                | ubuntu                            |
-| snyk/snyk:uv-python-3.9-trixie | ghcr.io/astral-sh/uv:python3.9-trixie |
-| snyk/snyk:uv-python-3.10-trixie | ghcr.io/astral-sh/uv:python3.10-trixie |
-| snyk/snyk:uv-python-3.11-trixie | ghcr.io/astral-sh/uv:python3.11-trixie |
-| snyk/snyk:uv-python-3.12-trixie | ghcr.io/astral-sh/uv:python3.12-trixie |
-| snyk/snyk:uv-python-3.13-trixie | ghcr.io/astral-sh/uv:python3.13-trixie |
-| snyk/snyk:sbt1.10.0-scala3.4.2 | sbtscala/scala-sbt:eclipse-temurin-jammy-22_36_1.10.0_3.4.2 |
 | snyk/snyk:alpine               | alpine                            |
 | snyk/snyk:cocoapods            | alpine                            |
 | snyk/snyk:composer             | composer                          |
 | snyk/snyk:php                  | composer                          |
 | snyk/snyk:docker               | docker:latest                     |
 | snyk/snyk:docker-latest        | docker:latest                     |
-| snyk/snyk:python-alpine        | python:alpine                     |
-| snyk/snyk:ruby-alpine          | ruby:alpine                       |
 | snyk/snyk:uv-python-3.9-alpine | ghcr.io/astral-sh/uv:python3.9-alpine |
 | snyk/snyk:uv-python-3.10-alpine | ghcr.io/astral-sh/uv:python3.10-alpine |
 | snyk/snyk:uv-python-3.11-alpine | ghcr.io/astral-sh/uv:python3.11-alpine |
 | snyk/snyk:uv-python-3.12-alpine | ghcr.io/astral-sh/uv:python3.12-alpine |
 | snyk/snyk:uv-python-3.13-alpine | ghcr.io/astral-sh/uv:python3.13-alpine |
+| snyk/snyk:uv-python-3.14-alpine | ghcr.io/astral-sh/uv:python3.14-alpine |
+| snyk/snyk:python-alpine        | python:alpine                     |
+| snyk/snyk:ruby-alpine          | ruby:alpine                       |
 
 
 ### Vendor unsupported base images
@@ -106,9 +113,9 @@ These images are no longer supported by the upstream vendor and should no longer
 | snyk/snyk:golang-1.21        | golang:1.21                             |
 | snyk/snyk:golang-1.22        | golang:1.22                             |
 | snyk/snyk:gradle-6.4         | gradle:6.4                              |
+| snyk/snyk:gradle-6.4-jdk8    | gradle:6.4-jdk8                         |
 | snyk/snyk:gradle-6.4-jdk11   | gradle:6.4-jdk11                        |
 | snyk/snyk:gradle-6.4-jdk14   | gradle:6.4-jdk14                        |
-| snyk/snyk:gradle-6.4-jdk8    | gradle:6.4-jdk8                         |
 | snyk/snyk:gradle-jdk8        | gradle:jdk8                             |
 | snyk/snyk:gradle-jdk11       | gradle:jdk11                            |
 | snyk/snyk:gradle-jdk12       | gradle:jdk12                            |
@@ -122,6 +129,8 @@ These images are no longer supported by the upstream vendor and should no longer
 | snyk/snyk:gradle-jdk21       | gradle:jdk21                            |
 | snyk/snyk:gradle-jdk23       | gradle:jdk23                            |
 | snyk/snyk:gradle-jdk24       | gradle:jdk24                            |
+| snyk/snyk:sbt                | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
+| snyk/snyk:scala              | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
 | snyk/snyk:maven-3-jdk-19     | maven:3-eclipse-temurin-19              |
 | snyk/snyk:maven-3-jdk-20     | maven:3-eclipse-temurin-20              |
 | snyk/snyk:maven-3-jdk-22     | maven:3-eclipse-temurin-22              |
@@ -142,12 +151,11 @@ These images are no longer supported by the upstream vendor and should no longer
 | snyk/snyk:python-3.6         | python:3.6                              |
 | snyk/snyk:python-3.7         | python:3.7                              |
 | snyk/snyk:python-3.8         | python:3.8                              |
+| snyk/snyk:python-3.9         | python:3.9                              |
 | snyk/snyk:ruby-2.4           | ruby:2.4                                |
 | snyk/snyk:ruby-2.5           | ruby:2.5                                |
 | snyk/snyk:ruby-2.6           | ruby:2.6                                |
 | snyk/snyk:ruby-2.7           | ruby:2.7                                |
-| snyk/snyk:sbt                | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
-| snyk/snyk:scala              | hseeberger/scala-sbt:8u212_1.2.8_2.13.0 |
 
 
 ### Security

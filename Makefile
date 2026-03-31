@@ -25,7 +25,7 @@ test-%:
 sort: sort-linux sort-alpine
 
 sort-%:
-	@sort $(NAME) -o $(NAME)
+	@sort -V $(NAME) -o $(NAME)
 
 markdown: sort
 	@echo "| Image | Based on |"
