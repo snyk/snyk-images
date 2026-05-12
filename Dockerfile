@@ -35,14 +35,11 @@ FROM alpine AS snyk-alpine
 ARG CLI_VERSION
 ENV SNYK_CLI_VERSION=$CLI_VERSION
 RUN echo "SNYK_CLI_VERSION=${SNYK_CLI_VERSION}"
-ARG EXPERIMENTAL_BASE_URL
-ENV SNYK_CLI_DOWNLOAD_URL=$EXPERIMENTAL_BASE_URL
-RUN echo "SNYK_CLI_DOWNLOAD_URL=${SNYK_CLI_DOWNLOAD_URL}"
 
 RUN apk update && apk add --no-cache git curl python3 py3-requests
 RUN curl --compressed --output /usr/local/bin/install-snyk.py https://raw.githubusercontent.com/snyk/cli/main/scripts/install-snyk.py
 RUN chmod +x /usr/local/bin/install-snyk.py
-RUN install-snyk.py $SNYK_CLI_VERSION --base_url=$SNYK_CLI_DOWNLOAD_URL
+RUN install-snyk.py $SNYK_CLI_VERSION
 
 FROM parent AS alpine
 RUN apk update && apk upgrade --no-cache
