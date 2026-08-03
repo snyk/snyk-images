@@ -21,9 +21,12 @@ workflows:
           name: scan repository for secrets
           context:
             - snyk-bot-slack
+            - prodsec-orb-runtime
           channel: cli-alerts
           
 
       - security-scans:
-          context: devex_cli-public-images
+          context:
+            - devex_cli-public-images
+            - prodsec-orb-runtime
 
