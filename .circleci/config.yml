@@ -23,10 +23,8 @@ workflows:
             - snyk-bot-slack
             - prodsec-orb-runtime
           channel: cli-alerts
-          
 
       - security-scans:
           context:
-            - devex_cli-public-images
+            - endpoint-experience
             - prodsec-orb-runtime
-
