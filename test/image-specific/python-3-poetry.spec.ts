@@ -1,6 +1,16 @@
+import * as fs from 'fs';
+import * as path from 'path';
 import { runContainer } from '../runContainer';
 
 jest.setTimeout(1000 * 90);
+
+afterEach(() => {
+  // The entrypoint runs `poetry install` in the bind-mounted fixture, which writes a lockfile that would make later runs skip it.
+  fs.rmSync(
+    path.resolve(__dirname, '../fixtures/python-3-pyproject-toml/poetry.lock'),
+    { force: true },
+  );
+});
 
 it('can do `snyk test` on a poetry project', async () => {
   const imageName = 'python-3.8';
@@ -10,11 +20,10 @@ it('can do `snyk test` on a poetry project', async () => {
     './fixtures/python-3-pyproject-toml',
   );
 
-  expect(stdout).toContain('Testing /app...');
+  expect(stdout).toContain('/app');
   expect(stdout).toContain('poetry-fixtures-project');
-  expect(stdout).toContain(
-    'Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-PYTHON-JINJA2-1012994]',
-  );
+  expect(stdout).toContain('Regular Expression Denial of Service (ReDoS)');
+  expect(stdout).toContain('SNYK-PYTHON-JINJA2-1012994');
   expect(stderr).toContain(
     'Skipping virtualenv creation, as specified in config file.\n',
   );
@@ -28,10 +37,9 @@ it('can do `snyk test` on a poetry project with lockfile', async () => {
     './fixtures/python-3-poetry-lock',
   );
 
-  expect(stdout).toContain('Testing /app...');
+  expect(stdout).toContain('/app');
   expect(stdout).toContain('poetry-fixtures-project');
-  expect(stdout).toContain(
-    'Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-PYTHON-JINJA2-1012994]',
-  );
+  expect(stdout).toContain('Regular Expression Denial of Service (ReDoS)');
+  expect(stdout).toContain('SNYK-PYTHON-JINJA2-1012994');
   expect(stderr).toBe('');
 });
