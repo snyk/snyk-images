@@ -1,6 +1,16 @@
+import * as fs from 'fs';
+import * as path from 'path';
 import { runContainer } from '../runContainer';
 
 jest.setTimeout(1000 * 90);
+
+afterEach(() => {
+  // The entrypoint runs `poetry install` in the bind-mounted fixture, which writes a lockfile that would make later runs skip it.
+  fs.rmSync(
+    path.resolve(__dirname, '../fixtures/python-3-pyproject-toml/poetry.lock'),
+    { force: true },
+  );
+});
 
 it('can do `snyk test` on a poetry project', async () => {
   const imageName = 'python-3.8';
