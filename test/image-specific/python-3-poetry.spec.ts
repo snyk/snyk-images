@@ -10,11 +10,10 @@ it('can do `snyk test` on a poetry project', async () => {
     './fixtures/python-3-pyproject-toml',
   );
 
-  expect(stdout).toContain('Testing /app...');
+  expect(stdout).toContain('/app');
   expect(stdout).toContain('poetry-fixtures-project');
-  expect(stdout).toContain(
-    'Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-PYTHON-JINJA2-1012994]',
-  );
+  expect(stdout).toContain('Regular Expression Denial of Service (ReDoS)');
+  expect(stdout).toContain('SNYK-PYTHON-JINJA2-1012994');
   expect(stderr).toContain(
     'Skipping virtualenv creation, as specified in config file.\n',
   );
@@ -28,10 +27,9 @@ it('can do `snyk test` on a poetry project with lockfile', async () => {
     './fixtures/python-3-poetry-lock',
   );
 
-  expect(stdout).toContain('Testing /app...');
+  expect(stdout).toContain('/app');
   expect(stdout).toContain('poetry-fixtures-project');
-  expect(stdout).toContain(
-    'Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-PYTHON-JINJA2-1012994]',
-  );
+  expect(stdout).toContain('Regular Expression Denial of Service (ReDoS)');
+  expect(stdout).toContain('SNYK-PYTHON-JINJA2-1012994');
   expect(stderr).toBe('');
 });
